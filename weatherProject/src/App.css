@@ -5,17 +5,20 @@
 
 body {
   margin: 0 auto;
-  width: 100vw;
+  width: 99vw;
+  height: 100%;
   display: block;
   background-color: #fff;
-  background-image: url(https://media.istockphoto.com/id/1952368018/ko/%EC%82%AC%EC%A7%84/%EC%95%84%EB%A6%84%EB%8B%A4%EC%9A%B4-%EC%97%AC%EB%A6%84%EB%82%A0%EC%97%90-%ED%9D%B0-%EA%B5%AC%EB%A6%84%EC%9D%B4-%EC%9E%88%EB%8A%94-%EC%83%9D%EC%83%9D%ED%95%9C-%ED%91%B8%EB%A5%B8-%ED%95%98%EB%8A%98.jpg?s=2048x2048&w=is&k=20&c=t75oo86l7mbh6g80fG7N8l4Lb004bFZEIANesNuSRH4=);
+  background-image: url(https://cdn.pixabay.com/photo/2018/03/12/14/34/blue-3219787_1280.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 body .container {
   margin: 0 auto;
-  height: 100vh;
+  height: 900px;
   width: 90vw;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 body .container .header {
   width: 100%;
@@ -40,14 +43,14 @@ body .container .main {
 }
 body .container .main .firstSection {
   width: 15%;
-  height: 100%;
+  height: 95%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-body .container .main .firstSection .a1 {
-  width: 90%;
-  height: 30%;
+body .container .main .firstSection .selectTime {
+  width: 100%;
+  height: 15%;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 20px;
@@ -56,9 +59,48 @@ body .container .main .firstSection .a1 {
   box-shadow: 5px 5px 10px #4f7a98;
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
+  box-sizing: border-box;
+  padding: 20px;
 }
-body .container .main .firstSection .a {
-  width: 90%;
+body .container .main .firstSection .selectTime .selectValuebox {
+  width: 100px;
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+body .container .main .firstSection .selectTime .selectValuebox .selectValue {
+  text-align: right;
+  width: 100px;
+  border-radius: 30px;
+}
+body .container .main .firstSection .realtimeWeatherArea {
+  width: 100%;
+  height: 45%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20px;
+  border-radius: 20px;
+  background: none;
+  box-shadow: 5px 5px 10px #4f7a98;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather {
+  text-align: center;
+  font-size: 14px;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul {
+  list-style: none;
+  margin-top: 20px;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul li {
+  line-height: 250%;
+  text-align: right;
+}
+body .container .main .firstSection .a1 {
+  width: 100%;
   height: 30%;
   margin: 0 auto;
   background-color: #fff;
@@ -71,7 +113,7 @@ body .container .main .firstSection .a {
 }
 body .container .main .secondSection {
   width: 40%;
-  height: 100%;
+  height: 95%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -98,7 +140,7 @@ body .container .main .secondSection .b2 {
 }
 body .container .main .thirdSection {
   width: 45%;
-  height: 100%;
+  height: 95%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -143,7 +185,7 @@ body .container .main .thirdSection .c2 {
     width: 100vw;
     display: block;
     background-color: #fff;
-    background-image: url(https://media.istockphoto.com/id/1952368018/ko/%EC%82%AC%EC%A7%84/%EC%95%84%EB%A6%84%EB%8B%A4%EC%9A%B4-%EC%97%AC%EB%A6%84%EB%82%A0%EC%97%90-%ED%9D%B0-%EA%B5%AC%EB%A6%84%EC%9D%B4-%EC%9E%88%EB%8A%94-%EC%83%9D%EC%83%9D%ED%95%9C-%ED%91%B8%EB%A5%B8-%ED%95%98%EB%8A%98.jpg?s=2048x2048&w=is&k=20&c=t75oo86l7mbh6g80fG7N8l4Lb004bFZEIANesNuSRH4=);
+    background-image: url();
     background-repeat: no-repeat;
     background-size: cover;
   }
