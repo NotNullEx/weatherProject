@@ -136,7 +136,7 @@ body .container .main .secondSection .b1 .map {
   width: 25vw;
   height: 100%;
 }
-body .container .main .secondSection .b1 .map .koreamap:hover {
+body .container .main .secondSection .b1 .map .koreaMap:hover {
   fill: #06ab7c;
   cursor: pointer;
 }

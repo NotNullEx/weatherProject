@@ -1,51 +1,49 @@
+import React, { useState } from "react";
 import Weather from "./weather";
 import WeatherMap from "./weatherMap";
 
-
 function WeatherDisplay() {
-
-
+    const [selectedIndex, setSelectedIndex] = useState<number>(0); // 지역 선택 상태
 
     return (
         <div id="container" className="container">
             <header id="header" className="header">
-                <p>ProjcetName</p>
+                <p>ProjectName</p>
             </header>
             <main id="main" className="main">
                 <section id="firstSection" className="firstSection">
                     <div className="selectTime">
                         <div className="selectValuebox">
-                            <select name="year" id="year" className="selectValue">
-                                <option value="1">2024</option><p>sss</p>
+                            <select name="year" className="selectValue">
+                                <option value="1">2024</option>
                             </select>
                             <p>년</p>
                         </div>
                         <div className="selectValuebox">
-                            <select name="year" id="year" className="selectValue">
-                                <option value="1">12</option><p>sss</p>
+                            <select name="month" className="selectValue">
+                                <option value="1">12</option>
                             </select>
                             <p>월</p>
                         </div>
                         <div className="selectValuebox">
-                            <select name="year" id="year" className="selectValue">
-                                <option value="1">1</option><p>sss</p>
+                            <select name="day" className="selectValue">
+                                <option value="1">1</option>
                             </select>
                             <p>일</p>
                         </div>
                     </div>
                     <div className="realtimeWeatherArea">
-                        <Weather />
+                        {/* 선택된 지역 정보를 Weather 컴포넌트에 전달 */}
+                        <Weather selectedIndex={selectedIndex} />
                     </div>
                     <div className="a1"></div>
                 </section>
                 <section id="secondSection" className="secondSection">
                     <div className="b1" id="map">
-                        <WeatherMap />
+                        {/* 선택된 지역을 변경할 수 있도록 props 전달 */}
+                        <WeatherMap selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
                     </div>
-                    <div className="b2" id="map">
-
-                    </div>
-
+                    <div className="b2" id="map"></div>
                 </section>
                 <section id="thirdSection" className="thirdSection">
                     <div className="c">
