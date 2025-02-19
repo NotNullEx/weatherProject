@@ -6,8 +6,8 @@
 @mixin backblur() {
     border-radius: 20px;
     background: none;
-    box-shadow: 5px 5px 10px #4f7a98;
-    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 10px #506472;
+    backdrop-filter: blur(30px);
 }
 
 html {}
@@ -92,6 +92,7 @@ body {
                     background-color: #fff;
                     border-radius: 20px;
                     @include backblur();
+                    background: linear-gradient(#0185f8, #ffffff);
                     padding: 20px;
                     box-sizing: border-box;
 
@@ -137,7 +138,23 @@ body {
                     width: 90%;
                     height: 63%;
                     margin: 0 auto;
-                    @include backblur()
+                    @include backblur();
+                    overflow: hidden;
+                    background: linear-gradient(#ffffff, #0185f8, #0f647c);
+                    opacity: 90%;
+
+
+                    .map {
+                        width: 25vw;
+                        height: 100%;
+
+                        .koreamap:hover {
+
+                            fill: #06ab7c;
+                            cursor: pointer;
+                        }
+                    }
+
                 }
 
                 .b2 {

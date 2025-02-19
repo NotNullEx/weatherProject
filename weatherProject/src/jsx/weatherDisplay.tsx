@@ -1,6 +1,9 @@
 import Weather from "./weather";
+import WeatherMap from "./weatherMap";
+
 
 function WeatherDisplay() {
+
 
 
     return (
@@ -37,7 +40,7 @@ function WeatherDisplay() {
                 </section>
                 <section id="secondSection" className="secondSection">
                     <div className="b1" id="map">
-
+                        <WeatherMap />
                     </div>
                     <div className="b2" id="map">
 

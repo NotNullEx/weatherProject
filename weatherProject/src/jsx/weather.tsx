@@ -63,11 +63,10 @@ const WeatherSelector: React.FC = () => {
             {loading ? (
                 <p>날씨 정보 불러오는 중...</p>
             ) : (
-                <ul style={{ marginTop: "1rem" }}>
-                    <li>지역: {regionCoords[selectedIndex].name}</li>
-                    <li>기온(T1H): {temp} °C</li>
-                    <li>습도(REH): {humidity} %</li>
-                    <li>강수형태(PTY): {rainType}</li>
+                <ul style={{ marginTop: "1rem", border: "1px solid black", borderRadius: "10px" }}>
+                    <li>기온: {temp} °C</li>
+                    <li>습도: {humidity} %</li>
+                    <li>강수형태: {rainType}</li>
                 </ul>
             )}
         </div>
