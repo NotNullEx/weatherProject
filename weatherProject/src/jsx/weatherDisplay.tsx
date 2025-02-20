@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Weather from "./weather";
 import WeatherMap from "./weatherMap";
+import TemperatureGraph from "./TemperatureGraph";
+import PrecipitationGraph from "./Precipitation graph";
+import SuggestWeather from "./SuggestClothes";
+
 
 function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0); // 지역 선택 상태
@@ -36,7 +40,9 @@ function WeatherDisplay() {
                         {/* 선택된 지역 정보를 Weather 컴포넌트에 전달 */}
                         <Weather selectedIndex={selectedIndex} />
                     </div>
-                    <div className="a1">날씨 비교</div>
+                    <div className="a1">추천 복장
+                        <SuggestWeather />
+                    </div>
                 </section>
                 <section id="secondSection" className="secondSection">
                     <div className="b1" id="map">
@@ -47,11 +53,22 @@ function WeatherDisplay() {
                 </section>
                 <section id="thirdSection" className="thirdSection">
                     <div className="c">
-                        <div className="c2-1">강수 avg</div>
-                        <div className="c2-1">강수 max</div>
-                        <div className="c2-1">강수 ??</div>
+                        <div className="c2-1">
+                            <PrecipitationGraph value={75} label="평균 강수량" />
+
+                        </div>
+                        <div className="c2-1">
+                            <PrecipitationGraph value={60} label="최대 강수량" />
+
+                        </div>
+                        <div className="c2-1">
+                            <PrecipitationGraph value={40} label="최소 강수량" />
+
+                        </div>
                     </div>
-                    <div className="c1">기온 그래프</div>
+                    <div className="c1">기온 그래프
+                        <TemperatureGraph></TemperatureGraph>
+                    </div>
                     <div className="c2">데이터</div>
                 </section>
             </main>
