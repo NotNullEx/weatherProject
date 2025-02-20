@@ -36,23 +36,23 @@ function WeatherDisplay() {
                         {/* 선택된 지역 정보를 Weather 컴포넌트에 전달 */}
                         <Weather selectedIndex={selectedIndex} />
                     </div>
-                    <div className="a1"></div>
+                    <div className="a1">날씨 비교</div>
                 </section>
                 <section id="secondSection" className="secondSection">
                     <div className="b1" id="map">
                         {/* 선택된 지역을 변경할 수 있도록 props 전달 */}
                         <WeatherMap selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
                     </div>
-                    <div className="b2" id="map"></div>
+                    <div className="b2" id="map">전년 기온 비교 </div>
                 </section>
                 <section id="thirdSection" className="thirdSection">
                     <div className="c">
-                        <div className="c2-1"></div>
-                        <div className="c2-1"></div>
-                        <div className="c2-1"></div>
+                        <div className="c2-1">강수 avg</div>
+                        <div className="c2-1">강수 max</div>
+                        <div className="c2-1">강수 ??</div>
                     </div>
-                    <div className="c1"></div>
-                    <div className="c2"></div>
+                    <div className="c1">기온 그래프</div>
+                    <div className="c2">데이터</div>
                 </section>
             </main>
         </div>

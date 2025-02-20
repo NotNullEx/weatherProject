@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 100;
 }
 
 body {
@@ -8,10 +10,8 @@ body {
   width: 99vw;
   height: 100%;
   display: block;
-  background-color: #fff;
-  background-image: url(https://cdn.pixabay.com/photo/2018/03/12/14/34/blue-3219787_1280.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #1C1B20;
+  color: white;
 }
 body .container {
   margin: 0 auto;
@@ -24,15 +24,14 @@ body .container .header {
   width: 100%;
   height: 60px;
   background-color: #fff;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
 }
 body .container .header p {
   font-size: 25px;
-  font-style: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
   line-height: 60px;
   margin-left: 50px;
 }
@@ -54,11 +53,8 @@ body .container .main .firstSection .selectTime {
   margin: 0 auto;
   background-color: #fff;
   border-radius: 20px;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
   box-sizing: border-box;
   padding: 20px;
 }
@@ -79,26 +75,78 @@ body .container .main .firstSection .realtimeWeatherArea {
   margin: 0 auto;
   background-color: #fff;
   border-radius: 20px;
-  border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-  background: linear-gradient(#0185f8, #ffffff);
+  background: linear-gradient(#bdc5cc, #0185f8);
   padding: 20px;
   box-sizing: border-box;
 }
 body .container .main .firstSection .realtimeWeatherArea .realtimeWeather {
-  text-align: center;
   font-size: 14px;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather h2 {
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
+  text-align: center;
 }
 body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul {
   list-style: none;
   margin-top: 20px;
 }
-body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul li {
-  line-height: 250%;
-  text-align: right;
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .icon {
+  width: 60%;
+  height: 7vw;
+  margin: auto;
+  background-image: url(./assets/img/sunny.png);
+  background-size: cover;
+  background-position: center;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .temperature {
+  text-align: center;
+  font-size: 2.2vw;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info {
+  margin-top: 0.7vw;
+  width: 100%;
+  height: 5.5vw;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
+  margin: auto;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
+  font-size: 0.7vw;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
+  width: 40px;
+  height: 2vw;
+  display: block;
+  margin: auto;
+  background-image: url(./assets/img/Wind.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .humidityIcon {
+  width: 40px;
+  height: 2vw;
+  display: block;
+  margin: auto;
+  background-image: url(./assets/img/Dew.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .VisibilityIcon {
+  width: 40px;
+  height: 2vw;
+  display: block;
+  margin: auto;
+  background-image: url(./assets/img/Rain2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 body .container .main .firstSection .a1 {
   width: 100%;
@@ -106,11 +154,8 @@ body .container .main .firstSection .a1 {
   margin: 0 auto;
   background-color: #fff;
   border-radius: 20px;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
 }
 body .container .main .secondSection {
   width: 40%;
@@ -123,18 +168,18 @@ body .container .main .secondSection .b1 {
   width: 90%;
   height: 63%;
   margin: 0 auto;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
   overflow: hidden;
-  background: linear-gradient(#ffffff, #0185f8, #0f647c);
   opacity: 90%;
 }
 body .container .main .secondSection .b1 .map {
   width: 25vw;
   height: 100%;
+}
+body .container .main .secondSection .b1 .map .koreaMap {
+  stroke: rgb(87, 84, 84);
+  fill: #cfcdc6;
 }
 body .container .main .secondSection .b1 .map .koreaMap:hover {
   fill: #06ab7c;
@@ -143,11 +188,8 @@ body .container .main .secondSection .b1 .map .koreaMap:hover {
 body .container .main .secondSection .b2 {
   width: 90%;
   margin: 0 auto;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
   height: 30%;
 }
 body .container .main .thirdSection {
@@ -166,29 +208,20 @@ body .container .main .thirdSection .c {
 body .container .main .thirdSection .c .c2-1 {
   width: 32%;
   background-color: black;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
 }
 body .container .main .thirdSection .c1 {
   width: 100%;
   height: 30%;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
 }
 body .container .main .thirdSection .c2 {
   width: 100%;
   height: 30%;
+  background-color: #303136;
   border-radius: 20px;
-  background: none;
-  box-shadow: 5px 5px 10px #506472;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
 }
 
 @media (max-width: 1280px) {
@@ -210,11 +243,8 @@ body .container .main .thirdSection .c2 {
     width: 100%;
     height: 60px;
     background-color: #fff;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   body .container .header p {
     font-size: 25px;
@@ -240,11 +270,8 @@ body .container .main .thirdSection .c2 {
     margin: 0 auto;
     background-color: #fff;
     border-radius: 20px;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   body .container .main .firstSection .a {
     width: 100%;
@@ -252,11 +279,8 @@ body .container .main .thirdSection .c2 {
     margin: 0 auto;
     background-color: #fff;
     border-radius: 20px;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   body .container .main .secondSection {
     width: 40%;
@@ -269,20 +293,14 @@ body .container .main .thirdSection .c2 {
     width: 90%;
     height: 63%;
     margin: 0 auto;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   body .container .main .secondSection .b2 {
     width: 90%;
     margin: 0 auto;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
     height: 30%;
   }
   body .container .main .thirdSection {
@@ -301,29 +319,20 @@ body .container .main .thirdSection .c2 {
   body .container .main .thirdSection .c .c2-1 {
     width: 32%;
     background-color: black;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   body .container .main .thirdSection .c1 {
     width: 100%;
     height: 40%;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   body .container .main .thirdSection .c2 {
     width: 100%;
     height: 30%;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
 }
 @media (max-width: 720px) {
@@ -353,22 +362,16 @@ body .container .main .thirdSection .c2 {
     height: 50px !important;
     background-color: #fff;
     border-radius: 20px;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   .container .main .firstSection .a {
     width: 46% !important;
     height: 200px !important;
     background-color: #fff;
     border-radius: 20px;
+    background-color: #303136;
     border-radius: 20px;
-    background: none;
-    box-shadow: 5px 5px 10px #506472;
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
   }
   .container .main .secondSection {
     width: 100% !important;

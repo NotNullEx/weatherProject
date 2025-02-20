@@ -1,9 +1,22 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 100;
 }
 
-@mixin backblur() {
+@mixin titleFont() {
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
+}
+
+@mixin objcolor() {
+    background-color: #303136;
+    border-radius: 20px;
+}
+
+@mixin backblur2() {
     border-radius: 20px;
     background: none;
     box-shadow: 5px 5px 10px #506472;
@@ -17,10 +30,9 @@ body {
     width: 99vw;
     height: 100%;
     display: block;
-    background-color: #fff;
-    background-image: url(https://cdn.pixabay.com/photo/2018/03/12/14/34/blue-3219787_1280.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #1C1B20;
+    color: white;
+
 
 
 
@@ -35,11 +47,11 @@ body {
             width: 100%;
             height: 60px;
             background-color: #fff;
-            @include backblur();
+            @include objcolor();
 
             p {
                 font-size: 25px;
-                font-style: bold;
+                @include titleFont;
                 line-height: 60px;
                 margin-left: 50px;
             }
@@ -63,7 +75,7 @@ body {
                     margin: 0 auto;
                     background-color: #fff;
                     border-radius: 20px;
-                    @include backblur();
+                    @include objcolor();
                     box-sizing: border-box;
                     padding: 20px;
 
@@ -91,22 +103,92 @@ body {
                     margin: 0 auto;
                     background-color: #fff;
                     border-radius: 20px;
-                    @include backblur();
-                    background: linear-gradient(#0185f8, #ffffff);
+                    background: linear-gradient(#bdc5cc, #0185f8);
                     padding: 20px;
                     box-sizing: border-box;
 
+
+
                     .realtimeWeather {
-                        text-align: center;
                         font-size: 14px;
+
+                        h2 {
+                            @include titleFont;
+                            text-align: center;
+
+                        }
 
                         ul {
                             list-style: none;
                             margin-top: 20px;
 
-                            li {
-                                line-height: 250%;
-                                text-align: right;
+                            .icon {
+                                width: 60%;
+                                height: 7vw;
+                                margin: auto;
+                                background-image: url(./assets/img/sunny.png);
+                                background-size: cover;
+                                background-position: center;
+                            }
+
+                            .temperature {
+                                text-align: center;
+                                font-size: 2.2vw;
+                            }
+
+                            .weather-info {
+                                margin-top: 0.7vw;
+                                width: 100%;
+                                height: 5.5vw;
+                                display: flex;
+                                justify-content: space-between;
+                                text-align: center;
+
+                                .winfoB {
+                                    margin: auto;
+
+                                    p {
+                                        font-size: 0.7vw
+                                    }
+
+                                    .windIcon {
+                                        width: 40px;
+                                        height: 2vw;
+                                        display: block;
+
+                                        margin: auto;
+                                        background-image: url(./assets/img/Wind.png);
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                    }
+
+                                    .humidityIcon {
+                                        width: 40px;
+                                        height: 2vw;
+                                        display: block;
+                                        margin: auto;
+                                        background-image: url(./assets/img/Dew.png);
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+
+                                    }
+
+                                    .VisibilityIcon {
+                                        width: 40px;
+                                        height: 2vw;
+                                        display: block;
+
+                                        margin: auto;
+                                        background-image: url(./assets/img/Rain2.png);
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+
+                                    }
+                                }
+
                             }
 
                         }
@@ -121,7 +203,7 @@ body {
                     margin: 0 auto;
                     background-color: #fff;
                     border-radius: 20px;
-                    @include backblur();
+                    @include objcolor();
 
 
                 }
@@ -138,15 +220,21 @@ body {
                     width: 90%;
                     height: 63%;
                     margin: 0 auto;
-                    @include backblur();
+                    @include objcolor();
                     overflow: hidden;
-                    background: linear-gradient(#ffffff, #0185f8, #0f647c);
+                    // background: linear-gradient(#bdc5cc, #0185f8);
+
                     opacity: 90%;
 
 
                     .map {
                         width: 25vw;
                         height: 100%;
+
+                        .koreaMap {
+                            stroke: rgb(87, 84, 84);
+                            fill: #cfcdc6;
+                        }
 
                         .koreaMap:hover {
 
@@ -160,7 +248,7 @@ body {
                 .b2 {
                     width: 90%;
                     margin: 0 auto;
-                    @include backblur();
+                    @include objcolor();
                     height: 30%;
 
 
@@ -187,21 +275,21 @@ body {
                     .c2-1 {
                         width: 32%;
                         background-color: black;
-                        @include backblur();
+                        @include objcolor();
                     }
                 }
 
                 .c1 {
                     width: 100%;
                     height: 30%;
-                    @include backblur();
+                    @include objcolor();
 
                 }
 
                 .c2 {
                     width: 100%;
                     height: 30%;
-                    @include backblur();
+                    @include objcolor();
 
                 }
             }
@@ -228,7 +316,7 @@ body {
                 width: 100%;
                 height: 60px;
                 background-color: #fff;
-                @include backblur();
+                @include objcolor();
 
                 p {
                     font-size: 25px;
@@ -256,7 +344,7 @@ body {
                         margin: 0 auto;
                         background-color: #fff;
                         border-radius: 20px;
-                        @include backblur();
+                        @include objcolor();
                     }
 
                     .a {
@@ -265,7 +353,7 @@ body {
                         margin: 0 auto;
                         background-color: #fff;
                         border-radius: 20px;
-                        @include backblur();
+                        @include objcolor();
 
 
                     }
@@ -282,14 +370,14 @@ body {
                         width: 90%;
                         height: 63%;
                         margin: 0 auto;
-                        @include backblur()
+                        @include objcolor()
                     }
 
                     .b2 {
                         width: 90%;
                         margin: 0 auto;
 
-                        @include backblur();
+                        @include objcolor();
                         height: 30%;
 
                     }
@@ -313,21 +401,21 @@ body {
                         .c2-1 {
                             width: 32%;
                             background-color: black;
-                            @include backblur();
+                            @include objcolor();
                         }
                     }
 
                     .c1 {
                         width: 100%;
                         height: 40%;
-                        @include backblur();
+                        @include objcolor();
 
                     }
 
                     .c2 {
                         width: 100%;
                         height: 30%;
-                        @include backblur();
+                        @include objcolor();
 
                     }
                 }
@@ -364,7 +452,7 @@ body {
                     height: 50px !important;
                     background-color: #fff;
                     border-radius: 20px;
-                    @include backblur();
+                    @include objcolor();
                 }
 
                 .a {
@@ -372,7 +460,7 @@ body {
                     height: 200px !important;
                     background-color: #fff;
                     border-radius: 20px;
-                    @include backblur();
+                    @include objcolor();
 
 
                 }
