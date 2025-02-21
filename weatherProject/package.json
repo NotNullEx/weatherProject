@@ -1,6 +1,7 @@
 {
   "name": "weatherproject",
   "private": true,
+  "proxy": "https://apihub.kma.go.kr",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
