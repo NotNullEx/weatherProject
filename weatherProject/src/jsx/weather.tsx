@@ -8,6 +8,7 @@ interface WeatherProps {
 
 const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
     const [temp, setTemp] = useState("-");
+    const [wind, setWind] = useState("-");
     const [humidity, setHumidity] = useState("-");
     const [rainType, setRainType] = useState("-");
     const [loading, setLoading] = useState(false);
@@ -21,6 +22,7 @@ const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
         if (data?.response?.header?.resultCode === "00") {
             const items = data.response.body.items.item;
             setTemp(items.find((item: any) => item.category === "T1H")?.obsrValue || "-");
+            setWind(items.find((item: any) => item.category === "WSD")?.obsrValue || "-");
             setHumidity(items.find((item: any) => item.category === "REH")?.obsrValue || "-");
             setRainType(items.find((item: any) => item.category === "PTY")?.obsrValue || "-");
         } else {
@@ -34,14 +36,24 @@ const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
 
     return (
         <div className="realtimeWeather">
-            <h2>오늘의 날씨</h2>
+            <h2>Today</h2>
             {loading ? (
                 <p>날씨 정보 불러오는 중...</p>
             ) : (
-                <ul>
-                    <li>기온: {temp} °C</li>
-                    <li>습도: {humidity} %</li>
-                    <li>강수형태: {rainType}</li>
+                <ul className="weather-card">
+                    <div className="icon"></div>
+                    <div className="temperature">{temp}°C</div>
+                    <div className="weather-info">
+                        <div className="winfoB">
+                            <span className="windIcon"></span><p> {wind} m/s <br /> 풍속</p>
+                        </div>
+                        <div className="winfoB">
+                            <span className="humidityIcon"></span> <p>{humidity} % <br /> 습도</p>
+                        </div>
+                        <div className="winfoB">
+                            <span className="VisibilityIcon"></span> <p>{rainType} <br /> 강수형태</p>
+                        </div>
+                    </div>
                 </ul>
             )}
         </div>
