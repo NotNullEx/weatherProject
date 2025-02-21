@@ -57,9 +57,12 @@ const SuggestWeather: React.FC = () => {
 
     return (
         <div>
-            <p>🌬️ 체감 온도: {weather?.main.feels_like} °C</p>
-            <div>👕 추천 의상: {suggestClothes(weather?.main.feels_like || 0).join(", ")}</div>
-        </div>
+            <div className="thermometerIconbox">
+                <div className="thermometerIcon"></div> <div>체감 온도 <p>{weather?.main.feels_like} °C</p></div>
+            </div>
+            <div className="suggestion">
+                <div className="suggestionT">추천 의상</div><div className="suggestionM"> {suggestClothes(weather?.main.feels_like || 0).join(", ")}</div></div>
+        </div >
     );
 };
 

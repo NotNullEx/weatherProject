@@ -15,7 +15,7 @@ const WeatherMap: React.FC<WeatherMapProps> = ({ selectedIndex, setSelectedIndex
     };
     return (
         <div>
-            <select value={selectedIndex} onChange={(e) => setSelectedIndex(Number(e.target.value))}>
+            <select value={selectedIndex} onChange={(e) => setSelectedIndex(Number(e.target.value))} className="mapSelect">
                 {regionCoords.map((region, idx) => (
                     <option key={region.name} value={idx}>
                         {region.name}

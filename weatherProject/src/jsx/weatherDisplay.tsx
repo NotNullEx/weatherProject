@@ -40,7 +40,7 @@ function WeatherDisplay() {
                         {/* 선택된 지역 정보를 Weather 컴포넌트에 전달 */}
                         <Weather selectedIndex={selectedIndex} />
                     </div>
-                    <div className="a1">추천 복장
+                    <div className="perceived ">
                         <SuggestWeather />
                     </div>
                 </section>
@@ -66,7 +66,8 @@ function WeatherDisplay() {
 
                         </div>
                     </div>
-                    <div className="c1">기온 그래프
+                    <div className="c1">
+                        <p>기온 그래프</p>
                         <TemperatureGraph></TemperatureGraph>
                     </div>
                     <div className="c2">데이터</div>
