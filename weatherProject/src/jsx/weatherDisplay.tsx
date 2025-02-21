@@ -67,7 +67,7 @@ function WeatherDisplay() {
                         </div>
                     </div>
                     <div className="c1">
-                        <p>기온 그래프</p>
+                        {/* <p>기온 그래프</p> */}
                         <TemperatureGraph></TemperatureGraph>
                     </div>
                     <div className="c2">데이터</div>

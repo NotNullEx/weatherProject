@@ -162,6 +162,7 @@ body .container .main .firstSection .perceived {
   margin: 0 auto;
   border-radius: 20px;
   background-color: #fff;
+  background: linear-gradient(#bdc5cc, #0185f8);
   background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
   box-sizing: border-box;
   padding: 2vw;
@@ -305,9 +306,10 @@ body .container .main .thirdSection .c1 p {
   position: absolute;
   top: 1.2vw;
 }
-body .container .main .thirdSection .c1 .canvas {
+body .container .main .thirdSection .c1 .temperatureGraph {
   position: absolute;
   top: 2vw;
+  left: 0;
   border-radius: 20px;
   margin: auto;
   display: block;
