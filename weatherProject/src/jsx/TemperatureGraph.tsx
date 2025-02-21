@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
     { name: '1월', 최고: 5, 평균: 2, 최저: -2 },
@@ -13,26 +13,29 @@ const data = [
     { name: '10월', 최고: 20, 평균: 14, 최저: 10 },
     { name: '11월', 최고: 13, 평균: 8, 최저: 3 },
     { name: '12월', 최고: 6, 평균: 2, 최저: -1 }
+
 ];
 const TemperatureGraph = () => {
     return (
         <div className="temperatureGraph">
-            <ResponsiveContainer width="110%" height={200}>
+
+            <ResponsiveContainer width="110%" height="92%">
+
                 <LineChart
                     data={data}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
+                    <XAxis dataKey="name" fontSize="12px" />
+                    <YAxis tickCount={12} domain={[-20, 35]} />
                     <Tooltip />
-                    <Legend />
+                    {/* <Legend /> */}
                     <Line type="monotone" dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} />
                     <Line type="monotone" dataKey="평균" stroke="#007BFF" />
                     <Line type="monotone" dataKey="최저" stroke="#00FF00" />
                 </LineChart>
             </ResponsiveContainer>
-        </div>
+        </div >
     );
 };
 

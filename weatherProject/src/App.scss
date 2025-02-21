@@ -29,7 +29,6 @@
     backdrop-filter: blur(30px);
 }
 
-html {}
 
 body {
     margin: 0 auto;
@@ -67,6 +66,7 @@ body {
             width: 100%;
             height: calc(100vh - 60px);
             display: flex;
+            justify-content: space-between;
 
             .firstSection {
                 width: 15%;
@@ -216,7 +216,7 @@ body {
 
                         .thermometerIcon {
                             width: 5vw;
-                            height: 10vh;
+                            height: 5vw;
                             background-image: url(./assets/img/ThermometerQuarter.png);
                             @include backgoundSet();
                         }
@@ -257,7 +257,7 @@ body {
             }
 
             .secondSection {
-                width: 40%;
+                width: 35%;
                 height: 44vw;
                 display: flex;
                 flex-wrap: wrap;
@@ -277,9 +277,11 @@ body {
 
                     .mapSelect {
                         position: absolute;
+                        top: 1vw;
                         text-align: center;
                         width: 84px;
                         height: 20px;
+                        right: 1vw;
                         border-radius: 30px;
                     }
 
@@ -379,21 +381,24 @@ body {
                     box-sizing: border-box;
                     position: relative;
 
-                    p {
+                    .tgtitle {
                         font-size: 1vw;
                         position: absolute;
-                        top: 1.2vw;
+                        top: 0.9vw;
+                        left: 17.3vw;
 
+                        font-weight: bold;
                     }
 
                     .temperatureGraph {
                         position: absolute;
-                        top: 2vw;
+                        top: 2.5vw;
                         left: 0;
                         border-radius: 20px;
                         margin: auto;
                         display: block;
-                        width: 35vw;
+                        width: 90%;
+                        height: 12vw;
                     }
 
 
@@ -414,78 +419,365 @@ body {
 
 
 @media (max-width:720px) {
-    .container {
-        margin: 0 auto;
-        height: 100vh;
-        width: 90vw;
+    body {
+        background-color: #fff;
 
-        .header {
-            width: 100%;
-            height: 60px;
-            background-color: #fff;
-            text-align: center;
-        }
+        .container {
+            background-color: #3b2b2b;
 
-        .main {
-            width: 100%;
-            height: calc(100% - 60px);
-            display: flex;
-            flex-wrap: wrap;
-
-            .firstSection {
-                width: 100% !important;
-                height: 300px !important;
-
-                .a1 {
-                    width: 100% !important;
-                    height: 50px !important;
-                    background-color: #fff;
+            .header {
+                p {
+                    font-size: 4vw;
+                    text-align: center;
+                    margin: 0;
                     border-radius: 20px;
-                    @include objcolor();
-                }
-
-                .a {
-                    width: 46% !important;
-                    height: 200px !important;
-                    background-color: #fff;
-                    border-radius: 20px;
-                    @include objcolor();
-
-
                 }
             }
 
-            .secondSection {
-                width: 100% !important;
-                height: 500px !important;
+            .main {
+                display: block;
 
-                .b1 {
-                    width: 100vw !important;
+                .firstSection {
+                    width: 100%;
+                    height: 44vw;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 20px;
+                    box-sizing: border-box;
+
+
+
+                    .selectTime {
+                        width: 30%;
+                        height: 100px;
+                        margin: 0 auto;
+                        border-radius: 20px;
+                        @include objcolor();
+                        background-color: #fff;
+
+                        .selectValuebox {
+                            width: 50px;
+                            display: flex;
+                            text-align: center;
+
+                            .selectValue {
+                                width: 200px;
+                            }
+                        }
+
+
+                    }
+
+                    .realtimeWeatherArea {
+                        width: 30%;
+                        height: 100px;
+                        margin: 0 auto;
+                        background-color: #fff;
+                        border-radius: 20px;
+                        background: linear-gradient(#bdc5cc, #0185f8);
+                        padding: 20px;
+                        box-sizing: border-box;
+
+                        .realtimeWeather {
+                            height: 100%;
+                            font-size: 1.4vw;
+
+                            h2 {
+                                @include titleFont;
+                                text-align: center;
+
+                            }
+
+                            ul {
+                                width: 10vw;
+                                height: 100%;
+                                margin: auto;
+                                list-style: none;
+                                margin-top: 2vh;
+
+                                .icon {
+                                    width: 8vw;
+                                    height: 40%;
+                                    margin: 0 auto;
+                                    background-image: url(./assets/img/sunny.png);
+                                    @include backgoundSet();
+                                }
+
+                                .temperature {
+                                    text-align: center;
+                                    font-size: 2.2vw;
+                                    font-weight: bold;
+                                    text-shadow: 7px 7px 20px #1C1B20;
+                                    margin-top: -2vw;
+                                }
+
+                                .weather-info {
+                                    margin-top: 2vw;
+                                    width: 100%;
+                                    height: 5.5vh;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    text-align: center;
+
+                                    .winfoB {
+                                        margin: auto;
+
+                                        p {
+                                            font-size: 0.7vw
+                                        }
+
+                                        .windIcon {
+                                            width: 4vh;
+                                            height: 2vw;
+                                            display: block;
+                                            margin: auto;
+                                            background-image: url(./assets/img/Wind.png);
+                                            @include backgoundSet();
+                                        }
+
+                                        .humidityIcon {
+                                            width: 4vh;
+                                            height: 2vw;
+                                            display: block;
+                                            margin: auto;
+                                            background-image: url(./assets/img/Dew.png);
+                                            @include backgoundSet();
+
+                                        }
+
+                                        .VisibilityIcon {
+                                            width: 4vh;
+                                            height: 2vw;
+                                            display: block;
+                                            margin: auto;
+                                            background-image: url(./assets/img/Rain2.png);
+                                            @include backgoundSet();
+
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+
+                    .perceived {
+                        width: 30%;
+                        height: 100px;
+                        margin: 0 auto;
+                        border-radius: 20px;
+                        background-color: #fff;
+                        background: linear-gradient(#bdc5cc, #0185f8);
+
+                        background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
+                        box-sizing: border-box;
+                        padding: 2vw;
+
+                        .thermometerIconbox {
+                            display: flex;
+                            width: 100%;
+                            height: 12vh;
+
+                            .thermometerIcon {
+                                width: 5vw;
+                                height: 5vw;
+                                background-image: url(./assets/img/ThermometerQuarter.png);
+                                @include backgoundSet();
+                            }
+
+                            div {
+                                text-align: center;
+                                font-size: 1vw;
+                                font-weight: bold;
+
+                                p {
+                                    margin-top: 1vw;
+                                    font-size: 1.1vw;
+                                    font-weight: bold;
+                                }
+                            }
+
+                        }
+
+                        .suggestion {
+                            text-align: center;
+
+                            .suggestionT {
+                                font-size: 1vw;
+                                font-weight: bold;
+                                margin-top: -0.5vh;
+                                margin-bottom: 1vh;
+
+                            }
+
+                            .suggestionM {
+                                font-size: 0.7vw;
+                            }
+
+
+                        }
+
+                    }
                 }
 
-                .b2 {
-                    width: 100vw !important;
+                .secondSection {
+                    width: 100%;
+                    height: 100vw;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                    .b1 {
+                        width: 90%;
+                        height: 63%;
+                        margin: 0 auto;
+                        @include objcolor();
+                        background-color: #1C1B20;
+                        overflow: hidden;
+                        position: relative;
+                        // background: linear-gradient(#bdc5cc, #0185f8);
+
+                        opacity: 90%;
+
+                        .mapSelect {
+                            position: absolute;
+                            top: 50vw;
+                            text-align: center;
+                            width: 84px;
+                            height: 20px;
+                            right: 6vw;
+                            border-radius: 30px;
+                        }
+
+                        .map {
+                            width: 300px;
+                            height: 250px;
+
+                            .koreaMap {
+                                stroke: rgb(159, 255, 171);
+                                fill: #ffffff;
+                            }
+
+                            .koreaMap:hover {
+
+                                fill: #06ab7c;
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+
+                    .b2 {
+                        width: 90%;
+                        margin: 0 auto;
+                        @include objcolor();
+                        height: 30%;
+
+
+
+
+                    }
                 }
 
+                .thirdSection {
+                    width: 100%;
+                    height: 44vw;
+                    // background-color: #3f1d1d;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                    .c {
+                        width: 100%;
+                        height: 13vw;
+                        // background-color: #fff;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .c2-1 {
+                            width: 32%;
+                            background-color: black;
+                            @include objcolor();
+
+                            .circleBox {
+                                width: 100%;
+                                position: relative;
 
 
-            }
+                                .circle {
+                                    display: block;
+                                    width: 12vw;
+                                    height: 12vw;
+                                    margin: auto;
 
-            .thirdSection {
-                width: 100% !important;
 
 
-                .c {
-                    height: 150px !important;
+                                }
 
-                    .c2-1 {}
+                                .circleperTitle {
+                                    position: absolute;
+                                    top: 1vw;
+                                    left: 4vw;
+                                    font-size: 1vw;
+                                    font-weight: bold;
+                                    font-family: "Nanum Gothic", serif;
+
+                                }
+
+                                .circleper {
+                                    position: absolute;
+                                    top: 6vw;
+                                    left: 4.3vw;
+                                    font-size: 2vw;
+                                    font-weight: bold;
+                                    text-shadow: 10px 10px 10px #1C1B20;
+                                    font-family: "Nanum Gothic", serif;
+                                }
+                            }
+                        }
+                    }
+
+                    .c1 {
+                        width: 100%;
+                        height: 30%;
+                        @include objcolor();
+                        padding: 30px;
+                        box-sizing: border-box;
+                        position: relative;
+
+                        .tgtitle {
+                            font-size: 1vw;
+                            position: absolute;
+                            top: 0.9vw;
+                            left: 17.3vw;
+
+                            font-weight: bold;
+                        }
+
+                        .temperatureGraph {
+                            position: absolute;
+                            top: 2.5vw;
+                            left: 0;
+                            border-radius: 20px;
+                            margin: auto;
+                            display: block;
+                            width: 90%;
+                            height: 12vw;
+                        }
+
+
+
+                    }
+
+                    .c2 {
+                        width: 100%;
+                        height: 30%;
+                        @include objcolor();
+
+                    }
                 }
-
-                .c1 {}
-
-                .c2 {}
             }
         }
-
     }
 }
