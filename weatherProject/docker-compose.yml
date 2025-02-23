@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+#React 앱서비스
+  react-app:
+    build: .
+    container_name: react-app
+    ports:
+      - "3000:80"
+    depends_on:
+      - db
+
+  node-backend:
+    build: .
+    container_name: node-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  # MySQL 서비스
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '1q2w3e'
+      MYSQL_DATABASE: 'weatherDB'
+      MYSQL_USER: 'mypassword'  
+      MYSQL_PASSWORD: '1q2w3e'
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    
+    # 데이터 지속성을 위한 볼륨 정의
+volumes:
+  mysql_data:

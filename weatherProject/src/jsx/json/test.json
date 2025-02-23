@@ -1,0 +1,84 @@
+{
+    "response": {
+        "header": {
+            "resultCode": "00",
+            "resultMsg": "NORMAL_SERVICE"
+        },
+        "body": {
+            "dataType": "JSON",
+            "items": {
+                "item": [{
+                    "stndays": {
+                        "stn_ko": "속초",
+                        "stn_en": "Sokcho",
+                        "stn_id": 90,
+                        "info": [{
+                            "si_day": "null",
+                            "ps": "999.9",
+                            "ss_day": "9.8",
+                            "hm": "72",
+                            "ta_max": "28.6",
+                            "ev_s": "null",
+                            "ca_tot": "null",
+                            "tg_min": "16.0",
+                            "wd_max": "NNW",
+                            "ta": "22.8",
+                            "td": "17.1",
+                            "ws_max": "7.7",
+                            "ta_min": "19.0",
+                            "tm": "1",
+                            "sd_new": "null",
+                            "rn_day": "3.5",
+                            "hm_min": "48",
+                            "ws": "2.4",
+                            "sd_max": "null"
+                        }, {
+                            "si_day": "null",
+                            "ps": "1008.6",
+                            "ss_day": "2.6",
+                            "hm": "87",
+                            "ta_max": "24.6",
+                            "ev_s": "null",
+                            "ca_tot": "null",
+                            "tg_min": "18.4",
+                            "wd_max": "SSE",
+                            "ta": "21.6",
+                            "td": "19.2",
+                            "ws_max": "5.1",
+                            "ta_min": "18.5",
+                            "tm": "2",
+                            "sd_new": "null",
+                            "rn_day": "0.0",
+                            "hm_min": "75",
+                            "ws": "1.9",
+                            "sd_max": "null"
+                        }, {
+                            "si_day": "null",
+                            "ps": "1010.5",
+                            "ss_day": "0.0",
+                            "hm": "99",
+                            "ta_max": "22.5",
+                            "ev_s": "null",
+                            "ca_tot": "null",
+                            "tg_min": "20.1",
+                            "wd_max": "SSE",
+                            "ta": "20.7",
+                            "td": "20.4",
+                            "ws_max": "3.3",
+                            "ta_min": "18.6",
+                            "tm": "3",
+                            "sd_new": "null",
+                            "rn_day": "17.9",
+                            "hm_min": "84",
+                            "ws": "0.8",
+                            "sd_max": "null"
+                        }]
+                    }
+                }]
+            },
+            "pageNo": 1,
+            "numOfRows": 10,
+            "totalCount": 1
+        }
+    }
+}

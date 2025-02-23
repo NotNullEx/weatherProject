@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: '0.0.0.0', // 외부 접근 허용
     proxy: {
       "/api": {
         target: "https://apihub.kma.go.kr",
