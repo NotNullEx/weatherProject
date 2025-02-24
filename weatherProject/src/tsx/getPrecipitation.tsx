@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 // 월별데이터
 interface WeatherInfo {
@@ -172,7 +171,7 @@ const CallApi: React.FC<CallApiProps> = ({ selectedYear }) => {
 
                 const addCity = [];
                 for (let i = 0; i < weatherInfo.length; i++) {
-                    if (weatherInfo[i].stn_ko == "서울") {
+                    if (weatherInfo[i].stn_ko == "서울d") {
                         addCity.push(weatherInfo[i]);
                     } else if (weatherInfo[i].stn_ko == "수원") {
                         addCity.push(weatherInfo[i]);
