@@ -6,7 +6,9 @@ interface WeatherProps {
     selectedIndex: number;
 }
 
-const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
+const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
+    const [region, setRegion] = useState("-");
+    const [time, setTime] = useState("-");
     const [temp, setTemp] = useState("-");
     const [wind, setWind] = useState("-");
     const [humidity, setHumidity] = useState("-");
@@ -21,6 +23,8 @@ const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
 
         if (data?.response?.header?.resultCode === "00") {
             const items = data.response.body.items.item;
+            setRegion(region.name || "-");
+            setTime(items.find((item: any) => item.baseTime)?.baseTime || "-");
             setTemp(items.find((item: any) => item.category === "T1H")?.obsrValue || "-");
             setWind(items.find((item: any) => item.category === "WSD")?.obsrValue || "-");
             setHumidity(items.find((item: any) => item.category === "REH")?.obsrValue || "-");
@@ -36,7 +40,10 @@ const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
 
     return (
         <div className="realtimeWeather">
-            <h2>Today</h2>
+            <h2>
+                {region}
+                <p>{time.substring(0, 2) + " : " + time.substring(2)}시 기준</p>
+            </h2>
             {loading ? (
                 <p>날씨 정보 불러오는 중...</p>
             ) : (
@@ -60,4 +67,4 @@ const Weather: React.FC<WeatherProps> = ({ selectedIndex }) => {
     );
 };
 
-export default Weather;
+export default WeatherChart;

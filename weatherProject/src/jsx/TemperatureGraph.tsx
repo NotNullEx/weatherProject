@@ -27,7 +27,7 @@ const TemperatureGraph = () => {
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" fontSize="12px" />
-                    <YAxis tickCount={12} domain={[-20, 35]} />
+                    <YAxis tickCount={12} domain={[-15, 3]} />
                     <Tooltip />
                     {/* <Legend /> */}
                     <Line type="monotone" dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} />
