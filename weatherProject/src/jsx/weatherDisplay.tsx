@@ -77,6 +77,7 @@ function WeatherDisplay() {
                         <div className="c2-1">
                             <p className="circleperTitle">전국 총 강수량</p>
                             <Totalprecipitation />
+                            <p className="allhighestprecipitation">1132ml</p>
                         </div>
                         <div className="c2-1">
                             <p className="circleperTitle">전국 중 지역 강수량</p>
@@ -84,6 +85,8 @@ function WeatherDisplay() {
                         </div>
                         <div className="c2-1">
                             <p className="circleperTitle">최다 강수량</p>
+                            <p className="highestprecipitationDay">2월</p>
+                            <p className="highestprecipitation">1132ml</p>
                         </div>
                     </div>
                     <div className="c1">

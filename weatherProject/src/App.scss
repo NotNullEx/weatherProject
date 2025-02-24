@@ -398,6 +398,8 @@ body {
                 justify-content: space-between;
                 position: relative;
 
+
+
                 .recharts-responsive-container {
                     position: absolute;
                     width: 7% !important;
@@ -410,6 +412,26 @@ body {
                     width: 32%;
                     background-color: black;
                     @include objcolor();
+
+                    .allhighestprecipitation {
+                        z-index: 2px;
+                        font-size: 1.5vw;
+                        line-height: 9vw;
+                        text-align: center;
+                    }
+
+                    .highestprecipitationDay {
+                        font-size: 2vw;
+                        line-height: 6vw;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .highestprecipitation {
+                        font-size: 1.5vw;
+                        line-height: 2vw;
+                        text-align: center;
+                    }
 
                     .circleperTitle {
                         margin-top: 1vw;

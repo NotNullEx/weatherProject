@@ -330,6 +330,23 @@ body .container .thirdSection .c .c2-1 {
   background-color: #303136;
   border-radius: 20px;
 }
+body .container .thirdSection .c .c2-1 .allhighestprecipitation {
+  z-index: 2px;
+  font-size: 1.5vw;
+  line-height: 9vw;
+  text-align: center;
+}
+body .container .thirdSection .c .c2-1 .highestprecipitationDay {
+  font-size: 2vw;
+  line-height: 6vw;
+  font-weight: bold;
+  text-align: center;
+}
+body .container .thirdSection .c .c2-1 .highestprecipitation {
+  font-size: 1.5vw;
+  line-height: 2vw;
+  text-align: center;
+}
 body .container .thirdSection .c .c2-1 .circleperTitle {
   margin-top: 1vw;
   text-align: center;
