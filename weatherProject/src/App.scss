@@ -5,6 +5,39 @@
     font-weight: 100;
 }
 
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-0lax {
+    text-align: left;
+    vertical-align: top
+}
+
 @mixin titleFont() {
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
@@ -86,331 +119,407 @@ body {
                     padding: 20px;
 
                     .selectValuebox {
-                        width: 5vw;
-                        display: flex;
+                        width: 10vw;
+
                         text-align: center;
                         margin: auto;
 
-                        .selectValue {
-                            text-align: right;
-                            width: 5vw;
+                        .yearBox {
+                            display: flex;
 
-                            border-radius: 30px;
-                        }
-                    }
-
-
-                }
-
-                .realtimeWeatherArea {
-                    width: 100%;
-                    height: 20.5vw;
-                    margin: 0 auto;
-                    background-color: #fff;
-                    border-radius: 20px;
-                    background: linear-gradient(#bdc5cc, #0185f8);
-                    padding: 20px;
-                    box-sizing: border-box;
-
-                    .realtimeWeather {
-                        height: 100%;
-
-                        font-size: 1.4vw;
-
-                        h2 {
-                            @include titleFont;
-                            text-align: center;
-
-                        }
-
-                        ul {
-                            width: 10vw;
-                            height: 100%;
-                            margin: auto;
-                            list-style: none;
-                            margin-top: 2vh;
-
-                            .icon {
-                                width: 8vw;
-                                height: 40%;
-                                margin: 0 auto;
-                                background-image: url(./assets/img/sunny.png);
-                                @include backgoundSet();
-                            }
-
-                            .temperature {
+                            .selectValue {
                                 text-align: center;
-                                font-size: 2.2vw;
-                                font-weight: bold;
-                                text-shadow: 7px 7px 20px #1C1B20;
-                                margin-top: -2vw;
-                            }
-
-                            .weather-info {
-                                margin-top: 2vw;
                                 width: 100%;
-                                height: 5.5vh;
-                                display: flex;
-                                justify-content: space-between;
-                                text-align: center;
-
-                                .winfoB {
-                                    margin: auto;
-
-                                    p {
-                                        font-size: 0.7vw
-                                    }
-
-                                    .windIcon {
-                                        width: 4vh;
-                                        height: 2vw;
-                                        display: block;
-                                        margin: auto;
-                                        background-image: url(./assets/img/Wind.png);
-                                        @include backgoundSet();
-                                    }
-
-                                    .humidityIcon {
-                                        width: 4vh;
-                                        height: 2vw;
-                                        display: block;
-                                        margin: auto;
-                                        background-image: url(./assets/img/Dew.png);
-                                        @include backgoundSet();
-
-                                    }
-
-                                    .VisibilityIcon {
-                                        width: 4vh;
-                                        height: 2vw;
-                                        display: block;
-                                        margin: auto;
-                                        background-image: url(./assets/img/Rain2.png);
-                                        @include backgoundSet();
-
-                                    }
-                                }
-
+                                height: 1.2vw;
+                                border-radius: 30px;
+                                margin-bottom: 1vw;
                             }
-
                         }
+
+                        .mapBox {
+                            .mapSelect {
+                                text-align: center;
+                                width: 10vw;
+                                height: 1.2vw;
+
+                                border-radius: 30px;
+                            }
+                        }
+
                     }
+
+
                 }
 
-                .perceived {
-                    width: 100%;
-                    height: 30%;
-                    margin: 0 auto;
-                    border-radius: 20px;
-                    background-color: #fff;
-                    background: linear-gradient(#bdc5cc, #0185f8);
 
-                    background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
-                    box-sizing: border-box;
-                    padding: 2vw;
+            }
 
-                    .thermometerIconbox {
-                        display: flex;
-                        width: 100%;
-                        height: 12vh;
+            .realtimeWeatherArea {
+                width: 100%;
+                height: 20.5vw;
+                margin: 0 auto;
+                background-color: #fff;
+                border-radius: 20px;
+                background: linear-gradient(#bdc5cc, #0185f8);
+                padding: 20px;
+                box-sizing: border-box;
 
-                        .thermometerIcon {
-                            width: 5vw;
-                            height: 5vw;
-                            background-image: url(./assets/img/ThermometerQuarter.png);
+                .realtimeWeather {
+                    height: 100%;
+
+                    font-size: 1.4vw;
+
+                    h2 {
+                        @include titleFont;
+                        text-align: center;
+
+                        p {
+                            font-size: 0.9vw;
+                        }
+
+                    }
+
+                    ul {
+                        width: 10vw;
+                        height: 100%;
+                        margin: auto;
+                        list-style: none;
+                        margin-top: 2vh;
+
+                        .icon {
+                            width: 8vw;
+                            height: 40%;
+                            margin: -1vw auto;
+                            background-image: url(./assets/img/sunny.png);
                             @include backgoundSet();
                         }
 
-                        div {
+                        .temperature {
                             text-align: center;
-                            font-size: 1vw;
+                            font-size: 2.2vw;
                             font-weight: bold;
-
-                            p {
-                                margin-top: 1vw;
-                                font-size: 1.1vw;
-                                font-weight: bold;
-                            }
+                            text-shadow: 7px 7px 20px #1C1B20;
+                            margin-top: -2vw;
                         }
 
-                    }
+                        .weather-info {
+                            margin-top: 1vw;
+                            width: 10vw;
+                            height: 5.5vw;
+                            display: flex;
+                            gap: 1.2vw;
+                            justify-content: space-between;
+                            text-align: center;
 
-                    .suggestion {
-                        text-align: center;
-
-                        .suggestionT {
-                            font-size: 1vw;
-                            font-weight: bold;
-                            margin-top: -0.5vh;
-                            margin-bottom: 1vh;
-
-                        }
-
-                        .suggestionM {
-                            font-size: 0.7vw;
-                        }
-
-
-                    }
-
-                }
-            }
-
-            .secondSection {
-                width: 35%;
-                height: 44vw;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-
-                .b1 {
-                    width: 90%;
-                    height: 63%;
-                    margin: 0 auto;
-                    @include objcolor();
-                    background-color: #1C1B20;
-                    overflow: hidden;
-                    position: relative;
-                    // background: linear-gradient(#bdc5cc, #0185f8);
-
-                    opacity: 90%;
-
-                    .mapSelect {
-                        position: absolute;
-                        top: 1vw;
-                        text-align: center;
-                        width: 84px;
-                        height: 20px;
-                        right: 1vw;
-                        border-radius: 30px;
-                    }
-
-                    .map {
-                        width: 25vw;
-                        height: 100%;
-
-                        .koreaMap {
-                            stroke: rgb(159, 255, 171);
-                            fill: #ffffff;
-                        }
-
-                        .koreaMap:hover {
-
-                            fill: #06ab7c;
-                            cursor: pointer;
-                        }
-                    }
-
-                }
-
-                .b2 {
-                    width: 90%;
-                    margin: 0 auto;
-                    @include objcolor();
-                    height: 30%;
-
-
-
-
-                }
-            }
-
-            .thirdSection {
-                width: 45%;
-                height: 44vw;
-                // background-color: #3f1d1d;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-
-                .c {
-                    width: 100%;
-                    height: 13vw;
-                    // background-color: #fff;
-                    display: flex;
-                    justify-content: space-between;
-
-                    .c2-1 {
-                        width: 32%;
-                        background-color: black;
-                        @include objcolor();
-
-                        .circleBox {
-                            width: 100%;
-                            position: relative;
-
-
-                            .circle {
-                                display: block;
-                                width: 12vw;
-                                height: 12vw;
+                            .winfoB {
                                 margin: auto;
 
+                                p {
+                                    margin-top: 0.5vw;
+                                    font-size: 0.6vw;
+                                    text-align: center;
+
+                                }
+
+                                .windIcon {
+                                    width: 2vw;
+                                    height: 2vw;
+                                    display: block;
+                                    margin: auto;
+                                    background-image: url(./assets/img/Wind.png);
+                                    @include backgoundSet();
+                                }
+
+                                .humidityIcon {
+                                    width: 2vw;
+                                    height: 2vw;
+                                    display: block;
+                                    margin: auto;
+                                    background-image: url(./assets/img/Dew.png);
+                                    @include backgoundSet();
 
 
+                                }
+
+                                .VisibilityIcon {
+                                    width: 2vw;
+                                    height: 2vw;
+                                    display: block;
+                                    margin: auto;
+                                    background-image: url(./assets/img/Rain2.png);
+                                    @include backgoundSet();
+
+                                }
                             }
 
-                            .circleperTitle {
-                                position: absolute;
-                                top: 1vw;
-                                left: 4vw;
-                                font-size: 1vw;
-                                font-weight: bold;
-                                font-family: "Nanum Gothic", serif;
+                        }
 
+                    }
+                }
+            }
+
+            .perceived {
+                width: 100%;
+                height: 30%;
+                margin: 0 auto;
+                border-radius: 20px;
+                background-color: #fff;
+                background: linear-gradient(#bdc5cc, #0185f8);
+
+                background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
+                box-sizing: border-box;
+                padding: 2vw;
+
+                .thermometerIconbox {
+                    display: flex;
+                    width: 100%;
+                    height: 6.5vw;
+
+                    .thermometerIcon {
+                        width: 5vw;
+                        height: 5vw;
+                        background-image: url(./assets/img/ThermometerQuarter.png);
+                        @include backgoundSet();
+                    }
+
+                    div {
+                        text-align: center;
+                        font-size: 1vw;
+                        font-weight: bold;
+
+                        p {
+                            margin-top: 1vw;
+                            font-size: 1.1vw;
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+
+                .suggestion {
+                    text-align: center;
+
+                    .suggestionT {
+                        font-size: 1vw;
+                        font-weight: bold;
+                        margin-top: -0.5vh;
+                        margin-bottom: 1vh;
+
+                    }
+
+                    .suggestionM {
+                        font-size: 0.7vw;
+                    }
+
+
+                }
+
+            }
+        }
+
+        .secondSection {
+            width: 35%;
+            height: 44vw;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .b1 {
+                width: 90%;
+                height: 63%;
+                margin: 0 auto;
+                @include objcolor();
+                background-color: #1C1B20;
+                overflow: hidden;
+                position: relative;
+                // background: linear-gradient(#bdc5cc, #0185f8);
+
+                opacity: 90%;
+
+
+
+                .map {
+                    width: 25vw;
+                    height: 100%;
+
+                    .koreaMap {
+                        stroke: rgb(159, 255, 171);
+                        fill: #ffffff;
+                    }
+
+                    .koreaMap:hover {
+
+                        fill: #06ab7c;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            .b2 {
+                width: 90%;
+                margin: 0 auto;
+                @include objcolor();
+                height: 30%;
+
+
+
+
+            }
+        }
+
+        .thirdSection {
+            width: 45%;
+            height: 44vw;
+            // background-color: #3f1d1d;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .c {
+                width: 100%;
+                height: 13vw;
+                // background-color: #fff;
+                display: flex;
+                justify-content: space-between;
+
+                .c2-1 {
+                    width: 32%;
+                    background-color: black;
+                    @include objcolor();
+
+                    .circleBox {
+                        width: 100%;
+                        position: relative;
+
+
+                        .circle {
+                            display: block;
+                            width: 12vw;
+                            height: 12vw;
+                            margin: auto;
+
+
+
+                        }
+
+                        .circleperTitle {
+                            position: absolute;
+                            top: 1vw;
+                            left: 4vw;
+                            font-size: 1vw;
+                            font-weight: bold;
+                            font-family: "Nanum Gothic", serif;
+
+                        }
+
+                        .circleper {
+                            position: absolute;
+                            top: 6vw;
+                            left: 4.3vw;
+                            font-size: 2vw;
+                            font-weight: bold;
+                            text-shadow: 10px 10px 10px #1C1B20;
+                            font-family: "Nanum Gothic", serif;
+                        }
+                    }
+                }
+            }
+
+            .c1 {
+                width: 100%;
+                height: 30%;
+                @include objcolor();
+                padding: 30px;
+                box-sizing: border-box;
+                position: relative;
+
+                .tgtitle {
+                    font-size: 1vw;
+                    position: absolute;
+                    top: 0.9vw;
+                    left: 17.3vw;
+                    font-weight: bold;
+                }
+
+                .temperatureGraph {
+                    position: absolute;
+                    top: 2.5vw;
+                    left: 0;
+                    border-radius: 20px;
+                    margin: auto;
+                    display: block;
+                    width: 90%;
+                    height: 12vw;
+                }
+
+
+
+            }
+
+            .c2 {
+                width: 100%;
+                height: 30%;
+                @include objcolor();
+                padding: 10px 0 20px 0;
+                font-size: 0.8vw;
+                text-align: center;
+                box-sizing: border-box;
+                font-weight: bold;
+
+
+                .table::-webkit-scrollbar {
+                    width: 80%;
+
+                }
+
+                h2 {
+                    font-size: 1vw;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+
+
+                .table {
+                    width: 90%;
+                    height: 80%;
+                    padding: 0.5vw;
+                    margin: auto;
+                    border: 1px solid #fff;
+                    border-radius: 20px;
+                    overflow-y: scroll;
+                    overflow-x: scroll;
+
+                    .tableMain {
+                        .customthead {
+                            .customtr {
+                                .customth {
+                                    border-bottom: 1px solid #bdc5cc;
+
+                                }
                             }
+                        }
 
-                            .circleper {
-                                position: absolute;
-                                top: 6vw;
-                                left: 4.3vw;
-                                font-size: 2vw;
-                                font-weight: bold;
-                                text-shadow: 10px 10px 10px #1C1B20;
-                                font-family: "Nanum Gothic", serif;
+                        .customtbody {
+                            .customtr {
+                                border-bottom: 2px solid #0185f8;
+
+                                .customtd {
+
+                                    width: 200px;
+                                    word-break: break-all;
+                                    border-bottom: 2px solid #646363;
+
+                                }
                             }
                         }
                     }
                 }
 
-                .c1 {
-                    width: 100%;
-                    height: 30%;
-                    @include objcolor();
-                    padding: 30px;
-                    box-sizing: border-box;
-                    position: relative;
-
-                    .tgtitle {
-                        font-size: 1vw;
-                        position: absolute;
-                        top: 0.9vw;
-                        left: 17.3vw;
-
-                        font-weight: bold;
-                    }
-
-                    .temperatureGraph {
-                        position: absolute;
-                        top: 2.5vw;
-                        left: 0;
-                        border-radius: 20px;
-                        margin: auto;
-                        display: block;
-                        width: 90%;
-                        height: 12vw;
-                    }
 
 
 
-                }
-
-                .c2 {
-                    width: 100%;
-                    height: 30%;
-                    @include objcolor();
-
-                }
             }
         }
     }
@@ -418,12 +527,13 @@ body {
 
 
 
-@media (max-width:720px) {
+@media (max-width:520px) {
     body {
-        background-color: #fff;
 
         .container {
-            background-color: #3b2b2b;
+            height: 100%;
+
+            // background-color: #3b2b2b;
 
             .header {
                 p {
@@ -442,37 +552,53 @@ body {
                     height: 44vw;
                     display: flex;
                     align-items: center;
-                    padding: 0 20px;
+                    padding: 0 !important;
                     box-sizing: border-box;
 
-
-
                     .selectTime {
-                        width: 30%;
-                        height: 100px;
+                        width: 100%;
                         margin: 0 auto;
                         border-radius: 20px;
                         @include objcolor();
-                        background-color: #fff;
+                        margin-bottom: 10px;
 
                         .selectValuebox {
-                            width: 50px;
-                            display: flex;
+                            width: 60%;
+                            height: 30px;
                             text-align: center;
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: -10px;
 
-                            .selectValue {
-                                width: 200px;
+                            .yearBox {
+                                display: flex;
+
+                                .selectValue {
+                                    text-align: center;
+                                    width: 100%;
+                                    height: 20px;
+                                    border-radius: 30px;
+                                }
                             }
+
+                            .mapBox {
+                                .mapSelect {
+                                    text-align: center;
+                                    width: 100%;
+                                    height: 20px;
+                                    border-radius: 30px;
+                                }
+                            }
+
                         }
 
 
                     }
 
                     .realtimeWeatherArea {
-                        width: 30%;
-                        height: 100px;
+                        width: 47%;
+                        height: 250px;
                         margin: 0 auto;
-                        background-color: #fff;
                         border-radius: 20px;
                         background: linear-gradient(#bdc5cc, #0185f8);
                         padding: 20px;
@@ -480,7 +606,7 @@ body {
 
                         .realtimeWeather {
                             height: 100%;
-                            font-size: 1.4vw;
+                            font-size: 4vw;
 
                             h2 {
                                 @include titleFont;
@@ -496,28 +622,26 @@ body {
                                 margin-top: 2vh;
 
                                 .icon {
-                                    width: 8vw;
-                                    height: 40%;
+                                    width: 20vw;
+                                    height: 10vh;
                                     margin: 0 auto;
+                                    margin-left: -4vw;
                                     background-image: url(./assets/img/sunny.png);
                                     @include backgoundSet();
                                 }
 
                                 .temperature {
                                     text-align: center;
-                                    font-size: 2.2vw;
+                                    font-size: 8vw;
                                     font-weight: bold;
                                     text-shadow: 7px 7px 20px #1C1B20;
-                                    margin-top: -2vw;
+                                    margin-top: -10vw;
+                                    margin-left: -3vw;
                                 }
 
                                 .weather-info {
-                                    margin-top: 2vw;
-                                    width: 100%;
-                                    height: 5.5vh;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    text-align: center;
+                                    width: 300%;
+                                    margin-left: -9.6vw;
 
                                     .winfoB {
                                         margin: auto;
@@ -527,8 +651,8 @@ body {
                                         }
 
                                         .windIcon {
-                                            width: 4vh;
-                                            height: 2vw;
+                                            width: 3vh;
+                                            height: 6vw;
                                             display: block;
                                             margin: auto;
                                             background-image: url(./assets/img/Wind.png);
@@ -536,8 +660,8 @@ body {
                                         }
 
                                         .humidityIcon {
-                                            width: 4vh;
-                                            height: 2vw;
+                                            width: 3vh;
+                                            height: 6vw;
                                             display: block;
                                             margin: auto;
                                             background-image: url(./assets/img/Dew.png);
@@ -546,8 +670,8 @@ body {
                                         }
 
                                         .VisibilityIcon {
-                                            width: 4vh;
-                                            height: 2vw;
+                                            width: 3vh;
+                                            height: 6vw;
                                             display: block;
                                             margin: auto;
                                             background-image: url(./assets/img/Rain2.png);
@@ -563,37 +687,40 @@ body {
                     }
 
                     .perceived {
-                        width: 30%;
-                        height: 100px;
+                        width: 47%;
+                        height: 250px;
                         margin: 0 auto;
                         border-radius: 20px;
-                        background-color: #fff;
-                        background: linear-gradient(#bdc5cc, #0185f8);
-
                         background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
                         box-sizing: border-box;
                         padding: 2vw;
 
                         .thermometerIconbox {
-                            display: flex;
                             width: 100%;
-                            height: 12vh;
+                            height: 150px;
+                            position: relative;
 
                             .thermometerIcon {
-                                width: 5vw;
-                                height: 5vw;
+                                margin-top: 14vw;
+                                margin-left: 1vw;
+                                width: 17vw;
+                                height: 10vh;
                                 background-image: url(./assets/img/ThermometerQuarter.png);
                                 @include backgoundSet();
                             }
 
                             div {
                                 text-align: center;
-                                font-size: 1vw;
+                                @include titleFont;
+                                font-size: 5vw;
                                 font-weight: bold;
+                                position: absolute;
+                                top: 3vw;
+                                left: 9vw;
 
                                 p {
                                     margin-top: 1vw;
-                                    font-size: 1.1vw;
+                                    font-size: 4vw;
                                     font-weight: bold;
                                 }
                             }
@@ -604,15 +731,15 @@ body {
                             text-align: center;
 
                             .suggestionT {
-                                font-size: 1vw;
+                                font-size: 4vw;
                                 font-weight: bold;
-                                margin-top: -0.5vh;
+                                margin-top: 2vh;
                                 margin-bottom: 1vh;
 
                             }
 
                             .suggestionM {
-                                font-size: 0.7vw;
+                                font-size: 2.5vw;
                             }
 
 
@@ -627,9 +754,10 @@ body {
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
+                    padding: 0;
 
                     .b1 {
-                        width: 90%;
+                        width: 100%;
                         height: 63%;
                         margin: 0 auto;
                         @include objcolor();
@@ -640,15 +768,7 @@ body {
 
                         opacity: 90%;
 
-                        .mapSelect {
-                            position: absolute;
-                            top: 50vw;
-                            text-align: center;
-                            width: 84px;
-                            height: 20px;
-                            right: 6vw;
-                            border-radius: 30px;
-                        }
+                        .mapSelect {}
 
                         .map {
                             width: 300px;
@@ -669,7 +789,7 @@ body {
                     }
 
                     .b2 {
-                        width: 90%;
+                        width: 100%;
                         margin: 0 auto;
                         @include objcolor();
                         height: 30%;
@@ -681,6 +801,7 @@ body {
                 }
 
                 .thirdSection {
+                    margin-top: 120px;
                     width: 100%;
                     height: 44vw;
                     // background-color: #3f1d1d;

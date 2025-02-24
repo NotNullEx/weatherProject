@@ -1,5 +1,4 @@
-import React, { useEffect,useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 interface WeatherInfo {
     tm_max: string;
@@ -37,17 +36,20 @@ interface ApiResponse {
         };
     };
 }
-const CallApi: React.FC = () => {
+interface CallApiProps {
+    selectedYear: string; // 연도 props 추가
+}
+const CallApi: React.FC<CallApiProps> = ({ selectedYear }) => {
     const [weatherData, setWeatherData] = useState<WeatherInfo[] | null>(null);
+
     useEffect(() => {
         const fetchWeatherData = async () => {
-            const apiUrl =
-            "/api/typ02/openApi/SfcMtlyInfoService/getMmSumry2?pageNo=1&numOfRows=10&dataType=json&year=2024&month=12&authKey=SbnYSQwuQ-G52EkMLhPhlQ";
+            const apiUrl = `/api/typ02/openApi/SfcMtlyInfoService/getMmSumry2?pageNo=1&numOfRows=10&dataType=json&year=${selectedYear}&month=12&authKey=SbnYSQwuQ-G52EkMLhPhlQ`;
 
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) {
-                throw new Error(`HTTP 오류: ${response.status}`);
+                    throw new Error(`HTTP 오류: ${response.status}`);
                 }
 
                 const data: ApiResponse = await response.json();
@@ -55,27 +57,28 @@ const CallApi: React.FC = () => {
 
                 // API 데이터에서 필요한 정보 추출
                 const weatherInfo = data.response.body.items.item[0].month.info[0];
-                console.log(weatherInfo);
-                // setWeatherData(weatherInfo);
-                // axios
-                // .get(apiUrl)
-                // .then((response) => {
-                //     console.log("API 응답:", response.data);
-
-                // })
-                // .catch((error) => {
-                //     console.error("API 호출 중 오류 발생:", error);
-                // });
+                setWeatherData([weatherInfo]); // 상태 업데이트
             } catch (error) {
                 console.error("API 호출 중 오류 발생:", error);
             }
-        }
-       
-        fetchWeatherData();
-        
-    }, []);
+        };
 
-    return <div>API 호출 중...</div>;
+        fetchWeatherData();
+    }, [selectedYear]); // 연도가 변경될 때마다 API 호출
+
+    return (
+        <div>
+            {weatherData ? (
+                <div>
+                    <h3>날씨 정보 ({selectedYear}년)</h3>
+                    <p>최대 기온: {weatherData[0].tm_max}℃</p>
+                    <p>강수량: {weatherData[0].rn}mm</p>
+                </div>
+            ) : (
+                <p>API 호출 중...</p>
+            )}
+        </div>
+    );
 };
 
 export default CallApi;
