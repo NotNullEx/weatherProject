@@ -1,0 +1,44 @@
+services:
+  react-app:
+    build: .
+    container_name: react-app
+    ports:
+      - "3000:5173"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  node-backend:
+    build: .
+    container_name: node-backend
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '1q2w3e'
+      MYSQL_DATABASE: 'weatherDB'
+      MYSQL_USER: 'weather'  
+      MYSQL_PASSWORD: '1q2w3e'
+    ports:
+      - "3307:3306"
+    networks:
+      - app-network
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_data:
+
+networks:
+  app-network:
+    driver: bridge  # 네트워크 타입을 bridge로 설정
