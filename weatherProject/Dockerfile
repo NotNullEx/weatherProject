@@ -1,4 +1,4 @@
-# 1. Node.js 이미지 사용
+# 1. React 이미지 사용
 FROM node:18
 
 # 2. 작업 디렉토리 설정
@@ -12,9 +12,6 @@ RUN npm install
 COPY . ./
 
 EXPOSE 3000
-
-# 5. TypeScript 컴파일
-RUN npm run build
 
 # 6. 서버 실행
 CMD [ "npm", "start" ]
