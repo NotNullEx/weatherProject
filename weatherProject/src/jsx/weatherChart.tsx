@@ -9,18 +9,35 @@ interface WeatherForecastChartProps {
 }
 
 const weatherIcons: { [key: string]: JSX.Element } = {
-    맑음: <WiDaySunny size={30} color="#FFD700" />,
-    구름많음: <WiCloud size={30} color="#A0A0A0" />,
-    흐림: <WiCloud size={30} color="#808080" />,
-    비: <WiRain size={30} color="#1E90FF" />,
-    눈: <WiSnow size={30} color="#ADD8E6" />,
-    "맑음 (밤)": <WiNightClear size={30} color="#FFD700" />,
+    맑음: <WiDaySunny size="1.4vw" color="#FFD700" />,
+    구름많음: <WiCloud size="1.4vw" color="#A0A0A0" />,
+    흐림: <WiCloud size="1.4vw" color="#808080" />,
+    비: <WiRain size="1.4vw" color="#1E90FF" />,
+    눈: <WiSnow size="1.4vw" color="#ADD8E6" />,
+    "맑음 (밤)": <WiNightClear size="1.4vw" color="#FFD700" />,
 };
 
 const WeatherChart: React.FC<WeatherForecastChartProps> = ({ selectedIndex }) => {
     const [data, setData] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    const [height, setHeight] = useState(180); // 초기값: 20vh
+
+    useEffect(() => {
+        // 창 크기 변경 시 height 업데이트
+        const updateHeight = () => {
+            const newHeight = Math.max(60, window.innerWidth * 0.1); // 최소 120px 유지
+            setHeight(newHeight);
+        };
+
+        window.addEventListener("resize", updateHeight);
+        updateHeight(); // 초기 실행
+
+        return () => {
+            window.removeEventListener("resize", updateHeight);
+        };
+    }, []);
 
     useEffect(() => {
         const fetchWeatherData = async () => {
@@ -66,16 +83,17 @@ const WeatherChart: React.FC<WeatherForecastChartProps> = ({ selectedIndex }) =>
 
     return (
         <div className="p-4 border rounded-lg shadow-lg bg-white">
-            <h2 className="text-lg font-semibold mb-4">최근 24시간 기온 변화</h2>
-            <ResponsiveContainer width="100%" height={150}>
-                <LineChart data={data} margin={{ right: 10, left: 20, bottom: 5 }}>
+            <h2 className="text-lg font-semibold mb-4"></h2>
+            <ResponsiveContainer width="100%" height={height}>
+                <LineChart data={data} margin={{ right: 20, left: 20, bottom: 5 }}>
                     <XAxis dataKey="time" tick={{ fontSize: 12 }} />
                     <YAxis hide domain={["dataMin-10", "dataMax+10"]} tickCount={5} />
                     <Tooltip />
                     <Line type="monotone" dataKey="기온" stroke="#8884d8" strokeWidth={2} dot={{ r: 4 }} />
                 </LineChart>
             </ResponsiveContainer>
-            <div className="chartInfo" style={{ display: "flex" }}>
+
+            <div className="chartInfo" style={{ display: "flex", width: "100vw" }}>
                 {data.map((item, index) => (
                     <div key={index} className="text-center">
                         {weatherIcons[item.weather]}

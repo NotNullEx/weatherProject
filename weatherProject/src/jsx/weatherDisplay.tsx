@@ -8,6 +8,8 @@ import { regionCoords } from "./regionCoords";
 import TableData from "./TableData";
 import WeatherChart from "./weatherChart";
 import CallApi from "../tsx/getPrecipitation";
+import Totalprecipitation from "./Totalprecipitation";
+
 
 
 
@@ -27,7 +29,7 @@ function WeatherDisplay() {
                         {/* 선택된 지역을 변경할 수 있도록 props 전달 */}
                         <WeatherMap selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
                     </div>
-                    <div className="b2" id="map">
+                    <div className="b2" id="wchart">
                         <WeatherChart selectedIndex={selectedIndex} />
                     </div>
                 </section>
@@ -73,16 +75,15 @@ function WeatherDisplay() {
                 <section id="thirdSection" className="thirdSection">
                     <div className="c">
                         <div className="c2-1">
-                            <PrecipitationGraph value={75} label="총 강수량" />
-
+                            <p className="circleperTitle">전국 총 강수량</p>
+                            <Totalprecipitation />
                         </div>
                         <div className="c2-1">
-                            <PrecipitationGraph value={60} label="전국 중 강수량" />
-
+                            <p className="circleperTitle">전국 중 지역 강수량</p>
+                            <PrecipitationGraph value={60} />
                         </div>
                         <div className="c2-1">
-                            <PrecipitationGraph value={40} label="최대 강수량" />
-
+                            <p className="circleperTitle">최다 강수량</p>
                         </div>
                     </div>
                     <div className="c1">
