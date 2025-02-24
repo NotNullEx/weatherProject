@@ -7,11 +7,11 @@ CREATE TABLE IF NOT EXISTS month_weather (
   city varchar(50) not null,
   year smallint not null,
   month smallint not null,
-  taavg decimal(3,3) not null,
-  tamax decimal(3,3) not null,
-  tamin decimal(3,3) not null,
+  taavg float not null,
+  tamax float not null,
+  tamin float not null,
   avghm smallint not null,
-  rnDay decimal(3,3) not null,
-  maxRnDay decimal(3,3) not null,
+  rnDay float not null,
+  maxRnDay float not null,
   tmRnDay tinyint not null
 );
