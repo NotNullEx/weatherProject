@@ -71,9 +71,6 @@ body {
     background-color: #1C1B20;
     color: white;
 
-
-
-
     .container {
         margin: 0 auto;
         height: 900px;
@@ -332,7 +329,7 @@ body {
                 background-color: #1C1B20;
                 overflow: hidden;
                 position: relative;
-                // background: linear-gradient(#bdc5cc, #0185f8);
+                background: linear-gradient(#bdc5cc, #0185f8);
 
                 opacity: 90%;
 
@@ -364,7 +361,26 @@ body {
 
 
 
+                .chartInfo {
+                    width: 100%;
+                    max-width: 28vw;
+                    justify-content: space-between;
+                    margin-left: 0.5vw;
 
+
+
+                    .text-center {
+                        margin-top: -0.6vw;
+                        width: 2vw;
+                        height: 2vw;
+
+                        .text-sm {
+
+                            font-size: 0.8vw;
+                            text-align: center;
+                        }
+                    }
+                }
             }
         }
 
@@ -382,15 +398,35 @@ body {
                 // background-color: #fff;
                 display: flex;
                 justify-content: space-between;
+                position: relative;
+
+                .recharts-responsive-container {
+                    position: absolute;
+                    width: 7% !important;
+                    top: 3.7vw;
+                    left: 5vw;
+                    margin: auto;
+                }
 
                 .c2-1 {
                     width: 32%;
                     background-color: black;
                     @include objcolor();
 
+                    .circleperTitle {
+                        margin-top: 1vw;
+                        text-align: center;
+                        font-size: 1.2vw;
+                        font-weight: bold;
+                        font-family: "Nanum Gothic", serif;
+
+
+                    }
+
                     .circleBox {
                         width: 100%;
                         position: relative;
+                        margin-top: -2vw;
 
 
                         .circle {
@@ -399,19 +435,9 @@ body {
                             height: 12vw;
                             margin: auto;
 
-
-
                         }
 
-                        .circleperTitle {
-                            position: absolute;
-                            top: 1vw;
-                            left: 4vw;
-                            font-size: 1vw;
-                            font-weight: bold;
-                            font-family: "Nanum Gothic", serif;
 
-                        }
 
                         .circleper {
                             position: absolute;
@@ -529,12 +555,12 @@ body {
 
 @media (max-width:520px) {
     body {
+        height: fit-content;
+        padding-bottom: 5vw;
 
         .container {
-            height: 100%;
 
             // background-color: #3b2b2b;
-
             .header {
                 p {
                     font-size: 4vw;
@@ -794,6 +820,28 @@ body {
                         @include objcolor();
                         height: 30%;
 
+                        .chartInfo {
+                            width: 100%;
+                            max-width: 28vw;
+                            justify-content: space-between;
+                            margin-left: 0.5vw;
+
+
+
+                            .text-center {
+                                margin-top: -0.6vw;
+                                width: 20vw;
+                                height: 20vw;
+
+                                .text-sm {
+
+                                    font-size: 3vw;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+
 
 
 
@@ -803,7 +851,6 @@ body {
                 .thirdSection {
                     margin-top: 120px;
                     width: 100%;
-                    height: 44vw;
                     // background-color: #3f1d1d;
                     display: flex;
                     flex-wrap: wrap;
@@ -811,46 +858,44 @@ body {
 
                     .c {
                         width: 100%;
-                        height: 13vw;
+                        height: 100%;
                         // background-color: #fff;
                         display: flex;
                         justify-content: space-between;
 
                         .c2-1 {
                             width: 32%;
+                            height: 170px;
+                            box-sizing: border-box;
                             background-color: black;
                             @include objcolor();
+
+                            .circleperTitle {
+                                text-align: center;
+                                line-height: 50px;
+                                font-size: 10px;
+                                font-weight: bold;
+                                font-family: "Nanum Gothic", serif;
+
+                            }
 
                             .circleBox {
                                 width: 100%;
                                 position: relative;
 
-
                                 .circle {
                                     display: block;
-                                    width: 12vw;
-                                    height: 12vw;
+                                    width: 28vw;
+                                    height: 28vw;
                                     margin: auto;
-
-
-
-                                }
-
-                                .circleperTitle {
-                                    position: absolute;
-                                    top: 1vw;
-                                    left: 4vw;
-                                    font-size: 1vw;
-                                    font-weight: bold;
-                                    font-family: "Nanum Gothic", serif;
-
+                                    margin-top: -6vw;
                                 }
 
                                 .circleper {
                                     position: absolute;
-                                    top: 6vw;
-                                    left: 4.3vw;
-                                    font-size: 2vw;
+                                    top: 12.5vw;
+                                    left: 7.4vw;
+                                    font-size: 7vw;
                                     font-weight: bold;
                                     text-shadow: 10px 10px 10px #1C1B20;
                                     font-family: "Nanum Gothic", serif;
@@ -861,30 +906,29 @@ body {
 
                     .c1 {
                         width: 100%;
-                        height: 30%;
+                        height: 150px;
                         @include objcolor();
                         padding: 30px;
                         box-sizing: border-box;
                         position: relative;
 
                         .tgtitle {
-                            font-size: 1vw;
-                            position: absolute;
-                            top: 0.9vw;
-                            left: 17.3vw;
-
+                            width: 65%;
+                            line-height: 10vw;
+                            font-size: 4vw;
+                            text-align: center;
                             font-weight: bold;
                         }
 
                         .temperatureGraph {
                             position: absolute;
-                            top: 2.5vw;
+                            top: 10vw;
                             left: 0;
                             border-radius: 20px;
                             margin: auto;
                             display: block;
                             width: 90%;
-                            height: 12vw;
+                            height: 120px;
                         }
 
 
@@ -892,8 +936,9 @@ body {
                     }
 
                     .c2 {
+                        margin-top: 4vw;
                         width: 100%;
-                        height: 30%;
+                        height: 16vh;
                         @include objcolor();
 
                     }

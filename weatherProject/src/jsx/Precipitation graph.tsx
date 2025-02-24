@@ -2,10 +2,9 @@ import React from "react";
 
 interface PrecipitationGraph {
     value: number; // 0 ~ 100 퍼센트 값
-    label: string;
 }
 
-const PrecipitationGraph: React.FC<PrecipitationGraph> = ({ value, label }) => {
+const PrecipitationGraph: React.FC<PrecipitationGraph> = ({ value }) => {
     const radius = 30;
     const circumference = 2 * Math.PI * radius;
     const offset = circumference * ((100 - value) / 100);
@@ -44,7 +43,6 @@ const PrecipitationGraph: React.FC<PrecipitationGraph> = ({ value, label }) => {
             </svg>
             {/* 중앙 텍스트 */}
             <div className="absolute text-white text-sm font-semibold">
-                <p className="circleperTitle">{label}</p>
                 <p className="circleper">{value}%</p>
             </div>
         </div>
