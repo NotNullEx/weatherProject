@@ -1,11 +1,11 @@
-version: '3.8'
 services:
-#React 앱서비스
   react-app:
     build: .
     container_name: react-app
     ports:
-      - "3000:80"
+      - "3000:5173"
+    networks:
+      - app-network
     depends_on:
       - db
 
@@ -14,10 +14,11 @@ services:
     container_name: node-backend
     ports:
       - "5000:5000"
+    networks:
+      - app-network
     depends_on:
       - db
 
-  # MySQL 서비스
   db:
     image: mysql:8
     container_name: mysql-db
@@ -25,13 +26,18 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: '1q2w3e'
       MYSQL_DATABASE: 'weatherDB'
-      MYSQL_USER: 'mypassword'  
+      MYSQL_USER: 'weather'  
       MYSQL_PASSWORD: '1q2w3e'
     ports:
       - "3307:3306"
+    networks:
+      - app-network
     volumes:
       - mysql_data:/var/lib/mysql
-    
-    # 데이터 지속성을 위한 볼륨 정의
+
 volumes:
   mysql_data:
+
+networks:
+  app-network:
+    driver: bridge  # 네트워크 타입을 bridge로 설정
