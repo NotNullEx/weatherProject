@@ -4,6 +4,11 @@ import WeatherMap from "./weatherMap";
 import TemperatureGraph from "./TemperatureGraph";
 import PrecipitationGraph from "./Precipitation graph";
 import SuggestWeather from "./SuggestClothes";
+import { regionCoords } from "./regionCoords";
+import TableData from "./TableData";
+import WeatherChart from "./weatherChart";
+import CallApi from "../tsx/getPrecipitation";
+
 
 
 
@@ -22,7 +27,9 @@ function WeatherDisplay() {
                         {/* 선택된 지역을 변경할 수 있도록 props 전달 */}
                         <WeatherMap selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
                     </div>
-                    <div className="b2" id="map">전년 기온 비교 </div>
+                    <div className="b2" id="map">
+                        <WeatherChart selectedIndex={selectedIndex} />
+                    </div>
                 </section>
                 <section id="firstSection" className="firstSection">
                     <div className="selectTime">
@@ -82,7 +89,10 @@ function WeatherDisplay() {
                         <h2 className="tgtitle">기온 그래프</h2>
                         <TemperatureGraph></TemperatureGraph>
                     </div>
-                    <div className="c2">데이터</div>
+                    <div className="c2">
+                        <h2>데이터</h2>
+                        <TableData selectedIndex={selectedIndex} />
+                    </div>
                 </section>
             </main>
             <CallApi selectedYear={selectedYear} />
