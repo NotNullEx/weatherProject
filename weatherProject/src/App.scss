@@ -38,6 +38,8 @@
     vertical-align: top
 }
 
+$MC: #303136;
+
 @mixin titleFont() {
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
@@ -52,23 +54,558 @@
 
 @mixin objcolor() {
     background-color: #303136;
-    border-radius: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
+
 }
 
 @mixin backblur2() {
-    border-radius: 20px;
+    border-radius: 10px;
     background: none;
     box-shadow: 5px 5px 10px #506472;
     backdrop-filter: blur(30px);
+    opacity: 90%;
 }
 
-
-body {
+.body {
     margin: 0 auto;
     width: 99vw;
     height: 100%;
     display: block;
-    background-color: #1C1B20;
+    background-image: url(./assets/img/날씨.jpg);
+    @include backgoundSet();
+    color: white;
+
+    .container {
+        margin: 0 auto;
+        height: 900px;
+        width: 90vw;
+        padding-top: 20px;
+        box-sizing: border-box;
+
+        .header {
+            justify-content: space-between;
+            display: flex;
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            @include backblur2();
+
+            p {
+                font-size: 25px;
+                @include titleFont;
+                line-height: 60px;
+                margin-left: 50px;
+            }
+        }
+
+        .main {
+            width: 100%;
+            height: calc(100vh - 60px);
+            display: flex;
+            justify-content: space-between;
+
+            .firstSection {
+                width: 15%;
+                height: 44vw;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                .selectTime {
+                    width: 100%;
+                    height: 15%;
+                    margin: 0 auto;
+                    @include backblur2();
+                    box-sizing: border-box;
+                    padding: 20px;
+
+                    .selectValuebox {
+                        width: 10vw;
+
+                        text-align: center;
+                        margin: auto;
+
+                        .yearBox {
+                            display: flex;
+
+                            .selectValue {
+                                text-align: center;
+                                width: 100%;
+                                height: 1.2vw;
+                                border-radius: 30px;
+                                margin-bottom: 1vw;
+                            }
+                        }
+
+                        .mapBox {
+                            .mapSelect {
+                                text-align: center;
+                                width: 10vw;
+                                height: 1.2vw;
+
+                                border-radius: 30px;
+                            }
+                        }
+
+                    }
+
+
+                }
+
+
+            }
+
+            .realtimeWeatherArea {
+                width: 100%;
+                height: 20.5vw;
+                margin: 0 auto;
+                border-radius: 20px;
+                background: linear-gradient(#bdc5cc, #0185f8);
+                padding: 20px;
+                box-sizing: border-box;
+
+                .realtimeWeather {
+                    height: 100%;
+
+                    font-size: 1.4vw;
+
+                    h2 {
+                        @include titleFont;
+                        text-align: center;
+
+                        p {
+                            font-size: 0.9vw;
+                            color: #e4e5e6;
+                        }
+
+                    }
+
+                    ul {
+                        width: 10vw;
+                        height: 100%;
+                        margin: auto;
+                        list-style: none;
+                        margin-top: 2vh;
+
+                        .icon {
+                            width: 8vw;
+                            height: 40%;
+                            margin: -1vw auto;
+                            background-image: url(./assets/img/sunny.png);
+                            @include backgoundSet();
+                        }
+
+                        .temperature {
+                            text-align: center;
+                            font-size: 2.2vw;
+                            font-weight: bold;
+                            text-shadow: 7px 7px 20px #1C1B20;
+                            margin-top: -2vw;
+                        }
+
+                        .weather-info {
+                            margin-top: 1vw;
+                            width: 10vw;
+                            height: 5.5vw;
+                            display: flex;
+                            gap: 1.2vw;
+                            justify-content: space-between;
+                            text-align: center;
+
+                            .winfoB {
+                                margin: auto;
+
+                                p {
+                                    margin-top: 0.5vw;
+                                    font-size: 0.6vw;
+                                    text-align: center;
+
+                                }
+
+                                .windIcon {
+                                    width: 2vw;
+                                    height: 2vw;
+                                    display: block;
+                                    margin: auto;
+                                    background-image: url(./assets/img/Wind.png);
+                                    @include backgoundSet();
+                                }
+
+                                .humidityIcon {
+                                    width: 2vw;
+                                    height: 2vw;
+                                    display: block;
+                                    margin: auto;
+                                    background-image: url(./assets/img/Dew.png);
+                                    @include backgoundSet();
+
+
+                                }
+
+                                .VisibilityIcon {
+                                    width: 2vw;
+                                    height: 2vw;
+                                    display: block;
+                                    margin: auto;
+                                    background-image: url(./assets/img/Rain2.png);
+                                    @include backgoundSet();
+
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            .perceived {
+                width: 100%;
+                height: 30%;
+                margin: 0 auto;
+                border-radius: 20px;
+                // background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
+                box-sizing: border-box;
+                @include backblur2();
+
+                padding: 2vw;
+
+                .thermometerIconbox {
+                    display: flex;
+                    width: 100%;
+                    height: 6.5vw;
+
+                    .thermometerIcon {
+                        width: 5vw;
+                        height: 6.2vw;
+                        margin-left: -1vw;
+                        margin-right: 1vw;
+                        background-image: url(./assets/img/ThermometerQuarter.png);
+                        @include backgoundSet();
+                    }
+
+                    div {
+                        text-align: center;
+                        font-size: 1vw;
+                        font-weight: bold;
+
+                        p {
+                            margin-top: 1vw;
+                            font-size: 1.1vw;
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+
+                .suggestion {
+                    text-align: center;
+
+                    .suggestionT {
+                        font-size: 1vw;
+                        font-weight: bold;
+                        margin-top: -0.5vh;
+                        margin-bottom: 1vh;
+
+                    }
+
+                    .suggestionM {
+                        font-size: 0.7vw;
+                    }
+
+
+                }
+
+            }
+        }
+
+        .secondSection {
+            width: 35%;
+            height: 44vw;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .b1 {
+                width: 100%;
+                height: 63%;
+                @include backblur2();
+                overflow: hidden;
+                position: relative;
+                // background-image: url(./assets/img/sea.jpg);
+                // background: linear-gradient(#153b5c, #355287, #043083);
+
+                .map {
+                    width: 25vw;
+                    height: 100%;
+                    top: -4%;
+                    left: 4%;
+                    position: absolute;
+
+                    .koreaMap {
+                        stroke: #0088ff;
+                        fill: #ffffff;
+                    }
+
+                    .koreaMap:hover {
+
+                        fill: #046b1e;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            .b2 {
+                width: 100%;
+                @include backblur2();
+                height: 30%;
+
+                .chart {
+                    height: 11vw !important;
+
+                    Line {
+                        stroke: #3d4754;
+
+
+                    }
+
+                    .chartline {
+                        stroke: #1269d4;
+                    }
+                }
+
+                .chartInfo {
+                    width: 30.4vw;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-left: 0.5vw;
+
+
+
+
+                    .text-center {
+                        margin-top: -0.6vw;
+                        font-size: 1.2vw;
+
+                        .text-sm {
+
+                            font-size: 0.8vw;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .thirdSection {
+            width: 45%;
+            height: 44vw;
+            // background-color: #3f1d1d;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .c {
+                width: 100%;
+                height: 13vw;
+                // background-color: #fff;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+
+
+
+                .recharts-responsive-container {
+                    position: absolute;
+                    width: 7% !important;
+                    top: 3.7vw;
+                    left: 5vw;
+                    margin: auto;
+                }
+
+                .c2-1 {
+                    width: 32%;
+                    background-color: black;
+                    @include backblur2();
+
+                    .allhighestprecipitation {
+                        z-index: 2px;
+                        font-size: 1.5vw;
+                        line-height: 9vw;
+                        text-align: center;
+                    }
+
+                    .highestprecipitationDay {
+                        font-size: 2vw;
+                        line-height: 6vw;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .highestprecipitation {
+                        font-size: 1.5vw;
+                        line-height: 2vw;
+                        text-align: center;
+                    }
+
+                    .circleperTitle {
+                        margin-top: 1vw;
+                        text-align: center;
+                        font-size: 1.2vw;
+                        font-weight: bold;
+                        font-family: "Nanum Gothic", serif;
+
+
+                    }
+
+                    .circleBox {
+                        width: 100%;
+                        position: relative;
+                        margin-top: -2vw;
+
+
+                        .circle {
+                            display: block;
+                            width: 12vw;
+                            height: 12vw;
+                            margin: auto;
+
+                            .circleIn {
+                                stroke: #d0dee9;
+
+                            }
+
+
+                            .circleIn2 {
+                                stroke: #00FFFF;
+                            }
+
+                        }
+
+                        .circleper {
+                            position: absolute;
+                            top: 6vw;
+                            left: 4.3vw;
+                            font-size: 2vw;
+                            font-weight: bold;
+                            text-shadow: 10px 10px 10px #1C1B20;
+                            font-family: "Nanum Gothic", serif;
+                        }
+                    }
+                }
+            }
+
+            .c1 {
+                width: 100%;
+                height: 30%;
+                @include backblur2();
+                padding: 30px;
+                box-sizing: border-box;
+                position: relative;
+
+                .tgtitle {
+                    font-size: 1vw;
+                    position: absolute;
+                    top: 0.9vw;
+                    left: 17.3vw;
+                    font-weight: bold;
+                }
+
+                .temperatureGraph {
+                    position: absolute;
+                    top: 2.5vw;
+                    left: 0;
+                    border-radius: 20px;
+                    margin: auto;
+                    display: block;
+                    width: 90%;
+                    height: 12vw;
+                }
+
+
+
+
+
+            }
+
+            .c2 {
+                width: 100%;
+                height: 30%;
+                @include backblur2();
+                padding: 10px 0 20px 0;
+                font-size: 0.8vw;
+                text-align: center;
+                box-sizing: border-box;
+                font-weight: bold;
+
+
+                .table::-webkit-scrollbar {
+                    width: 80%;
+
+                }
+
+                h2 {
+                    font-size: 1vw;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+
+
+                .table {
+                    width: 90%;
+                    height: 80%;
+                    padding: 0.5vw;
+                    margin: auto;
+                    border: 1px solid #fff;
+                    border-radius: 20px;
+                    overflow-y: scroll;
+                    overflow-x: scroll;
+
+                    .tableMain {
+                        .customthead {
+                            .customtr {
+                                .customth {
+                                    border-bottom: 1px solid #bdc5cc;
+
+                                }
+                            }
+                        }
+
+                        .customtbody {
+                            .customtr {
+                                border-bottom: 2px solid #0185f8;
+
+                                .customtd {
+
+                                    width: 200px;
+                                    word-break: break-all;
+                                    border-bottom: 2px solid #646363;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+
+
+            }
+        }
+    }
+}
+
+.body.dark {
+    margin: 0 auto;
+    width: 99vw;
+    height: 100%;
+    display: block;
+    background-color: #4A494E;
+    background-image: none;
     color: white;
 
     .container {
@@ -109,7 +646,6 @@ body {
                     width: 100%;
                     height: 15%;
                     margin: 0 auto;
-                    background-color: #fff;
                     border-radius: 20px;
                     @include objcolor();
                     box-sizing: border-box;
@@ -157,7 +693,7 @@ body {
                 margin: 0 auto;
                 background-color: #fff;
                 border-radius: 20px;
-                background: linear-gradient(#bdc5cc, #0185f8);
+                background: linear-gradient(#6D4AE3, #6d069d);
                 padding: 20px;
                 box-sizing: border-box;
 
@@ -260,11 +796,10 @@ body {
                 height: 30%;
                 margin: 0 auto;
                 border-radius: 20px;
-                background-color: #fff;
-                background: linear-gradient(#bdc5cc, #0185f8);
-
-                background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
+                // background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
                 box-sizing: border-box;
+                @include objcolor();
+
                 padding: 2vw;
 
                 .thermometerIconbox {
@@ -274,7 +809,9 @@ body {
 
                     .thermometerIcon {
                         width: 5vw;
-                        height: 5vw;
+                        height: 6.2vw;
+                        margin-left: -1vw;
+                        margin-right: 1vw;
                         background-image: url(./assets/img/ThermometerQuarter.png);
                         @include backgoundSet();
                     }
@@ -325,21 +862,20 @@ body {
                 width: 100%;
                 height: 63%;
                 @include objcolor();
-                background-color: #1C1B20;
                 overflow: hidden;
                 position: relative;
-                background: linear-gradient(#bdc5cc, #0185f8);
-
+                // background: linear-gradient(#bdc5cc, #0185f8);
                 opacity: 90%;
-
-
 
                 .map {
                     width: 25vw;
                     height: 100%;
+                    top: -4%;
+                    left: 4%;
+                    position: absolute;
 
                     .koreaMap {
-                        stroke: rgb(159, 255, 171);
+                        stroke: $MC;
                         fill: #ffffff;
                     }
 
@@ -357,20 +893,26 @@ body {
                 @include objcolor();
                 height: 30%;
 
+                .chart {
+                    height: 11vw !important;
 
+
+
+                    .chartline {
+                        stroke: #7b55f0;
+                    }
+                }
 
                 .chartInfo {
-                    width: 100%;
-                    max-width: 28vw;
+                    width: 30.4vw;
+                    display: flex;
                     justify-content: space-between;
+                    align-items: center;
                     margin-left: 0.5vw;
-
-
 
                     .text-center {
                         margin-top: -0.6vw;
-                        width: 2vw;
-                        height: 2vw;
+                        font-size: 1.2vw;
 
                         .text-sm {
 
@@ -455,6 +997,14 @@ body {
                             height: 12vw;
                             margin: auto;
 
+                            .circleIn {
+                                stroke: #232324;
+
+                            }
+
+                            .circleIn2 {
+                                stroke: #6D4AE3;
+                            }
                         }
 
 
@@ -487,6 +1037,8 @@ body {
                     left: 17.3vw;
                     font-weight: bold;
                 }
+
+
 
                 .temperatureGraph {
                     position: absolute;
@@ -594,8 +1146,9 @@ body {
                 display: block;
 
                 .firstSection {
+                    margin-top: -7vw;
                     width: 100%;
-                    height: 44vw;
+                    height: fit-content;
                     display: flex;
                     align-items: center;
                     padding: 0 !important;
@@ -603,18 +1156,19 @@ body {
 
                     .selectTime {
                         width: 100%;
+                        height: 20px;
                         margin: 0 auto;
                         border-radius: 20px;
                         @include objcolor();
-                        margin-bottom: 10px;
+                        margin-bottom: 4vw;
 
                         .selectValuebox {
                             width: 60%;
-                            height: 30px;
+                            height: 10px;
                             text-align: center;
                             display: flex;
                             justify-content: space-between;
-                            margin-top: -10px;
+                            margin-top: -2.5vw;
 
                             .yearBox {
                                 display: flex;
@@ -649,6 +1203,8 @@ body {
                         background: linear-gradient(#bdc5cc, #0185f8);
                         padding: 20px;
                         box-sizing: border-box;
+
+
 
                         .realtimeWeather {
                             height: 100%;
@@ -733,6 +1289,7 @@ body {
                     }
 
                     .perceived {
+
                         width: 47%;
                         height: 250px;
                         margin: 0 auto;
@@ -796,7 +1353,7 @@ body {
 
                 .secondSection {
                     width: 100%;
-                    height: 100vw;
+                    height: 63%;
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
@@ -804,14 +1361,15 @@ body {
 
                     .b1 {
                         width: 100%;
-                        height: 63%;
+                        height: 50%;
                         margin: 0 auto;
+                        margin-top: -7vw;
+
                         @include objcolor();
                         background-color: #1C1B20;
                         overflow: hidden;
                         position: relative;
                         // background: linear-gradient(#bdc5cc, #0185f8);
-
                         opacity: 90%;
 
                         .mapSelect {}
@@ -837,25 +1395,30 @@ body {
                     .b2 {
                         width: 100%;
                         margin: 0 auto;
+                        margin-top: -17vw;
                         @include objcolor();
-                        height: 30%;
+                        height: 35%;
+
+
+                        .chart {
+                            height: 150px !important;
+                        }
+
+
 
                         .chartInfo {
-                            width: 100%;
-                            max-width: 28vw;
+                            width: 88vw;
                             justify-content: space-between;
-                            margin-left: 0.5vw;
-
-
+                            margin-left: 4vw;
 
                             .text-center {
                                 margin-top: -0.6vw;
-                                width: 20vw;
-                                height: 20vw;
+                                width: 20vw !important;
+                                height: 20vw !important;
 
                                 .text-sm {
-
-                                    font-size: 3vw;
+                                    margin-left: -3vw;
+                                    font-size: 2.3vw;
                                     text-align: center;
                                 }
                             }
@@ -869,8 +1432,9 @@ body {
                 }
 
                 .thirdSection {
-                    margin-top: 120px;
+                    margin-top: 5vw;
                     width: 100%;
+                    height: fit-content;
                     // background-color: #3f1d1d;
                     display: flex;
                     flex-wrap: wrap;
@@ -882,6 +1446,7 @@ body {
                         // background-color: #fff;
                         display: flex;
                         justify-content: space-between;
+
 
                         .c2-1 {
                             width: 32%;
@@ -931,11 +1496,13 @@ body {
                         padding: 30px;
                         box-sizing: border-box;
                         position: relative;
+                        margin-top: 5vw;
+
 
                         .tgtitle {
                             width: 65%;
                             line-height: 10vw;
-                            font-size: 4vw;
+                            font-size: 3vw;
                             text-align: center;
                             font-weight: bold;
                         }
@@ -960,6 +1527,18 @@ body {
                         width: 100%;
                         height: 16vh;
                         @include objcolor();
+                        margin-top: 5vw;
+                        margin-bottom: 5vw;
+
+                        .tgtitle2 {
+                            font-size: 3vw !important;
+                        }
+
+                        .customtbody {
+                            font-size: 0.8rem;
+                            /* 모바일에서 글자 크기 조정 */
+                        }
+
 
                     }
                 }

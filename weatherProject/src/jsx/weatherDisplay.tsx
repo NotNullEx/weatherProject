@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Weather from "./weather";
 import WeatherMap from "./weatherMap";
 import TemperatureGraph from "./TemperatureGraph";
@@ -10,30 +10,57 @@ import WeatherChart from "./weatherChart";
 import CallApi from "../tsx/getPrecipitation";
 import Totalprecipitation from "./Totalprecipitation";
 
-
-
-
-
 function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0); // 지역 선택 상태
     const [selectedYear, setSelectedYear] = useState<string>("2024"); // 선택된 연도 상태
-    const [weatherData,setWeatherData] = useState<any>([]);
+    const [darkMode, setDarkMode] = useState<boolean>(false);
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/api/weather')
-        .then((response)=>response.json())
-        .then((data)=>setWeatherData(data))
-        .catch((error)=>console.error('Error fetching weather data',error));
-    },[]);
+    useEffect(() => {
+        const counters: NodeListOf<HTMLElement> = document.querySelectorAll(".allhighestprecipitation");
+
+        counters.forEach((counter) => {
+            counter.textContent = "0";
+
+            const targetAttr = counter.getAttribute("data-target");
+            if (!targetAttr) return;
+
+            const targetNum: number = parseInt(targetAttr, 10);
+
+            const updateCounter = () => {
+                const count: number = parseInt(counter.textContent || "0", 10);
+                const increment: number = targetNum / 100;
+                const nextCount: number = Math.ceil(count + increment);
+
+                counter.textContent = String(nextCount > targetNum ? targetNum : nextCount);
+
+                if (count < targetNum) {
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            updateCounter();
+        });
+    }, [selectedIndex, selectedYear]);
+
+    useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+    }, [darkMode]);
+
     return (
         <div id="container" className="container">
             <header id="header" className="header">
                 <p>ProjectName</p>
+                <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
+                    {darkMode ? "라이트 모드" : "다크 모드"}
+                </button>
             </header>
             <main id="main" className="main">
                 <section id="secondSection" className="secondSection">
                     <div className="b1" id="map">
-                        {/* 선택된 지역을 변경할 수 있도록 props 전달 */}
                         <WeatherMap selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
                     </div>
                     <div className="b2" id="wchart">
@@ -47,7 +74,7 @@ function WeatherDisplay() {
                                 <select name="year"
                                     className="selectValue"
                                     value={selectedYear}
-                                    onChange={(e) => setSelectedYear(e.target.value)} // 선택된 연도 변경
+                                    onChange={(e) => setSelectedYear(e.target.value)}
                                 >
                                     <option value="2024">2024년</option>
                                     <option value="2023">2023년</option>
@@ -71,7 +98,6 @@ function WeatherDisplay() {
                         </div>
                     </div>
                     <div className="realtimeWeatherArea">
-                        {/* 선택된 지역 정보를 Weather 컴포넌트에 전달 */}
                         <Weather selectedIndex={selectedIndex} />
                     </div>
                     <div className="perceived ">
@@ -84,7 +110,7 @@ function WeatherDisplay() {
                         <div className="c2-1">
                             <p className="circleperTitle">전국 총 강수량</p>
                             <Totalprecipitation />
-                            <p className="allhighestprecipitation">1132ml</p>
+                            <p className="allhighestprecipitation" data-target="12000"></p>
                         </div>
                         <div className="c2-1">
                             <p className="circleperTitle">전국 중 지역 강수량</p>
@@ -98,8 +124,7 @@ function WeatherDisplay() {
                     </div>
                     <div className="c1">
                         <h2 className="tgtitle">기온 그래프</h2>
-                        {/* <TemperatureGraph></TemperatureGraph> */}
-                        <pre>{JSON.stringify(weatherData,null,2)}</pre>
+                        <TemperatureGraph></TemperatureGraph>
                     </div>
                     <div className="c2">
                         <h2>데이터</h2>

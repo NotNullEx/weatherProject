@@ -12,9 +12,9 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
     const [temp, setTemp] = useState("-");
     const [wind, setWind] = useState("-");
     const [humidity, setHumidity] = useState("-");
-    const [rainType, setRainType] = useState("0"); // 실황 강수 형태 (PTY)
-    const [skyCode, setSkyCode] = useState("-"); // 예보 SKY 코드
-    const [rainCode, setRainCode] = useState("0"); // 예보 PTY 코드
+    const [rainType, setRainType] = useState("0"); // 실황 강수 (PTY)
+    const [skyCode, setSkyCode] = useState("-"); // 예보 SKY 
+    const [rainCode, setRainCode] = useState("0"); // 예보 PTY 
     const [loading, setLoading] = useState(false);
 
     const fetchWeather = async () => {
@@ -31,9 +31,9 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
             setTemp(items.find((item: any) => item.category === "T1H")?.obsrValue || "-");
             setWind(items.find((item: any) => item.category === "WSD")?.obsrValue || "-");
             setHumidity(items.find((item: any) => item.category === "REH")?.obsrValue || "-");
-            setRainType(items.find((item: any) => item.category === "PTY")?.obsrValue || "0"); // ✅ 현재 강수 상태 저장
+            setRainType(items.find((item: any) => item.category === "PTY")?.obsrValue || "0");
         } else {
-            console.log("❌ 실황 API 응답 오류:", ncstData?.response?.header?.resultMsg);
+            console.log("실황 API 응답 오류:", ncstData?.response?.header?.resultMsg);
         }
 
         if (fcstData?.response?.header?.resultCode === "00") {
@@ -41,9 +41,9 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
             const sky = forecastItems.find((item: any) => item.category === "SKY")?.fcstValue || "-";
             const rain = forecastItems.find((item: any) => item.category === "PTY")?.fcstValue || "0";
             setSkyCode(sky);
-            setRainCode(rain);
+            setRainCode(비);
         } else {
-            console.log("❌ 예보 API 응답 오류:", fcstData?.response?.header?.resultMsg);
+            console.log("예보 API 응답 오류:", fcstData?.response?.header?.resultMsg);
         }
     };
 
@@ -51,13 +51,13 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
         fetchWeather();
     }, [selectedIndex]);
 
-    // ✅ 현재 강수 상태(rainType)를 사용하도록 수정
+    // 현재 강수 상태(rainType)
     const getWeatherClass = (skyCode: string, rainType: string) => {
         if (rainType !== "0") {
             switch (rainType) {
                 case "1": return "rain";    // 비
                 case "2": return "sleet";   // 눈비
-                case "3": return "snow";    // 눈 (대소문자 일관성 유지)
+                case "3": return "Snow";    // 눈 
                 case "4": return "shower";  // 소나기
                 case "5": return "drizzle"; // 빗방울
                 case "6": return "sleet";   // 눈비    
@@ -74,17 +74,29 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
         }
     };
 
+    // 오전/오후 변환
+    const formatTimeWithMeridiem = (time: string) => {
+        if (time.length !== 4) return "-";
+
+        const hour = parseInt(time.substring(0, 2), 10);
+        const minute = time.substring(2);
+        const meridiem = hour < 12 ? "오전" : "오후";
+        const formattedHour = hour % 12 === 0 ? 12 : hour % 12;
+
+        return `${meridiem} ${formattedHour}:${minute}`;
+    };
+
     return (
         <div className="realtimeWeather">
             <h2>
                 {region}
-                <p>{time.substring(0, 2) + " : " + time.substring(2)}시 기준</p>
+                <p>{formatTimeWithMeridiem(time)} 기준</p>
             </h2>
             {loading ? (
                 <p>날씨 정보 불러오는 중...</p>
             ) : (
                 <ul className="weather-card">
-                    <div className={`icon ${getWeatherClass(skyCode, rainType)}`}></div> {/* ✅ 현재 강수 상태 반영 */}
+                    <div className={`icon ${getWeatherClass(skyCode, rainType)}`}></div>
                     <div className="temperature">{temp}°C</div>
                     <div className="weather-info">
                         <div className="winfoB">

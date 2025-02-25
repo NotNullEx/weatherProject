@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -38,29 +39,38 @@
   vertical-align: top;
 }
 
-body {
+.body {
   margin: 0 auto;
   width: 99vw;
   height: 100%;
   display: block;
-  background-color: #1C1B20;
+  background-image: url(./assets/img/날씨.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 }
-body .container {
+.body .container {
   margin: 0 auto;
   height: 900px;
   width: 90vw;
   padding-top: 20px;
   box-sizing: border-box;
 }
-body .container .header {
+.body .container .header {
+  justify-content: space-between;
+  display: flex;
   width: 100%;
   height: 60px;
   background-color: #fff;
-  background-color: #303136;
-  border-radius: 20px;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
 }
-body .container .header p {
+.body .container .header p {
   font-size: 25px;
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
@@ -68,82 +78,84 @@ body .container .header p {
   line-height: 60px;
   margin-left: 50px;
 }
-body .container .main {
+.body .container .main {
   width: 100%;
   height: calc(100vh - 60px);
   display: flex;
   justify-content: space-between;
 }
-body .container .main .firstSection {
+.body .container .main .firstSection {
   width: 15%;
   height: 44vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-body .container .main .firstSection .selectTime {
+.body .container .main .firstSection .selectTime {
   width: 100%;
   height: 15%;
   margin: 0 auto;
-  background-color: #fff;
-  border-radius: 20px;
-  background-color: #303136;
-  border-radius: 20px;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
   box-sizing: border-box;
   padding: 20px;
 }
-body .container .main .firstSection .selectTime .selectValuebox {
+.body .container .main .firstSection .selectTime .selectValuebox {
   width: 10vw;
   text-align: center;
   margin: auto;
 }
-body .container .main .firstSection .selectTime .selectValuebox .yearBox {
+.body .container .main .firstSection .selectTime .selectValuebox .yearBox {
   display: flex;
 }
-body .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
+.body .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
   text-align: center;
   width: 100%;
   height: 1.2vw;
   border-radius: 30px;
   margin-bottom: 1vw;
 }
-body .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
+.body .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
   text-align: center;
   width: 10vw;
   height: 1.2vw;
   border-radius: 30px;
 }
-body .container .main .realtimeWeatherArea {
+.body .container .main .realtimeWeatherArea {
   width: 100%;
   height: 20.5vw;
   margin: 0 auto;
-  background-color: #fff;
   border-radius: 20px;
   background: linear-gradient(#bdc5cc, #0185f8);
   padding: 20px;
   box-sizing: border-box;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather {
+.body .container .main .realtimeWeatherArea .realtimeWeather {
   height: 100%;
   font-size: 1.4vw;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather h2 {
+.body .container .main .realtimeWeatherArea .realtimeWeather h2 {
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
   color: white;
   text-align: center;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather h2 p {
+.body .container .main .realtimeWeatherArea .realtimeWeather h2 p {
   font-size: 0.9vw;
+  color: #e4e5e6;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul {
   width: 10vw;
   height: 100%;
   margin: auto;
   list-style: none;
   margin-top: 2vh;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .icon {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .icon {
   width: 8vw;
   height: 40%;
   margin: -1vw auto;
@@ -152,14 +164,14 @@ body .container .main .realtimeWeatherArea .realtimeWeather ul .icon {
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .temperature {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .temperature {
   text-align: center;
   font-size: 2.2vw;
   font-weight: bold;
   text-shadow: 7px 7px 20px #1C1B20;
   margin-top: -2vw;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
   margin-top: 1vw;
   width: 10vw;
   height: 5.5vw;
@@ -168,15 +180,15 @@ body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
   justify-content: space-between;
   text-align: center;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
   margin: auto;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
   margin-top: 0.5vw;
   font-size: 0.6vw;
   text-align: center;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
   width: 2vw;
   height: 2vw;
   display: block;
@@ -186,7 +198,7 @@ body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .wi
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .humidityIcon {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .humidityIcon {
   width: 2vw;
   height: 2vw;
   display: block;
@@ -196,7 +208,7 @@ body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .wi
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .VisibilityIcon {
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .VisibilityIcon {
   width: 2vw;
   height: 2vw;
   display: block;
@@ -206,166 +218,198 @@ body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .wi
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .container .main .perceived {
+.body .container .main .perceived {
   width: 100%;
   height: 30%;
   margin: 0 auto;
   border-radius: 20px;
-  background-color: #fff;
-  background: linear-gradient(#bdc5cc, #0185f8);
-  background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
   box-sizing: border-box;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
   padding: 2vw;
 }
-body .container .main .perceived .thermometerIconbox {
+.body .container .main .perceived .thermometerIconbox {
   display: flex;
   width: 100%;
   height: 6.5vw;
 }
-body .container .main .perceived .thermometerIconbox .thermometerIcon {
+.body .container .main .perceived .thermometerIconbox .thermometerIcon {
   width: 5vw;
-  height: 5vw;
+  height: 6.2vw;
+  margin-left: -1vw;
+  margin-right: 1vw;
   background-image: url(./assets/img/ThermometerQuarter.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .container .main .perceived .thermometerIconbox div {
+.body .container .main .perceived .thermometerIconbox div {
   text-align: center;
   font-size: 1vw;
   font-weight: bold;
 }
-body .container .main .perceived .thermometerIconbox div p {
+.body .container .main .perceived .thermometerIconbox div p {
   margin-top: 1vw;
   font-size: 1.1vw;
   font-weight: bold;
 }
-body .container .main .perceived .suggestion {
+.body .container .main .perceived .suggestion {
   text-align: center;
 }
-body .container .main .perceived .suggestion .suggestionT {
+.body .container .main .perceived .suggestion .suggestionT {
   font-size: 1vw;
   font-weight: bold;
   margin-top: -0.5vh;
   margin-bottom: 1vh;
 }
-body .container .main .perceived .suggestion .suggestionM {
+.body .container .main .perceived .suggestion .suggestionM {
   font-size: 0.7vw;
 }
-body .container .secondSection {
+.body .container .secondSection {
   width: 35%;
   height: 44vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-body .container .secondSection .b1 {
+.body .container .secondSection .b1 {
   width: 100%;
   height: 63%;
-  background-color: #303136;
-  border-radius: 20px;
-  background-color: #1C1B20;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(#bdc5cc, #0185f8);
-  opacity: 90%;
 }
-body .container .secondSection .b1 .map {
+.body .container .secondSection .b1 .map {
   width: 25vw;
   height: 100%;
+  top: -4%;
+  left: 4%;
+  position: absolute;
 }
-body .container .secondSection .b1 .map .koreaMap {
-  stroke: rgb(159, 255, 171);
+.body .container .secondSection .b1 .map .koreaMap {
+  stroke: #0088ff;
   fill: #ffffff;
 }
-body .container .secondSection .b1 .map .koreaMap:hover {
-  fill: #06ab7c;
+.body .container .secondSection .b1 .map .koreaMap:hover {
+  fill: #046b1e;
   cursor: pointer;
 }
-body .container .secondSection .b2 {
+.body .container .secondSection .b2 {
   width: 100%;
-  background-color: #303136;
-  border-radius: 20px;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
   height: 30%;
 }
-body .container .secondSection .b2 .chartInfo {
-  width: 100%;
-  max-width: 28vw;
+.body .container .secondSection .b2 .chart {
+  height: 11vw !important;
+}
+.body .container .secondSection .b2 .chart Line {
+  stroke: #3d4754;
+}
+.body .container .secondSection .b2 .chart .chartline {
+  stroke: #1269d4;
+}
+.body .container .secondSection .b2 .chartInfo {
+  width: 30.4vw;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-left: 0.5vw;
 }
-body .container .secondSection .b2 .chartInfo .text-center {
+.body .container .secondSection .b2 .chartInfo .text-center {
   margin-top: -0.6vw;
-  width: 2vw;
-  height: 2vw;
+  font-size: 1.2vw;
 }
-body .container .secondSection .b2 .chartInfo .text-center .text-sm {
+.body .container .secondSection .b2 .chartInfo .text-center .text-sm {
   font-size: 0.8vw;
   text-align: center;
 }
-body .container .thirdSection {
+.body .container .thirdSection {
   width: 45%;
   height: 44vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-body .container .thirdSection .c {
+.body .container .thirdSection .c {
   width: 100%;
   height: 13vw;
   display: flex;
   justify-content: space-between;
   position: relative;
 }
-body .container .thirdSection .c .recharts-responsive-container {
+.body .container .thirdSection .c .recharts-responsive-container {
   position: absolute;
   width: 7% !important;
   top: 3.7vw;
   left: 5vw;
   margin: auto;
 }
-body .container .thirdSection .c .c2-1 {
+.body .container .thirdSection .c .c2-1 {
   width: 32%;
   background-color: black;
-  background-color: #303136;
-  border-radius: 20px;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
 }
-body .container .thirdSection .c .c2-1 .allhighestprecipitation {
+.body .container .thirdSection .c .c2-1 .allhighestprecipitation {
   z-index: 2px;
   font-size: 1.5vw;
   line-height: 9vw;
   text-align: center;
 }
-body .container .thirdSection .c .c2-1 .highestprecipitationDay {
+.body .container .thirdSection .c .c2-1 .highestprecipitationDay {
   font-size: 2vw;
   line-height: 6vw;
   font-weight: bold;
   text-align: center;
 }
-body .container .thirdSection .c .c2-1 .highestprecipitation {
+.body .container .thirdSection .c .c2-1 .highestprecipitation {
   font-size: 1.5vw;
   line-height: 2vw;
   text-align: center;
 }
-body .container .thirdSection .c .c2-1 .circleperTitle {
+.body .container .thirdSection .c .c2-1 .circleperTitle {
   margin-top: 1vw;
   text-align: center;
   font-size: 1.2vw;
   font-weight: bold;
   font-family: "Nanum Gothic", serif;
 }
-body .container .thirdSection .c .c2-1 .circleBox {
+.body .container .thirdSection .c .c2-1 .circleBox {
   width: 100%;
   position: relative;
   margin-top: -2vw;
 }
-body .container .thirdSection .c .c2-1 .circleBox .circle {
+.body .container .thirdSection .c .c2-1 .circleBox .circle {
   display: block;
   width: 12vw;
   height: 12vw;
   margin: auto;
 }
-body .container .thirdSection .c .c2-1 .circleBox .circleper {
+.body .container .thirdSection .c .c2-1 .circleBox .circle .circleIn {
+  stroke: #d0dee9;
+}
+.body .container .thirdSection .c .c2-1 .circleBox .circle .circleIn2 {
+  stroke: #00FFFF;
+}
+.body .container .thirdSection .c .c2-1 .circleBox .circleper {
   position: absolute;
   top: 6vw;
   left: 4.3vw;
@@ -374,23 +418,27 @@ body .container .thirdSection .c .c2-1 .circleBox .circleper {
   text-shadow: 10px 10px 10px #1C1B20;
   font-family: "Nanum Gothic", serif;
 }
-body .container .thirdSection .c1 {
+.body .container .thirdSection .c1 {
   width: 100%;
   height: 30%;
-  background-color: #303136;
-  border-radius: 20px;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
   padding: 30px;
   box-sizing: border-box;
   position: relative;
 }
-body .container .thirdSection .c1 .tgtitle {
+.body .container .thirdSection .c1 .tgtitle {
   font-size: 1vw;
   position: absolute;
   top: 0.9vw;
   left: 17.3vw;
   font-weight: bold;
 }
-body .container .thirdSection .c1 .temperatureGraph {
+.body .container .thirdSection .c1 .temperatureGraph {
   position: absolute;
   top: 2.5vw;
   left: 0;
@@ -400,26 +448,30 @@ body .container .thirdSection .c1 .temperatureGraph {
   width: 90%;
   height: 12vw;
 }
-body .container .thirdSection .c2 {
+.body .container .thirdSection .c2 {
   width: 100%;
   height: 30%;
-  background-color: #303136;
-  border-radius: 20px;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 5px 5px 10px #506472;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  opacity: 90%;
   padding: 10px 0 20px 0;
   font-size: 0.8vw;
   text-align: center;
   box-sizing: border-box;
   font-weight: bold;
 }
-body .container .thirdSection .c2 .table::-webkit-scrollbar {
+.body .container .thirdSection .c2 .table::-webkit-scrollbar {
   width: 80%;
 }
-body .container .thirdSection .c2 h2 {
+.body .container .thirdSection .c2 h2 {
   font-size: 1vw;
   font-weight: bold;
   margin-bottom: 5px;
 }
-body .container .thirdSection .c2 .table {
+.body .container .thirdSection .c2 .table {
   width: 90%;
   height: 80%;
   padding: 0.5vw;
@@ -429,13 +481,438 @@ body .container .thirdSection .c2 .table {
   overflow-y: scroll;
   overflow-x: scroll;
 }
-body .container .thirdSection .c2 .table .tableMain .customthead .customtr .customth {
+.body .container .thirdSection .c2 .table .tableMain .customthead .customtr .customth {
   border-bottom: 1px solid #bdc5cc;
 }
-body .container .thirdSection .c2 .table .tableMain .customtbody .customtr {
+.body .container .thirdSection .c2 .table .tableMain .customtbody .customtr {
   border-bottom: 2px solid #0185f8;
 }
-body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .customtd {
+.body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .customtd {
+  width: 200px;
+  word-break: break-all;
+  border-bottom: 2px solid #646363;
+}
+
+.body.dark {
+  margin: 0 auto;
+  width: 99vw;
+  height: 100%;
+  display: block;
+  background-color: #4A494E;
+  background-image: none;
+  color: white;
+}
+.body.dark .container {
+  margin: 0 auto;
+  height: 900px;
+  width: 90vw;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.body.dark .container .header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+}
+.body.dark .container .header p {
+  font-size: 25px;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
+  line-height: 60px;
+  margin-left: 50px;
+}
+.body.dark .container .main {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: space-between;
+}
+.body.dark .container .main .firstSection {
+  width: 15%;
+  height: 44vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.body.dark .container .main .firstSection .selectTime {
+  width: 100%;
+  height: 15%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.body.dark .container .main .firstSection .selectTime .selectValuebox {
+  width: 10vw;
+  text-align: center;
+  margin: auto;
+}
+.body.dark .container .main .firstSection .selectTime .selectValuebox .yearBox {
+  display: flex;
+}
+.body.dark .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
+  text-align: center;
+  width: 100%;
+  height: 1.2vw;
+  border-radius: 30px;
+  margin-bottom: 1vw;
+}
+.body.dark .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
+  text-align: center;
+  width: 10vw;
+  height: 1.2vw;
+  border-radius: 30px;
+}
+.body.dark .container .main .realtimeWeatherArea {
+  width: 100%;
+  height: 20.5vw;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20px;
+  background: linear-gradient(#6D4AE3, #6d069d);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather {
+  height: 100%;
+  font-size: 1.4vw;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather h2 {
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather h2 p {
+  font-size: 0.9vw;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul {
+  width: 10vw;
+  height: 100%;
+  margin: auto;
+  list-style: none;
+  margin-top: 2vh;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .icon {
+  width: 8vw;
+  height: 40%;
+  margin: -1vw auto;
+  background-image: url(./assets/img/sunny.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .temperature {
+  text-align: center;
+  font-size: 2.2vw;
+  font-weight: bold;
+  text-shadow: 7px 7px 20px #1C1B20;
+  margin-top: -2vw;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
+  margin-top: 1vw;
+  width: 10vw;
+  height: 5.5vw;
+  display: flex;
+  gap: 1.2vw;
+  justify-content: space-between;
+  text-align: center;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
+  margin: auto;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
+  margin-top: 0.5vw;
+  font-size: 0.6vw;
+  text-align: center;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
+  width: 2vw;
+  height: 2vw;
+  display: block;
+  margin: auto;
+  background-image: url(./assets/img/Wind.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .humidityIcon {
+  width: 2vw;
+  height: 2vw;
+  display: block;
+  margin: auto;
+  background-image: url(./assets/img/Dew.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .VisibilityIcon {
+  width: 2vw;
+  height: 2vw;
+  display: block;
+  margin: auto;
+  background-image: url(./assets/img/Rain2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body.dark .container .main .perceived {
+  width: 100%;
+  height: 30%;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+  padding: 2vw;
+}
+.body.dark .container .main .perceived .thermometerIconbox {
+  display: flex;
+  width: 100%;
+  height: 6.5vw;
+}
+.body.dark .container .main .perceived .thermometerIconbox .thermometerIcon {
+  width: 5vw;
+  height: 6.2vw;
+  margin-left: -1vw;
+  margin-right: 1vw;
+  background-image: url(./assets/img/ThermometerQuarter.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body.dark .container .main .perceived .thermometerIconbox div {
+  text-align: center;
+  font-size: 1vw;
+  font-weight: bold;
+}
+.body.dark .container .main .perceived .thermometerIconbox div p {
+  margin-top: 1vw;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+.body.dark .container .main .perceived .suggestion {
+  text-align: center;
+}
+.body.dark .container .main .perceived .suggestion .suggestionT {
+  font-size: 1vw;
+  font-weight: bold;
+  margin-top: -0.5vh;
+  margin-bottom: 1vh;
+}
+.body.dark .container .main .perceived .suggestion .suggestionM {
+  font-size: 0.7vw;
+}
+.body.dark .container .secondSection {
+  width: 35%;
+  height: 44vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.body.dark .container .secondSection .b1 {
+  width: 100%;
+  height: 63%;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+  overflow: hidden;
+  position: relative;
+  opacity: 90%;
+}
+.body.dark .container .secondSection .b1 .map {
+  width: 25vw;
+  height: 100%;
+  top: -4%;
+  left: 4%;
+  position: absolute;
+}
+.body.dark .container .secondSection .b1 .map .koreaMap {
+  stroke: #303136;
+  fill: #ffffff;
+}
+.body.dark .container .secondSection .b1 .map .koreaMap:hover {
+  fill: #06ab7c;
+  cursor: pointer;
+}
+.body.dark .container .secondSection .b2 {
+  width: 100%;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+  height: 30%;
+}
+.body.dark .container .secondSection .b2 .chart {
+  height: 11vw !important;
+}
+.body.dark .container .secondSection .b2 .chart .chartline {
+  stroke: #7b55f0;
+}
+.body.dark .container .secondSection .b2 .chartInfo {
+  width: 30.4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0.5vw;
+}
+.body.dark .container .secondSection .b2 .chartInfo .text-center {
+  margin-top: -0.6vw;
+  font-size: 1.2vw;
+}
+.body.dark .container .secondSection .b2 .chartInfo .text-center .text-sm {
+  font-size: 0.8vw;
+  text-align: center;
+}
+.body.dark .container .thirdSection {
+  width: 45%;
+  height: 44vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.body.dark .container .thirdSection .c {
+  width: 100%;
+  height: 13vw;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.body.dark .container .thirdSection .c .recharts-responsive-container {
+  position: absolute;
+  width: 7% !important;
+  top: 3.7vw;
+  left: 5vw;
+  margin: auto;
+}
+.body.dark .container .thirdSection .c .c2-1 {
+  width: 32%;
+  background-color: black;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+}
+.body.dark .container .thirdSection .c .c2-1 .allhighestprecipitation {
+  z-index: 2px;
+  font-size: 1.5vw;
+  line-height: 9vw;
+  text-align: center;
+}
+.body.dark .container .thirdSection .c .c2-1 .highestprecipitationDay {
+  font-size: 2vw;
+  line-height: 6vw;
+  font-weight: bold;
+  text-align: center;
+}
+.body.dark .container .thirdSection .c .c2-1 .highestprecipitation {
+  font-size: 1.5vw;
+  line-height: 2vw;
+  text-align: center;
+}
+.body.dark .container .thirdSection .c .c2-1 .circleperTitle {
+  margin-top: 1vw;
+  text-align: center;
+  font-size: 1.2vw;
+  font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+}
+.body.dark .container .thirdSection .c .c2-1 .circleBox {
+  width: 100%;
+  position: relative;
+  margin-top: -2vw;
+}
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circle {
+  display: block;
+  width: 12vw;
+  height: 12vw;
+  margin: auto;
+}
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circle .circleIn {
+  stroke: #232324;
+}
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circle .circleIn2 {
+  stroke: #6D4AE3;
+}
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circleper {
+  position: absolute;
+  top: 6vw;
+  left: 4.3vw;
+  font-size: 2vw;
+  font-weight: bold;
+  text-shadow: 10px 10px 10px #1C1B20;
+  font-family: "Nanum Gothic", serif;
+}
+.body.dark .container .thirdSection .c1 {
+  width: 100%;
+  height: 30%;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+.body.dark .container .thirdSection .c1 .tgtitle {
+  font-size: 1vw;
+  position: absolute;
+  top: 0.9vw;
+  left: 17.3vw;
+  font-weight: bold;
+}
+.body.dark .container .thirdSection .c1 .temperatureGraph {
+  position: absolute;
+  top: 2.5vw;
+  left: 0;
+  border-radius: 20px;
+  margin: auto;
+  display: block;
+  width: 90%;
+  height: 12vw;
+}
+.body.dark .container .thirdSection .c2 {
+  width: 100%;
+  height: 30%;
+  background-color: #303136;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #535353;
+  padding: 10px 0 20px 0;
+  font-size: 0.8vw;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+.body.dark .container .thirdSection .c2 .table::-webkit-scrollbar {
+  width: 80%;
+}
+.body.dark .container .thirdSection .c2 h2 {
+  font-size: 1vw;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.body.dark .container .thirdSection .c2 .table {
+  width: 90%;
+  height: 80%;
+  padding: 0.5vw;
+  margin: auto;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+.body.dark .container .thirdSection .c2 .table .tableMain .customthead .customtr .customth {
+  border-bottom: 1px solid #bdc5cc;
+}
+.body.dark .container .thirdSection .c2 .table .tableMain .customtbody .customtr {
+  border-bottom: 2px solid #0185f8;
+}
+.body.dark .container .thirdSection .c2 .table .tableMain .customtbody .customtr .customtd {
   width: 200px;
   word-break: break-all;
   border-bottom: 2px solid #646363;
@@ -457,8 +934,10 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
     display: block;
   }
   body .container .main .firstSection {
+    margin-top: -7vw;
     width: 100%;
-    height: 44vw;
+    height: -moz-fit-content;
+    height: fit-content;
     display: flex;
     align-items: center;
     padding: 0 !important;
@@ -466,19 +945,21 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
   }
   body .container .main .firstSection .selectTime {
     width: 100%;
+    height: 20px;
     margin: 0 auto;
     border-radius: 20px;
     background-color: #303136;
-    border-radius: 20px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
+    margin-bottom: 4vw;
   }
   body .container .main .firstSection .selectTime .selectValuebox {
     width: 60%;
-    height: 30px;
+    height: 10px;
     text-align: center;
     display: flex;
     justify-content: space-between;
-    margin-top: -10px;
+    margin-top: -2.5vw;
   }
   body .container .main .firstSection .selectTime .selectValuebox .yearBox {
     display: flex;
@@ -633,7 +1114,7 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
   }
   body .container .main .secondSection {
     width: 100%;
-    height: 100vw;
+    height: 63%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -641,10 +1122,12 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
   }
   body .container .main .secondSection .b1 {
     width: 100%;
-    height: 63%;
+    height: 50%;
     margin: 0 auto;
+    margin-top: -7vw;
     background-color: #303136;
-    border-radius: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
     background-color: #1C1B20;
     overflow: hidden;
     position: relative;
@@ -665,28 +1148,35 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
   body .container .main .secondSection .b2 {
     width: 100%;
     margin: 0 auto;
+    margin-top: -17vw;
     background-color: #303136;
-    border-radius: 20px;
-    height: 30%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
+    height: 35%;
+  }
+  body .container .main .secondSection .b2 .chart {
+    height: 150px !important;
   }
   body .container .main .secondSection .b2 .chartInfo {
-    width: 100%;
-    max-width: 28vw;
+    width: 88vw;
     justify-content: space-between;
-    margin-left: 0.5vw;
+    margin-left: 4vw;
   }
   body .container .main .secondSection .b2 .chartInfo .text-center {
     margin-top: -0.6vw;
-    width: 20vw;
-    height: 20vw;
+    width: 20vw !important;
+    height: 20vw !important;
   }
   body .container .main .secondSection .b2 .chartInfo .text-center .text-sm {
-    font-size: 3vw;
+    margin-left: -3vw;
+    font-size: 2.3vw;
     text-align: center;
   }
   body .container .main .thirdSection {
-    margin-top: 120px;
+    margin-top: 5vw;
     width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -703,7 +1193,8 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
     box-sizing: border-box;
     background-color: black;
     background-color: #303136;
-    border-radius: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
   }
   body .container .main .thirdSection .c .c2-1 .circleperTitle {
     text-align: center;
@@ -736,15 +1227,17 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
     width: 100%;
     height: 150px;
     background-color: #303136;
-    border-radius: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
     padding: 30px;
     box-sizing: border-box;
     position: relative;
+    margin-top: 5vw;
   }
   body .container .main .thirdSection .c1 .tgtitle {
     width: 65%;
     line-height: 10vw;
-    font-size: 4vw;
+    font-size: 3vw;
     text-align: center;
     font-weight: bold;
   }
@@ -763,6 +1256,16 @@ body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .cust
     width: 100%;
     height: 16vh;
     background-color: #303136;
-    border-radius: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #535353;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+  body .container .main .thirdSection .c2 .tgtitle2 {
+    font-size: 3vw !important;
+  }
+  body .container .main .thirdSection .c2 .customtbody {
+    font-size: 0.8rem;
+    /* 모바일에서 글자 크기 조정 */
   }
 }/*# sourceMappingURL=App.css.map */

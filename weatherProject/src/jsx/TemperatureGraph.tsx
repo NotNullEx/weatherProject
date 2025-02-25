@@ -18,9 +18,7 @@ const data = [
 const TemperatureGraph = () => {
     return (
         <div className="temperatureGraph">
-
             <ResponsiveContainer width="110%" height="92%">
-
                 <LineChart
                     data={data}
                     margin={{ top: 5, right: 30, left: 0, bottom: 5 }}

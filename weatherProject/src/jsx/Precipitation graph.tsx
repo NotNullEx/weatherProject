@@ -18,7 +18,6 @@ const PrecipitationGraph: React.FC<PrecipitationGraph> = ({ value }) => {
                     cy="50"
                     r={radius}
                     fill="none"
-                    stroke="#232324"
                     strokeWidth="7"
                     strokeDasharray={circumference}
                     strokeDashoffset={0}
@@ -31,7 +30,6 @@ const PrecipitationGraph: React.FC<PrecipitationGraph> = ({ value }) => {
                     cy="50"
                     r={radius}
                     fill="none"
-                    stroke="#00FFFF"
                     strokeWidth="6"
                     // strokeLinecap="round"
                     strokeDasharray={circumference}
