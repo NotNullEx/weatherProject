@@ -10,38 +10,38 @@ ALTER DATABASE weatherDB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS month_temperature_weather (
   id INT(1) AUTO_INCREMENT PRIMARY KEY,
-  city varchar(50) not null,
-  year smallint not null,
-  month smallint not null,
-  taavg float not null,   -- 기온 평균
-  tamax float not null,   -- 기온 최고
-  tamin float not null,   -- 기온 최저
-  avghm smallint not null -- 평균 상대 습도
+  city varchar(50) null,
+  year smallint null,
+  month smallint null,
+  taavg float null,   -- 기온 평균
+  tamax float null,   -- 기온 최고
+  tamin float null,   -- 기온 최저
+  avghm smallint null -- 평균 상대 습도
 );
 
 create table if not exists month_precipitation_weather(
   id int(1) auto_increment primary key,
-  city varchar(50) not null,
-  year smallint not null,
-  month smallint not null,
-  rnDay float not null,    -- 강수량 총량
-  maxRnDay float not null, -- 1일 최다 강수량
-  tmRnDay tinyint not null -- 1일 최다 강수량이 나타난 날
+  city varchar(50) null,
+  year smallint null,
+  month smallint null,
+  rnDay float null,    -- 강수량 총량
+  maxRnDay float null, -- 1일 최다 강수량
+  tmRnDay tinyint null -- 1일 최다 강수량이 나타난 날
 );
 
 create table if not exists year_temper_precipi_weather(
   id int(1) auto_increment primary key,
-  city varchar(50) not null,
-  year smallint not null,
-  Va_lst_11 int not null,   -- 강수량 총량
-  Va_lst_13 bigint not null,   -- 1일 최다 강수량
-  Va_lst_14 int not null, -- 1일 최다 강수량이 나타난 날
-  Va_lst_03 int not null,   -- 평균 기온
-  Va_lst_05 int not null,   -- 최고 평균 기온
-  Va_lst_06 int not null,   -- 최고 기온
-  Va_lst_07 int not null, -- 최고 기온이 나타난 날
-  Va_lst_09 int not null,   -- 최저 기온
-  Va_lst_10 int not null  -- 최저 기온이 나타난 날
+  city varchar(50) null,
+  year smallint null,
+  Va_lst_11 int null,   -- 강수량 총량
+  Va_lst_13 bigint null,   -- 1일 최다 강수량
+  Va_lst_14 int null, -- 1일 최다 강수량이 나타난 날
+  Va_lst_03 int null,   -- 평균 기온
+  Va_lst_05 int null,   -- 최고 평균 기온
+  Va_lst_06 int null,   -- 최고 기온
+  Va_lst_07 int null, -- 최고 기온이 나타난 날
+  Va_lst_09 int null,   -- 최저 기온
+  Va_lst_10 int null  -- 최저 기온이 나타난 날
 );
 
 ALTER TABLE month_temperature_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
