@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Weather from "./weather";
 import WeatherMap from "./weatherMap";
 import TemperatureGraph from "./TemperatureGraph";
@@ -17,7 +17,14 @@ import Totalprecipitation from "./Totalprecipitation";
 function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0); // 지역 선택 상태
     const [selectedYear, setSelectedYear] = useState<string>("2024"); // 선택된 연도 상태
+    const [weatherData,setWeatherData] = useState<any>([]);
 
+    useEffect(()=>{
+        fetch('http://localhost:5000/api/weather')
+        .then((response)=>response.json())
+        .then((data)=>setWeatherData(data))
+        .catch((error)=>console.error('Error fetching weather data',error));
+    },[]);
     return (
         <div id="container" className="container">
             <header id="header" className="header">
@@ -91,7 +98,8 @@ function WeatherDisplay() {
                     </div>
                     <div className="c1">
                         <h2 className="tgtitle">기온 그래프</h2>
-                        <TemperatureGraph></TemperatureGraph>
+                        {/* <TemperatureGraph></TemperatureGraph> */}
+                        <pre>{JSON.stringify(weatherData,null,2)}</pre>
                     </div>
                     <div className="c2">
                         <h2>데이터</h2>
