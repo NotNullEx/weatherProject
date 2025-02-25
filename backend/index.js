@@ -144,7 +144,7 @@ const insertWeatherData2 = async (data, year, type) => {
 const main = async () => {
   try {
     for (let year = 2017; year <= 2017; year++) {
-      const weatherData3 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcYearlyInfoService/getYearSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
+      const weatherData3 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcYearlyInfoService/getYearSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null); 
       if (weatherData3) await insertWeatherData2(weatherData3,year,"precipi");
 
       for (const month of months) {
