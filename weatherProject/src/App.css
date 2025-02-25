@@ -4,6 +4,7 @@
   padding: 0;
   font-family: "Nanum Gothic", serif;
   font-weight: 100;
+  color: #D3D3D3;
 }
 
 .tg {
@@ -48,7 +49,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
 }
 .body .container {
   margin: 0 auto;
@@ -77,6 +77,15 @@
   color: white;
   line-height: 60px;
   margin-left: 50px;
+}
+.body .container .header button {
+  border-radius: 30px;
+  height: 30px;
+  line-height: 10px;
+  color: #1C1B20;
+  margin: 0.8vw;
+  background-color: #cddcf8;
+  border: none;
 }
 .body .container .main {
   width: 100%;
@@ -118,12 +127,14 @@
   height: 1.2vw;
   border-radius: 30px;
   margin-bottom: 1vw;
+  font-size: 1vw;
 }
 .body .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
   text-align: center;
   width: 10vw;
   height: 1.2vw;
   border-radius: 30px;
+  font-size: 1vw;
 }
 .body .container .main .realtimeWeatherArea {
   width: 100%;
@@ -251,11 +262,17 @@
   text-align: center;
   font-size: 1vw;
   font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body .container .main .perceived .thermometerIconbox div p {
   margin-top: 1vw;
   font-size: 1.1vw;
   font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body .container .main .perceived .suggestion {
   text-align: center;
@@ -264,6 +281,9 @@
   font-size: 1vw;
   font-weight: bold;
   margin-top: -0.5vh;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
   margin-bottom: 1vh;
 }
 .body .container .main .perceived .suggestion .suggestionM {
@@ -358,9 +378,10 @@
   left: 5vw;
   margin: auto;
 }
-.body .container .thirdSection .c .c2-1 {
+.body .container .thirdSection .c .c2-1,
+.body .container .thirdSection .c .c2-2,
+.body .container .thirdSection .c .c2-3 {
   width: 32%;
-  background-color: black;
   border-radius: 10px;
   background: none;
   box-shadow: 5px 5px 10px #506472;
@@ -368,48 +389,69 @@
           backdrop-filter: blur(30px);
   opacity: 90%;
 }
-.body .container .thirdSection .c .c2-1 .allhighestprecipitation {
+.body .container .thirdSection .c .c2-1 .allhighestprecipitation,
+.body .container .thirdSection .c .c2-2 .allhighestprecipitation,
+.body .container .thirdSection .c .c2-3 .allhighestprecipitation {
   z-index: 2px;
   font-size: 1.5vw;
   line-height: 9vw;
   text-align: center;
 }
-.body .container .thirdSection .c .c2-1 .highestprecipitationDay {
+.body .container .thirdSection .c .c2-1 .highestprecipitationDay,
+.body .container .thirdSection .c .c2-2 .highestprecipitationDay,
+.body .container .thirdSection .c .c2-3 .highestprecipitationDay {
   font-size: 2vw;
   line-height: 6vw;
   font-weight: bold;
   text-align: center;
 }
-.body .container .thirdSection .c .c2-1 .highestprecipitation {
+.body .container .thirdSection .c .c2-1 .highestprecipitation,
+.body .container .thirdSection .c .c2-2 .highestprecipitation,
+.body .container .thirdSection .c .c2-3 .highestprecipitation {
   font-size: 1.5vw;
   line-height: 2vw;
   text-align: center;
 }
-.body .container .thirdSection .c .c2-1 .circleperTitle {
+.body .container .thirdSection .c .c2-1 .circleperTitle,
+.body .container .thirdSection .c .c2-2 .circleperTitle,
+.body .container .thirdSection .c .c2-3 .circleperTitle {
   margin-top: 1vw;
   text-align: center;
   font-size: 1.2vw;
   font-weight: bold;
   font-family: "Nanum Gothic", serif;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
-.body .container .thirdSection .c .c2-1 .circleBox {
+.body .container .thirdSection .c .c2-1 .circleBox,
+.body .container .thirdSection .c .c2-2 .circleBox,
+.body .container .thirdSection .c .c2-3 .circleBox {
   width: 100%;
   position: relative;
   margin-top: -2vw;
 }
-.body .container .thirdSection .c .c2-1 .circleBox .circle {
+.body .container .thirdSection .c .c2-1 .circleBox .circle,
+.body .container .thirdSection .c .c2-2 .circleBox .circle,
+.body .container .thirdSection .c .c2-3 .circleBox .circle {
   display: block;
   width: 12vw;
   height: 12vw;
   margin: auto;
 }
-.body .container .thirdSection .c .c2-1 .circleBox .circle .circleIn {
+.body .container .thirdSection .c .c2-1 .circleBox .circle .circleIn,
+.body .container .thirdSection .c .c2-2 .circleBox .circle .circleIn,
+.body .container .thirdSection .c .c2-3 .circleBox .circle .circleIn {
   stroke: #d0dee9;
 }
-.body .container .thirdSection .c .c2-1 .circleBox .circle .circleIn2 {
+.body .container .thirdSection .c .c2-1 .circleBox .circle .circleIn2,
+.body .container .thirdSection .c .c2-2 .circleBox .circle .circleIn2,
+.body .container .thirdSection .c .c2-3 .circleBox .circle .circleIn2 {
   stroke: #00FFFF;
 }
-.body .container .thirdSection .c .c2-1 .circleBox .circleper {
+.body .container .thirdSection .c .c2-1 .circleBox .circleper,
+.body .container .thirdSection .c .c2-2 .circleBox .circleper,
+.body .container .thirdSection .c .c2-3 .circleBox .circleper {
   position: absolute;
   top: 6vw;
   left: 4.3vw;
@@ -417,6 +459,9 @@
   font-weight: bold;
   text-shadow: 10px 10px 10px #1C1B20;
   font-family: "Nanum Gothic", serif;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body .container .thirdSection .c1 {
   width: 100%;
@@ -431,12 +476,18 @@
   box-sizing: border-box;
   position: relative;
 }
+.body .container .thirdSection .c1 Line {
+  stroke: #746bb8;
+}
 .body .container .thirdSection .c1 .tgtitle {
   font-size: 1vw;
   position: absolute;
   top: 0.9vw;
   left: 17.3vw;
   font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body .container .thirdSection .c1 .temperatureGraph {
   position: absolute;
@@ -462,6 +513,7 @@
   text-align: center;
   box-sizing: border-box;
   font-weight: bold;
+  background-color: rgb(109, 145, 181);
 }
 .body .container .thirdSection .c2 .table::-webkit-scrollbar {
   width: 80%;
@@ -470,6 +522,9 @@
   font-size: 1vw;
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body .container .thirdSection .c2 .table {
   width: 90%;
@@ -483,14 +538,17 @@
 }
 .body .container .thirdSection .c2 .table .tableMain .customthead .customtr .customth {
   border-bottom: 1px solid #bdc5cc;
+  color: #ffffff;
 }
 .body .container .thirdSection .c2 .table .tableMain .customtbody .customtr {
   border-bottom: 2px solid #0185f8;
+  color: #ffffff;
 }
 .body .container .thirdSection .c2 .table .tableMain .customtbody .customtr .customtd {
   width: 200px;
   word-break: break-all;
-  border-bottom: 2px solid #646363;
+  border-bottom: 1px solid #dedede;
+  color: #ffffff;
 }
 
 .body.dark {
@@ -500,7 +558,6 @@
   display: block;
   background-color: #4A494E;
   background-image: none;
-  color: white;
 }
 .body.dark .container {
   margin: 0 auto;
@@ -516,6 +573,15 @@
   background-color: #303136;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #535353;
+}
+.body.dark .container .header button {
+  border-radius: 30px;
+  height: 30px;
+  line-height: 10px;
+  color: #ffffff;
+  margin: 0.8vw;
+  background-color: #4A494E;
+  border: none;
 }
 .body.dark .container .header p {
   font-size: 25px;
@@ -563,11 +629,13 @@
   height: 1.2vw;
   border-radius: 30px;
   margin-bottom: 1vw;
+  color: #1C1B20;
 }
 .body.dark .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
   text-align: center;
   width: 10vw;
   height: 1.2vw;
+  color: #1C1B20;
   border-radius: 30px;
 }
 .body.dark .container .main .realtimeWeatherArea {
@@ -582,7 +650,7 @@
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather {
   height: 100%;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather h2 {
   font-family: "Nanum Gothic", serif;
@@ -615,6 +683,9 @@
   font-weight: bold;
   text-shadow: 7px 7px 20px #1C1B20;
   margin-top: -2vw;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
   margin-top: 1vw;
@@ -693,16 +764,25 @@
   text-align: center;
   font-size: 1vw;
   font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body.dark .container .main .perceived .thermometerIconbox div p {
   margin-top: 1vw;
   font-size: 1.1vw;
   font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body.dark .container .main .perceived .suggestion {
   text-align: center;
 }
 .body.dark .container .main .perceived .suggestion .suggestionT {
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
   font-size: 1vw;
   font-weight: bold;
   margin-top: -0.5vh;
@@ -792,55 +872,77 @@
   left: 5vw;
   margin: auto;
 }
-.body.dark .container .thirdSection .c .c2-1 {
+.body.dark .container .thirdSection .c .c2-1,
+.body.dark .container .thirdSection .c .c2-2,
+.body.dark .container .thirdSection .c .c2-3 {
   width: 32%;
-  background-color: black;
   background-color: #303136;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #535353;
 }
-.body.dark .container .thirdSection .c .c2-1 .allhighestprecipitation {
+.body.dark .container .thirdSection .c .c2-1 .allhighestprecipitation,
+.body.dark .container .thirdSection .c .c2-2 .allhighestprecipitation,
+.body.dark .container .thirdSection .c .c2-3 .allhighestprecipitation {
   z-index: 2px;
   font-size: 1.5vw;
   line-height: 9vw;
   text-align: center;
 }
-.body.dark .container .thirdSection .c .c2-1 .highestprecipitationDay {
+.body.dark .container .thirdSection .c .c2-1 .highestprecipitationDay,
+.body.dark .container .thirdSection .c .c2-2 .highestprecipitationDay,
+.body.dark .container .thirdSection .c .c2-3 .highestprecipitationDay {
   font-size: 2vw;
   line-height: 6vw;
   font-weight: bold;
   text-align: center;
 }
-.body.dark .container .thirdSection .c .c2-1 .highestprecipitation {
+.body.dark .container .thirdSection .c .c2-1 .highestprecipitation,
+.body.dark .container .thirdSection .c .c2-2 .highestprecipitation,
+.body.dark .container .thirdSection .c .c2-3 .highestprecipitation {
   font-size: 1.5vw;
   line-height: 2vw;
   text-align: center;
 }
-.body.dark .container .thirdSection .c .c2-1 .circleperTitle {
+.body.dark .container .thirdSection .c .c2-1 .circleperTitle,
+.body.dark .container .thirdSection .c .c2-2 .circleperTitle,
+.body.dark .container .thirdSection .c .c2-3 .circleperTitle {
   margin-top: 1vw;
   text-align: center;
   font-size: 1.2vw;
   font-weight: bold;
   font-family: "Nanum Gothic", serif;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
-.body.dark .container .thirdSection .c .c2-1 .circleBox {
+.body.dark .container .thirdSection .c .c2-1 .circleBox,
+.body.dark .container .thirdSection .c .c2-2 .circleBox,
+.body.dark .container .thirdSection .c .c2-3 .circleBox {
   width: 100%;
   position: relative;
   margin-top: -2vw;
 }
-.body.dark .container .thirdSection .c .c2-1 .circleBox .circle {
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circle,
+.body.dark .container .thirdSection .c .c2-2 .circleBox .circle,
+.body.dark .container .thirdSection .c .c2-3 .circleBox .circle {
   display: block;
   width: 12vw;
   height: 12vw;
   margin: auto;
 }
-.body.dark .container .thirdSection .c .c2-1 .circleBox .circle .circleIn {
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circle .circleIn,
+.body.dark .container .thirdSection .c .c2-2 .circleBox .circle .circleIn,
+.body.dark .container .thirdSection .c .c2-3 .circleBox .circle .circleIn {
   stroke: #232324;
 }
-.body.dark .container .thirdSection .c .c2-1 .circleBox .circle .circleIn2 {
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circle .circleIn2,
+.body.dark .container .thirdSection .c .c2-2 .circleBox .circle .circleIn2,
+.body.dark .container .thirdSection .c .c2-3 .circleBox .circle .circleIn2 {
   stroke: #6D4AE3;
 }
-.body.dark .container .thirdSection .c .c2-1 .circleBox .circleper {
+.body.dark .container .thirdSection .c .c2-1 .circleBox .circleper,
+.body.dark .container .thirdSection .c .c2-2 .circleBox .circleper,
+.body.dark .container .thirdSection .c .c2-3 .circleBox .circleper {
   position: absolute;
   top: 6vw;
   left: 4.3vw;
@@ -865,6 +967,9 @@
   top: 0.9vw;
   left: 17.3vw;
   font-weight: bold;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body.dark .container .thirdSection .c1 .temperatureGraph {
   position: absolute;
@@ -895,6 +1000,9 @@
   font-size: 1vw;
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: "Nanum Gothic", serif;
+  font-weight: 600;
+  color: white;
 }
 .body.dark .container .thirdSection .c2 .table {
   width: 90%;

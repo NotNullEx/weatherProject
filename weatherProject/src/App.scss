@@ -3,6 +3,8 @@
     padding: 0;
     font-family: "Nanum Gothic", serif;
     font-weight: 100;
+    color: #D3D3D3;
+
 }
 
 .tg {
@@ -74,7 +76,6 @@ $MC: #303136;
     display: block;
     background-image: url(./assets/img/날씨.jpg);
     @include backgoundSet();
-    color: white;
 
     .container {
         margin: 0 auto;
@@ -96,6 +97,16 @@ $MC: #303136;
                 @include titleFont;
                 line-height: 60px;
                 margin-left: 50px;
+            }
+
+            button {
+                border-radius: 30px;
+                height: 30px;
+                line-height: 10px;
+                color: #1C1B20;
+                margin: 0.8vw;
+                background-color: #cddcf8;
+                border: none;
             }
         }
 
@@ -135,6 +146,7 @@ $MC: #303136;
                                 height: 1.2vw;
                                 border-radius: 30px;
                                 margin-bottom: 1vw;
+                                font-size: 1vw;
                             }
                         }
 
@@ -143,8 +155,8 @@ $MC: #303136;
                                 text-align: center;
                                 width: 10vw;
                                 height: 1.2vw;
-
                                 border-radius: 30px;
+                                font-size: 1vw;
                             }
                         }
 
@@ -289,11 +301,13 @@ $MC: #303136;
                         text-align: center;
                         font-size: 1vw;
                         font-weight: bold;
+                        @include titleFont();
 
                         p {
                             margin-top: 1vw;
                             font-size: 1.1vw;
                             font-weight: bold;
+                            @include titleFont();
                         }
                     }
 
@@ -306,6 +320,7 @@ $MC: #303136;
                         font-size: 1vw;
                         font-weight: bold;
                         margin-top: -0.5vh;
+                        @include titleFont();
                         margin-bottom: 1vh;
 
                     }
@@ -426,10 +441,12 @@ $MC: #303136;
                     margin: auto;
                 }
 
-                .c2-1 {
+                .c2-1,
+                .c2-2,
+                .c2-3 {
                     width: 32%;
-                    background-color: black;
                     @include backblur2();
+
 
                     .allhighestprecipitation {
                         z-index: 2px;
@@ -457,6 +474,7 @@ $MC: #303136;
                         font-size: 1.2vw;
                         font-weight: bold;
                         font-family: "Nanum Gothic", serif;
+                        @include titleFont();
 
 
                     }
@@ -493,6 +511,7 @@ $MC: #303136;
                             font-weight: bold;
                             text-shadow: 10px 10px 10px #1C1B20;
                             font-family: "Nanum Gothic", serif;
+                            @include titleFont();
                         }
                     }
                 }
@@ -506,13 +525,21 @@ $MC: #303136;
                 box-sizing: border-box;
                 position: relative;
 
+                // background-color: rgb(68, 78, 120);
+                Line {
+                    stroke: #746bb8;
+                }
+
+
                 .tgtitle {
                     font-size: 1vw;
                     position: absolute;
                     top: 0.9vw;
                     left: 17.3vw;
                     font-weight: bold;
+                    @include titleFont();
                 }
+
 
                 .temperatureGraph {
                     position: absolute;
@@ -540,6 +567,7 @@ $MC: #303136;
                 text-align: center;
                 box-sizing: border-box;
                 font-weight: bold;
+                background-color: rgb(109, 145, 181);
 
 
                 .table::-webkit-scrollbar {
@@ -551,6 +579,7 @@ $MC: #303136;
                     font-size: 1vw;
                     font-weight: bold;
                     margin-bottom: 5px;
+                    @include titleFont();
                 }
 
 
@@ -570,6 +599,8 @@ $MC: #303136;
                             .customtr {
                                 .customth {
                                     border-bottom: 1px solid #bdc5cc;
+                                    color: #ffffff;
+
 
                                 }
                             }
@@ -578,12 +609,16 @@ $MC: #303136;
                         .customtbody {
                             .customtr {
                                 border-bottom: 2px solid #0185f8;
+                                color: #ffffff;
+
 
                                 .customtd {
 
                                     width: 200px;
                                     word-break: break-all;
-                                    border-bottom: 2px solid #646363;
+                                    border-bottom: 1px solid #dedede;
+                                    color: #ffffff;
+
 
                                 }
                             }
@@ -606,7 +641,7 @@ $MC: #303136;
     display: block;
     background-color: #4A494E;
     background-image: none;
-    color: white;
+
 
     .container {
         margin: 0 auto;
@@ -620,6 +655,16 @@ $MC: #303136;
             height: 60px;
             background-color: #fff;
             @include objcolor();
+
+            button {
+                border-radius: 30px;
+                height: 30px;
+                line-height: 10px;
+                color: #ffffff;
+                margin: 0.8vw;
+                background-color: #4A494E;
+                border: none;
+            }
 
             p {
                 font-size: 25px;
@@ -666,6 +711,8 @@ $MC: #303136;
                                 height: 1.2vw;
                                 border-radius: 30px;
                                 margin-bottom: 1vw;
+                                color: #1C1B20;
+
                             }
                         }
 
@@ -674,7 +721,7 @@ $MC: #303136;
                                 text-align: center;
                                 width: 10vw;
                                 height: 1.2vw;
-
+                                color: #1C1B20;
                                 border-radius: 30px;
                             }
                         }
@@ -700,7 +747,7 @@ $MC: #303136;
                 .realtimeWeather {
                     height: 100%;
 
-                    font-size: 1.4vw;
+                    font-size: 1.3vw;
 
                     h2 {
                         @include titleFont;
@@ -733,6 +780,8 @@ $MC: #303136;
                             font-weight: bold;
                             text-shadow: 7px 7px 20px #1C1B20;
                             margin-top: -2vw;
+                            @include titleFont;
+
                         }
 
                         .weather-info {
@@ -751,6 +800,7 @@ $MC: #303136;
                                     margin-top: 0.5vw;
                                     font-size: 0.6vw;
                                     text-align: center;
+
 
                                 }
 
@@ -820,11 +870,15 @@ $MC: #303136;
                         text-align: center;
                         font-size: 1vw;
                         font-weight: bold;
+                        @include titleFont;
+
 
                         p {
                             margin-top: 1vw;
                             font-size: 1.1vw;
                             font-weight: bold;
+                            @include titleFont;
+
                         }
                     }
 
@@ -833,7 +887,10 @@ $MC: #303136;
                 .suggestion {
                     text-align: center;
 
+
                     .suggestionT {
+                        @include titleFont;
+
                         font-size: 1vw;
                         font-weight: bold;
                         margin-top: -0.5vh;
@@ -950,16 +1007,19 @@ $MC: #303136;
                     margin: auto;
                 }
 
-                .c2-1 {
+                .c2-1,
+                .c2-2,
+                .c2-3 {
                     width: 32%;
-                    background-color: black;
                     @include objcolor();
+
 
                     .allhighestprecipitation {
                         z-index: 2px;
                         font-size: 1.5vw;
                         line-height: 9vw;
                         text-align: center;
+
                     }
 
                     .highestprecipitationDay {
@@ -981,6 +1041,8 @@ $MC: #303136;
                         font-size: 1.2vw;
                         font-weight: bold;
                         font-family: "Nanum Gothic", serif;
+                        @include titleFont;
+
 
 
                     }
@@ -1022,6 +1084,11 @@ $MC: #303136;
                 }
             }
 
+            // .c2-1 {
+            //     background: linear-gradient(#355287, #002383);
+            // }
+
+
             .c1 {
                 width: 100%;
                 height: 30%;
@@ -1036,6 +1103,8 @@ $MC: #303136;
                     top: 0.9vw;
                     left: 17.3vw;
                     font-weight: bold;
+                    @include titleFont;
+
                 }
 
 
@@ -1066,6 +1135,7 @@ $MC: #303136;
                 font-weight: bold;
 
 
+
                 .table::-webkit-scrollbar {
                     width: 80%;
 
@@ -1075,9 +1145,9 @@ $MC: #303136;
                     font-size: 1vw;
                     font-weight: bold;
                     margin-bottom: 5px;
+                    @include titleFont;
+
                 }
-
-
 
                 .table {
                     width: 90%;

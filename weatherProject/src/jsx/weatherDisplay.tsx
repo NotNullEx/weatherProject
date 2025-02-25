@@ -14,6 +14,14 @@ function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0); // 지역 선택 상태
     const [selectedYear, setSelectedYear] = useState<string>("2024"); // 선택된 연도 상태
     const [darkMode, setDarkMode] = useState<boolean>(false);
+    const [weatherData, setWeatherData] = useState<any>([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/weather')
+            .then((response) => response.json())
+            .then((data) => setWeatherData(data))
+            .catch((error) => console.error('Error fetching weather data', error));
+    }, []);
 
     useEffect(() => {
         const counters: NodeListOf<HTMLElement> = document.querySelectorAll(".allhighestprecipitation");
@@ -55,7 +63,7 @@ function WeatherDisplay() {
             <header id="header" className="header">
                 <p>ProjectName</p>
                 <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
-                    {darkMode ? "라이트 모드" : "다크 모드"}
+                    {darkMode ? "다크 모드" : "라이트 모드"}
                 </button>
             </header>
             <main id="main" className="main">
@@ -112,11 +120,11 @@ function WeatherDisplay() {
                             <Totalprecipitation />
                             <p className="allhighestprecipitation" data-target="12000"></p>
                         </div>
-                        <div className="c2-1">
+                        <div className="c2-2">
                             <p className="circleperTitle">전국 중 지역 강수량</p>
                             <PrecipitationGraph value={60} />
                         </div>
-                        <div className="c2-1">
+                        <div className="c2-3">
                             <p className="circleperTitle">최다 강수량</p>
                             <p className="highestprecipitationDay">2월</p>
                             <p className="highestprecipitation">1132ml</p>
@@ -125,6 +133,7 @@ function WeatherDisplay() {
                     <div className="c1">
                         <h2 className="tgtitle">기온 그래프</h2>
                         <TemperatureGraph></TemperatureGraph>
+                        {/* <pre>{JSON.stringify(weatherData, null, 2)}</pre> */}
                     </div>
                     <div className="c2">
                         <h2>데이터</h2>
