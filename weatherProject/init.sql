@@ -33,15 +33,15 @@ create table if not exists year_temper_precipi_weather(
   id int(1) auto_increment primary key,
   city varchar(50) not null,
   year smallint not null,
-  Va_lst_11 float not null,   -- 강수량 총량
-  Va_lst_13 float not null,   -- 1일 최다 강수량
-  Va_lst_14 tinyint not null, -- 1일 최다 강수량이 나타난 날
-  Va_lst_03 float not null,   -- 평균 기온
-  Va_lst_05 float not null,   -- 최고 평균 기온
-  Va_lst_06 float not null,   -- 최고 기온
-  Va_lst_07 tinyint not null, -- 최고 기온이 나타난 날
-  Va_lst_09 float not null,   -- 최저 기온
-  Va_lst_10 tinyint not null  -- 최저 기온이 나타난 날
+  Va_lst_11 int not null,   -- 강수량 총량
+  Va_lst_13 bigint not null,   -- 1일 최다 강수량
+  Va_lst_14 int not null, -- 1일 최다 강수량이 나타난 날
+  Va_lst_03 int not null,   -- 평균 기온
+  Va_lst_05 int not null,   -- 최고 평균 기온
+  Va_lst_06 int not null,   -- 최고 기온
+  Va_lst_07 int not null, -- 최고 기온이 나타난 날
+  Va_lst_09 int not null,   -- 최저 기온
+  Va_lst_10 int not null  -- 최저 기온이 나타난 날
 );
 
 ALTER TABLE month_temperature_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
