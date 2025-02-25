@@ -144,14 +144,14 @@ const insertWeatherData2 = async (data, year, type) => {
 const main = async () => {
   try {
     for (let year = 2017; year <= 2017; year++) {
-      const weatherData3 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcYearlyInfoService/getYearSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&authKey=YGHzUcOxRdSh81HDsRXULg`).catch(() => null);
+      const weatherData3 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcYearlyInfoService/getYearSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
       if (weatherData3) await insertWeatherData2(weatherData3,year,"precipi");
 
       for (const month of months) {
         console.log(`📊 데이터 수집 중: ${year}-${month}`);
         
-        const weatherData1 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcMtlyInfoService/getMmSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&month=${month}&authKey=FyIoXmJzSiWiKF5icxolng`).catch(() => null);
-        const weatherData2 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcMtlyInfoService/getMmSumry2?year=${year}&month=${month}&dataType=JSON&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
+        const weatherData1 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcMtlyInfoService/getMmSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&month=${month}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
+        const weatherData2 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcMtlyInfoService/getMmSumry2?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&month=${month}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
         if (weatherData1) await insertWeatherData(weatherData1, year, month, 'temperature');
         if (weatherData2) await insertWeatherData(weatherData2, year, month, 'precipitation');
 
