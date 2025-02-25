@@ -27,10 +27,15 @@ connection.connect((err)=>{
 
 // 데이터 조회 api
 app.get("/api/weather",(req,res)=>{
-    console.log("리퀘스트 확인:",req)
-    const query = `SELECT year,month,city,  taavg, tamax,tamin,avghm FROM month_temperature_weather where year=2024`;
+    const selectedYear = req.query.year; // 요청에서 year 파라미터 가져오기
+    console.log("선택된 연도:", selectedYear);
+    let query = `SELECT year, month, city, taavg, tamax, tamin, avghm FROM month_temperature_weather`;
 
-    connection.query(query,(err,result)=>{
+    if(selectedYear){
+        query += ` WHERE year = ?`;
+    }
+
+    connection.query(query, selectedYear ? [selectedYear]:[], (err,result)=>{
         if(err){
             console.log("데이터 조회 실패...",err);
             res.status(500).json({error:"데이터 조회 실패"});

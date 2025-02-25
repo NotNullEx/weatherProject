@@ -34,7 +34,7 @@ const TemperatureGraph: React.FC<CallApiProps> = ({selectedYear}) => {
     const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
   
     useEffect(() => {
-      fetch(`http://localhost:5000/api/weather`)
+      fetch(`http://localhost:5000/api/weather?year=${selectedYear}`)
         .then((res) => res.json())
         .then((data) => setWeatherData(data))
         .catch((err) => console.error('❌ 데이터 가져오기 실패:', err));

@@ -135,7 +135,7 @@ function WeatherDisplay() {
                     </div>
                     <div className="c1">
                         <h2 className="tgtitle">기온 그래프</h2>
-                        <TemperatureGraph></TemperatureGraph>
+                        <TemperatureGraph selectedYear={selectedYear}></TemperatureGraph>
                         {/* <pre>{JSON.stringify(weatherData, null, 2)}</pre> */}
                     </div>
                     <div className="c2">
