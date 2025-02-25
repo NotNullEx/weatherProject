@@ -23,6 +23,7 @@ create table if not exists month_precipitation_weather(
   id int(1) auto_increment primary key,
   city varchar(50) not null,
   year smallint not null,
+  month smallint not null,
   rnDay float not null,    -- 강수량 총량
   maxRnDay float not null, -- 1일 최다 강수량
   tmRnDay tinyint not null -- 1일 최다 강수량이 나타난 날
