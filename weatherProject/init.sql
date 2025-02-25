@@ -1,4 +1,7 @@
-
+SET NAMES utf8mb4;
+SET character_set_client = utf8mb4;
+SET character_set_connection = utf8mb4;
+SET character_set_results = utf8mb4;
 
 CREATE DATABASE IF NOT EXISTS weatherDB;
 
@@ -43,8 +46,3 @@ create table if not exists year_temper_precipi_weather(
 ALTER TABLE month_temperature_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ALTER TABLE month_precipitation_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ALTER TABLE year_temper_precipi_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-SET NAMES utf8mb4;
-SET character_set_client = utf8mb4;
-SET character_set_connection = utf8mb4;
-SET character_set_results = utf8mb4;
