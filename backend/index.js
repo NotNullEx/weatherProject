@@ -98,7 +98,7 @@ const insertWeatherData = async (data, year, month) => {
 // 메인 실행 함수
 const main = async () => {
   try {
-    for (let year = 2017; year < 2025; year++) {
+    for (let year = 2024; year <= 2024; year++) {
       for (const month of months) {
         console.log(`📊 데이터 수집 중: ${year}-${month}`);
         const weatherData = await fetchWeatherData(year, month);

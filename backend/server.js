@@ -27,7 +27,8 @@ connection.connect((err)=>{
 
 // 데이터 조회 api
 app.get("/api/weather",(req,res)=>{
-    const query = "SELECT * FROM month_temperature_weather";
+    console.log("리퀘스트 확인:",req)
+    const query = `SELECT year,month,city,  taavg, tamax,tamin,avghm FROM month_temperature_weather where year=2024`;
 
     connection.query(query,(err,result)=>{
         if(err){

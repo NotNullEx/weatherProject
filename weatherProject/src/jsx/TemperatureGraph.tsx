@@ -1,4 +1,16 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { useEffect, useState } from 'react';
+
+type WeatherData = {
+    id: number;
+    city: string;
+    year: number;
+    month: number;
+    taavg: number;
+    tamax: number;
+    tamin: number;
+    avghm: number;
+  };
 
 const data = [
     { name: '1월', 최고: 5, 평균: 2, 최저: -2 },
@@ -15,7 +27,20 @@ const data = [
     { name: '12월', 최고: 6, 평균: 2, 최저: -1 }
 
 ];
-const TemperatureGraph = () => {
+interface CallApiProps {
+    selectedYear: string; // 연도 props 추가
+}
+const TemperatureGraph: React.FC<CallApiProps> = ({selectedYear}) => {
+    const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
+  
+    useEffect(() => {
+      fetch(`http://localhost:5000/api/weather`)
+        .then((res) => res.json())
+        .then((data) => setWeatherData(data))
+        .catch((err) => console.error('❌ 데이터 가져오기 실패:', err));
+    }, [selectedYear]);
+    console.log(weatherData);
+    console.log(selectedYear);
     return (
         <div className="temperatureGraph">
             <ResponsiveContainer width="110%" height="92%">
