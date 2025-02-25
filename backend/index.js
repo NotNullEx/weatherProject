@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise';
 import https from 'https';
+import './server.js';
 
 // MySQL 연결 설정
 const connection = await mysql.createConnection({
