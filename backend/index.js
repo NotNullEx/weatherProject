@@ -1,5 +1,6 @@
 import mysql from 'mysql2';
-
+import getSelect from "./select.js";
+import './server.js';
 // MySQL 연결 설정
 const connection = mysql.createConnection({
   host: 'mysql-db',
@@ -10,11 +11,11 @@ const connection = mysql.createConnection({
 
 // 연결 시도
 connection.connect((err) => {
-  if (err) {
-    console.error('MySQL 연결 실패:', err);
-    return;
-  }
-  console.log('MySQL 연결 성공!');
+  // if (err) {
+  //   console.error('MySQL 연결 실패:', err);
+  //   return;
+  // }
+  // console.log('MySQL 연결 성공!');
 
   // 데이터 삽입 예제
   const query = `
@@ -25,12 +26,17 @@ connection.connect((err) => {
 
   const values = [null, 'seoul', 2024, 12, 1.1, 2.2, 3.3, 60];
 
-  connection.query(query, values, (err, result) => {
-    if (err) {
-      console.error('데이터 삽입 실패:', err);
-    } else {
-      console.log('데이터 삽입 성공:', result);
-    }
+  // connection.query(query, values, (err, result) => {
+  //   if (err) {
+  //     console.error('데이터 삽입 실패:', err);
+  //     connection.end();
+  //   } 
+  //   console.log('데이터 삽입 성공:', result);
+    
+    
+  // });
+  getSelect(connection,() =>{
+    // console.log("데이터 조회 성공!");
     connection.end();
   });
 });

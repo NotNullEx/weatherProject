@@ -142,7 +142,7 @@ const CallApi: React.FC<CallApiProps> = ({ selectedYear }) => {
                         }
                     }
                     // API 데이터에서 필요한 정보 추출
-                    console.log("API 응답 데이터:", addCity);
+                    
                     setMonthWeatherInputData((prev) => [...prev, addCity]);
                 }
 
