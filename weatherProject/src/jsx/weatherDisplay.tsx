@@ -10,11 +10,13 @@ import WeatherChart from "./weatherChart";
 import CallApi from "../tsx/getPrecipitation";
 import Totalprecipitation from "./Totalprecipitation";
 
+
 function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0); // 지역 선택 상태
     const [selectedYear, setSelectedYear] = useState<string>("2024"); // 선택된 연도 상태
     const [darkMode, setDarkMode] = useState<boolean>(false);
-    const [weatherData, setWeatherData] = useState<any>([]);
+    const [setWeatherData] = useState<any>([]);
+
 
     useEffect(() => {
         fetch('http://localhost:5000/api/weather')
@@ -49,6 +51,7 @@ function WeatherDisplay() {
             updateCounter();
         });
     }, [selectedIndex, selectedYear]);
+
 
     useEffect(() => {
         if (darkMode) {

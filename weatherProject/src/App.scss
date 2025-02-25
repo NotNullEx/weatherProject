@@ -3,7 +3,7 @@
     padding: 0;
     font-family: "Nanum Gothic", serif;
     font-weight: 100;
-    color: #D3D3D3;
+    color: #e0dfdf;
 
 }
 
@@ -40,7 +40,7 @@
     vertical-align: top
 }
 
-$MC: #303136;
+$MC: #e0dfdf;
 
 @mixin titleFont() {
     font-family: "Nanum Gothic", serif;
@@ -64,7 +64,8 @@ $MC: #303136;
 @mixin backblur2() {
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
+
+    box-shadow: 5px 5px 10px #68747c;
     backdrop-filter: blur(30px);
     opacity: 90%;
 }
@@ -91,6 +92,7 @@ $MC: #303136;
             height: 60px;
             background-color: #fff;
             @include backblur2();
+
 
             p {
                 font-size: 25px;
@@ -128,6 +130,7 @@ $MC: #303136;
                     height: 15%;
                     margin: 0 auto;
                     @include backblur2();
+
                     box-sizing: border-box;
                     padding: 20px;
 
@@ -173,13 +176,12 @@ $MC: #303136;
                 height: 20.5vw;
                 margin: 0 auto;
                 border-radius: 20px;
-                background: linear-gradient(#bdc5cc, #0185f8);
+                background: linear-gradient(#ccc8bd, #0185f8);
                 padding: 20px;
                 box-sizing: border-box;
 
                 .realtimeWeather {
                     height: 100%;
-
                     font-size: 1.4vw;
 
                     h2 {
@@ -280,7 +282,6 @@ $MC: #303136;
                 // background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
                 box-sizing: border-box;
                 @include backblur2();
-
                 padding: 2vw;
 
                 .thermometerIconbox {
@@ -346,6 +347,7 @@ $MC: #303136;
                 width: 100%;
                 height: 63%;
                 @include backblur2();
+
                 overflow: hidden;
                 position: relative;
                 // background-image: url(./assets/img/sea.jpg);
@@ -361,13 +363,22 @@ $MC: #303136;
                     .koreaMap {
                         stroke: #0088ff;
                         fill: #ffffff;
+
+                        &.active {
+                            fill: #0088ff; // 클릭 시 활성화된 색 (주황색)
+                            stroke: #ffa600; // 테두리 강조
+                            stroke-width: 3;
+
+
+                        }
+
+                        &:hover {
+
+                            fill: #0088ff;
+                            cursor: pointer;
+                        }
                     }
 
-                    .koreaMap:hover {
-
-                        fill: #046b1e;
-                        cursor: pointer;
-                    }
                 }
 
             }
@@ -375,6 +386,7 @@ $MC: #303136;
             .b2 {
                 width: 100%;
                 @include backblur2();
+
                 height: 30%;
 
                 .chart {
@@ -446,6 +458,7 @@ $MC: #303136;
                 .c2-3 {
                     width: 32%;
                     @include backblur2();
+
 
 
                     .allhighestprecipitation {
@@ -521,6 +534,7 @@ $MC: #303136;
                 width: 100%;
                 height: 30%;
                 @include backblur2();
+
                 padding: 30px;
                 box-sizing: border-box;
                 position: relative;
@@ -562,6 +576,7 @@ $MC: #303136;
                 width: 100%;
                 height: 30%;
                 @include backblur2();
+
                 padding: 10px 0 20px 0;
                 font-size: 0.8vw;
                 text-align: center;
@@ -625,9 +640,6 @@ $MC: #303136;
                         }
                     }
                 }
-
-
-
 
             }
         }
@@ -1188,430 +1200,6 @@ $MC: #303136;
 
 
 
-            }
-        }
-    }
-}
-
-
-
-@media (max-width:520px) {
-    body {
-        height: fit-content;
-        padding-bottom: 5vw;
-
-        .container {
-
-            // background-color: #3b2b2b;
-            .header {
-                p {
-                    font-size: 4vw;
-                    text-align: center;
-                    margin: 0;
-                    border-radius: 20px;
-                }
-            }
-
-            .main {
-                display: block;
-
-                .firstSection {
-                    margin-top: -7vw;
-                    width: 100%;
-                    height: fit-content;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 !important;
-                    box-sizing: border-box;
-
-                    .selectTime {
-                        width: 100%;
-                        height: 20px;
-                        margin: 0 auto;
-                        border-radius: 20px;
-                        @include objcolor();
-                        margin-bottom: 4vw;
-
-                        .selectValuebox {
-                            width: 60%;
-                            height: 10px;
-                            text-align: center;
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: -2.5vw;
-
-                            .yearBox {
-                                display: flex;
-
-                                .selectValue {
-                                    text-align: center;
-                                    width: 100%;
-                                    height: 20px;
-                                    border-radius: 30px;
-                                }
-                            }
-
-                            .mapBox {
-                                .mapSelect {
-                                    text-align: center;
-                                    width: 100%;
-                                    height: 20px;
-                                    border-radius: 30px;
-                                }
-                            }
-
-                        }
-
-
-                    }
-
-                    .realtimeWeatherArea {
-                        width: 47%;
-                        height: 250px;
-                        margin: 0 auto;
-                        border-radius: 20px;
-                        background: linear-gradient(#bdc5cc, #0185f8);
-                        padding: 20px;
-                        box-sizing: border-box;
-
-
-
-                        .realtimeWeather {
-                            height: 100%;
-                            font-size: 4vw;
-
-                            h2 {
-                                @include titleFont;
-                                text-align: center;
-
-                            }
-
-                            ul {
-                                width: 10vw;
-                                height: 100%;
-                                margin: auto;
-                                list-style: none;
-                                margin-top: 2vh;
-
-                                .icon {
-                                    width: 20vw;
-                                    height: 10vh;
-                                    margin: 0 auto;
-                                    margin-left: -4vw;
-                                    background-image: url(./assets/img/sunny.png);
-                                    @include backgoundSet();
-                                }
-
-                                .temperature {
-                                    text-align: center;
-                                    font-size: 8vw;
-                                    font-weight: bold;
-                                    text-shadow: 7px 7px 20px #1C1B20;
-                                    margin-top: -10vw;
-                                    margin-left: -3vw;
-                                }
-
-                                .weather-info {
-                                    width: 300%;
-                                    margin-left: -9.6vw;
-
-                                    .winfoB {
-                                        margin: auto;
-
-                                        p {
-                                            font-size: 0.7vw
-                                        }
-
-                                        .windIcon {
-                                            width: 3vh;
-                                            height: 6vw;
-                                            display: block;
-                                            margin: auto;
-                                            background-image: url(./assets/img/Wind.png);
-                                            @include backgoundSet();
-                                        }
-
-                                        .humidityIcon {
-                                            width: 3vh;
-                                            height: 6vw;
-                                            display: block;
-                                            margin: auto;
-                                            background-image: url(./assets/img/Dew.png);
-                                            @include backgoundSet();
-
-                                        }
-
-                                        .VisibilityIcon {
-                                            width: 3vh;
-                                            height: 6vw;
-                                            display: block;
-                                            margin: auto;
-                                            background-image: url(./assets/img/Rain2.png);
-                                            @include backgoundSet();
-
-                                        }
-                                    }
-
-                                }
-
-                            }
-                        }
-                    }
-
-                    .perceived {
-
-                        width: 47%;
-                        height: 250px;
-                        margin: 0 auto;
-                        border-radius: 20px;
-                        background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
-                        box-sizing: border-box;
-                        padding: 2vw;
-
-                        .thermometerIconbox {
-                            width: 100%;
-                            height: 150px;
-                            position: relative;
-
-                            .thermometerIcon {
-                                margin-top: 14vw;
-                                margin-left: 1vw;
-                                width: 17vw;
-                                height: 10vh;
-                                background-image: url(./assets/img/ThermometerQuarter.png);
-                                @include backgoundSet();
-                            }
-
-                            div {
-                                text-align: center;
-                                @include titleFont;
-                                font-size: 5vw;
-                                font-weight: bold;
-                                position: absolute;
-                                top: 3vw;
-                                left: 9vw;
-
-                                p {
-                                    margin-top: 1vw;
-                                    font-size: 4vw;
-                                    font-weight: bold;
-                                }
-                            }
-
-                        }
-
-                        .suggestion {
-                            text-align: center;
-
-                            .suggestionT {
-                                font-size: 4vw;
-                                font-weight: bold;
-                                margin-top: 2vh;
-                                margin-bottom: 1vh;
-
-                            }
-
-                            .suggestionM {
-                                font-size: 2.5vw;
-                            }
-
-
-                        }
-
-                    }
-                }
-
-                .secondSection {
-                    width: 100%;
-                    height: 63%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    padding: 0;
-
-                    .b1 {
-                        width: 100%;
-                        height: 50%;
-                        margin: 0 auto;
-                        margin-top: -7vw;
-
-                        @include objcolor();
-                        background-color: #1C1B20;
-                        overflow: hidden;
-                        position: relative;
-                        // background: linear-gradient(#bdc5cc, #0185f8);
-                        opacity: 90%;
-
-                        .mapSelect {}
-
-                        .map {
-                            width: 300px;
-                            height: 250px;
-
-                            .koreaMap {
-                                stroke: rgb(159, 255, 171);
-                                fill: #ffffff;
-                            }
-
-                            .koreaMap:hover {
-
-                                fill: #06ab7c;
-                                cursor: pointer;
-                            }
-                        }
-
-                    }
-
-                    .b2 {
-                        width: 100%;
-                        margin: 0 auto;
-                        margin-top: -17vw;
-                        @include objcolor();
-                        height: 35%;
-
-
-                        .chart {
-                            height: 150px !important;
-                        }
-
-
-
-                        .chartInfo {
-                            width: 88vw;
-                            justify-content: space-between;
-                            margin-left: 4vw;
-
-                            .text-center {
-                                margin-top: -0.6vw;
-                                width: 20vw !important;
-                                height: 20vw !important;
-
-                                .text-sm {
-                                    margin-left: -3vw;
-                                    font-size: 2.3vw;
-                                    text-align: center;
-                                }
-                            }
-                        }
-
-
-
-
-
-                    }
-                }
-
-                .thirdSection {
-                    margin-top: 5vw;
-                    width: 100%;
-                    height: fit-content;
-                    // background-color: #3f1d1d;
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-
-                    .c {
-                        width: 100%;
-                        height: 100%;
-                        // background-color: #fff;
-                        display: flex;
-                        justify-content: space-between;
-
-
-                        .c2-1 {
-                            width: 32%;
-                            height: 170px;
-                            box-sizing: border-box;
-                            background-color: black;
-                            @include objcolor();
-
-                            .circleperTitle {
-                                text-align: center;
-                                line-height: 50px;
-                                font-size: 10px;
-                                font-weight: bold;
-                                font-family: "Nanum Gothic", serif;
-
-                            }
-
-                            .circleBox {
-                                width: 100%;
-                                position: relative;
-
-                                .circle {
-                                    display: block;
-                                    width: 28vw;
-                                    height: 28vw;
-                                    margin: auto;
-                                    margin-top: -6vw;
-                                }
-
-                                .circleper {
-                                    position: absolute;
-                                    top: 12.5vw;
-                                    left: 7.4vw;
-                                    font-size: 7vw;
-                                    font-weight: bold;
-                                    text-shadow: 10px 10px 10px #1C1B20;
-                                    font-family: "Nanum Gothic", serif;
-                                }
-                            }
-                        }
-                    }
-
-                    .c1 {
-                        width: 100%;
-                        height: 150px;
-                        @include objcolor();
-                        padding: 30px;
-                        box-sizing: border-box;
-                        position: relative;
-                        margin-top: 5vw;
-
-
-                        .tgtitle {
-                            width: 65%;
-                            line-height: 10vw;
-                            font-size: 3vw;
-                            text-align: center;
-                            font-weight: bold;
-                        }
-
-                        .temperatureGraph {
-                            position: absolute;
-                            top: 10vw;
-                            left: 0;
-                            border-radius: 20px;
-                            margin: auto;
-                            display: block;
-                            width: 90%;
-                            height: 120px;
-                        }
-
-
-
-                    }
-
-                    .c2 {
-                        margin-top: 4vw;
-                        width: 100%;
-                        height: 16vh;
-                        @include objcolor();
-                        margin-top: 5vw;
-                        margin-bottom: 5vw;
-
-                        .tgtitle2 {
-                            font-size: 3vw !important;
-                        }
-
-                        .customtbody {
-                            font-size: 0.8rem;
-                            /* 모바일에서 글자 크기 조정 */
-                        }
-
-
-                    }
-                }
             }
         }
     }
