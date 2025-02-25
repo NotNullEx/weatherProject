@@ -1,6 +1,9 @@
+
+
 CREATE DATABASE IF NOT EXISTS weatherDB;
 
 USE weatherDB;
+ALTER DATABASE weatherDB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS month_temperature_weather (
   id INT(1) AUTO_INCREMENT PRIMARY KEY,
@@ -36,3 +39,12 @@ create table if not exists year_temper_precipi_weather(
   Va_lst_09 float not null,   -- 최저 기온
   Va_lst_10 tinyint not null  -- 최저 기온이 나타난 날
 );
+
+ALTER TABLE month_temperature_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE month_precipitation_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE year_temper_precipi_weather CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+SET NAMES utf8mb4;
+SET character_set_client = utf8mb4;
+SET character_set_connection = utf8mb4;
+SET character_set_results = utf8mb4;
