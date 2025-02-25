@@ -41,7 +41,7 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
             const sky = forecastItems.find((item: any) => item.category === "SKY")?.fcstValue || "-";
             const rain = forecastItems.find((item: any) => item.category === "PTY")?.fcstValue || "0";
             setSkyCode(sky);
-            setRainCode(비);
+            setRainCode(rain);
         } else {
             console.log("예보 API 응답 오류:", fcstData?.response?.header?.resultMsg);
         }
