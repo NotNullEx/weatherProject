@@ -1,45 +1,4 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Nanum Gothic", serif;
-  font-weight: 100;
-  color: #e0dddd;
-}
-
-.tg {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.tg td {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  overflow: hidden;
-  padding: 10px 5px;
-  word-break: normal;
-}
-
-.tg th {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  overflow: hidden;
-  padding: 10px 5px;
-  word-break: normal;
-}
-
-.tg .tg-0lax {
-  text-align: left;
-  vertical-align: top;
-}
-
 @media (max-width: 520px) {
   .body {
     height: -moz-fit-content;
@@ -79,47 +38,54 @@
   }
   .body .container .main .firstSection .selectTime {
     width: 100%;
-    height: 20px;
+    height: 40px;
     margin: 0 auto;
+    margin-top: -0.4vw;
+    padding: 2vw !important;
     border-radius: 10px;
-    background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
+    background: none;
+    box-shadow: 5px 5px 10px #506472;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    opacity: 90%;
+    box-sizing: border-box;
     margin-bottom: 4vw;
   }
   .body .container .main .firstSection .selectTime .selectValuebox {
-    width: 60%;
+    width: 100%;
+    margin: 1.5vw auto;
     text-align: center;
     display: flex;
     justify-content: space-between;
-    margin-top: -2.5vw;
   }
-  .body .container .main .firstSection .selectTime .selectValuebox .yearBox {
-    display: flex;
-  }
-  .body .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
-    text-align: center;
-    width: 100px;
-    height: 20px;
-    border-radius: 10px;
-    color: #1C1B20;
+  .body .container .main .firstSection .selectTime .selectValue,
+  .body .container .main .firstSection .selectTime .mapSelect {
+    width: 20vw;
+    height: 3vw;
+    border-radius: 20px;
     font-size: 2vw;
-  }
-  .body .container .main .firstSection .selectTime .selectValuebox .mapBox {
-    height: 0;
-  }
-  .body .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
-    vertical-align: top;
     text-align: center;
-    width: 100px;
-    height: 20px;
-    color: #1C1B20;
-    font-size: 2vw;
-    border-radius: 10px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000 !important;
+  }
+  .body .container .main .firstSection .selectTime .selectValue:hover,
+  .body .container .main .firstSection .selectTime .mapSelect:hover {
+    border-color: #0648AB;
+    background: #f0f8ff;
+    color: #000;
+  }
+  .body .container .main .firstSection .selectTime .selectValue option,
+  .body .container .main .firstSection .selectTime .mapSelect option {
+    color: #333;
+    font-size: 0.7vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea {
-    width: 47%;
-    height: 250px;
+    width: 48%;
+    height: 280px;
     margin: 0 auto;
     border-radius: 10px;
     background: linear-gradient(#ccc8bd, #0185f8);
@@ -169,7 +135,7 @@
     margin: auto;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
-    font-size: 0.7vw;
+    font-size: 2vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
     width: 3vh;
@@ -202,8 +168,8 @@
     background-size: cover;
   }
   .body .container .main .firstSection .perceived {
-    width: 47%;
-    height: 250px;
+    width: 48%;
+    height: 280px;
     margin: 0 auto;
     border-radius: 10px;
     background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
@@ -247,7 +213,7 @@
   .body .container .main .firstSection .perceived .suggestion .suggestionT {
     font-size: 4vw;
     font-weight: bold;
-    margin-top: 2vh;
+    margin-top: 4vh;
     margin-bottom: 1vh;
   }
   .body .container .main .firstSection .perceived .suggestion .suggestionM {
@@ -266,9 +232,12 @@
     height: 50%;
     margin: 0 auto;
     margin-top: -7vw;
-    background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
+    background: none;
+    box-shadow: 5px 5px 10px #506472;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    opacity: 90%;
     overflow: hidden;
     position: relative;
     opacity: 90%;
@@ -292,9 +261,12 @@
     width: 100%;
     margin: 0 auto;
     margin-top: -17vw;
-    background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
+    background: none;
+    box-shadow: 5px 5px 10px #506472;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    opacity: 90%;
     height: 35%;
   }
   .body .container .main .secondSection .b2 .chart {
@@ -343,9 +315,12 @@
     height: 170px;
     box-sizing: border-box;
     background-color: black;
-    background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
+    background: none;
+    box-shadow: 5px 5px 10px #506472;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    opacity: 90%;
   }
   .body .container .main .thirdSection .c .c2-1 .circleperTitle,
   .body .container .main .thirdSection .c .c2-2 .circleperTitle,
@@ -360,57 +335,110 @@
   .body .container .main .thirdSection .c .c2-2 .allhighestprecipitation,
   .body .container .main .thirdSection .c .c2-3 .allhighestprecipitation {
     z-index: 2px;
-    font-size: 1.5vw;
-    line-height: 9vw;
-    text-align: center;
-  }
-  .body .container .main .thirdSection .c .c2-1 .highestprecipitationDay,
-  .body .container .main .thirdSection .c .c2-2 .highestprecipitationDay,
-  .body .container .main .thirdSection .c .c2-3 .highestprecipitationDay {
     font-size: 4vw;
-    line-height: 6vw;
-    font-weight: bold;
+    line-height: 15vw;
     text-align: center;
   }
-  .body .container .main .thirdSection .c .c2-1 .highestprecipitation,
-  .body .container .main .thirdSection .c .c2-2 .highestprecipitation,
-  .body .container .main .thirdSection .c .c2-3 .highestprecipitation {
-    font-size: 5vw;
-    line-height: 2vw;
+  .body .container .main .thirdSection .c .c2-1 .ml,
+  .body .container .main .thirdSection .c .c2-2 .ml,
+  .body .container .main .thirdSection .c .c2-3 .ml {
+    position: absolute;
+    top: 21vw;
+    left: 10.5vw;
+    font-size: 2vw;
+  }
+  .body .container .main .thirdSection .c .c2-1 .circleperTitle,
+  .body .container .main .thirdSection .c .c2-2 .circleperTitle,
+  .body .container .main .thirdSection .c .c2-3 .circleperTitle {
+    margin-top: 1vw;
     text-align: center;
+    font-size: 2.5vw;
+    font-weight: bold;
+    font-family: "Nanum Gothic", serif;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
+  }
+  .body .container .main .thirdSection .c .c2-1 .daytemer,
+  .body .container .main .thirdSection .c .c2-2 .daytemer,
+  .body .container .main .thirdSection .c .c2-3 .daytemer {
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 2vw;
+  }
+  .body .container .main .thirdSection .c .c2-1 .daytemer .daytemerMax,
+  .body .container .main .thirdSection .c .c2-2 .daytemer .daytemerMax,
+  .body .container .main .thirdSection .c .c2-3 .daytemer .daytemerMax {
+    margin-bottom: 1vw;
+  }
+  .body .container .main .thirdSection .c .c2-1 .daytemer .daytemerMin,
+  .body .container .main .thirdSection .c .c2-2 .daytemer .daytemerMin,
+  .body .container .main .thirdSection .c .c2-3 .daytemer .daytemerMin {
+    margin-bottom: 1vw;
+  }
+  .body .container .main .thirdSection .c .c2-1 .dayprec,
+  .body .container .main .thirdSection .c .c2-2 .dayprec,
+  .body .container .main .thirdSection .c .c2-3 .dayprec {
+    text-align: center;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+  }
+  .body .container .main .thirdSection .c .c2-1 .dayhumidity,
+  .body .container .main .thirdSection .c .c2-2 .dayhumidity,
+  .body .container .main .thirdSection .c .c2-3 .dayhumidity {
+    text-align: center;
+    margin-bottom: 1vw;
+    font-size: 2vw;
   }
   .body .container .main .thirdSection .c .c2-1 .circleBox,
   .body .container .main .thirdSection .c .c2-2 .circleBox,
   .body .container .main .thirdSection .c .c2-3 .circleBox {
     width: 100%;
     position: relative;
+    margin-top: -2vw;
   }
   .body .container .main .thirdSection .c .c2-1 .circleBox .circle,
   .body .container .main .thirdSection .c .c2-2 .circleBox .circle,
   .body .container .main .thirdSection .c .c2-3 .circleBox .circle {
     display: block;
-    width: 28vw;
-    height: 28vw;
+    width: 25vw;
+    height: 25vw;
     margin: auto;
-    margin-top: -6vw;
+    margin-top: -7vw;
+  }
+  .body .container .main .thirdSection .c .c2-1 .circleBox .circle .circleIn,
+  .body .container .main .thirdSection .c .c2-2 .circleBox .circle .circleIn,
+  .body .container .main .thirdSection .c .c2-3 .circleBox .circle .circleIn {
+    stroke: #d0dee9;
+  }
+  .body .container .main .thirdSection .c .c2-1 .circleBox .circle .circleIn2,
+  .body .container .main .thirdSection .c .c2-2 .circleBox .circle .circleIn2,
+  .body .container .main .thirdSection .c .c2-3 .circleBox .circle .circleIn2 {
+    stroke: #00FFFF;
   }
   .body .container .main .thirdSection .c .c2-1 .circleBox .circleper,
   .body .container .main .thirdSection .c .c2-2 .circleBox .circleper,
   .body .container .main .thirdSection .c .c2-3 .circleBox .circleper {
     position: absolute;
-    top: 12.5vw;
-    left: 7.4vw;
-    font-size: 7vw;
+    top: 9vw;
+    left: 8vw;
+    font-size: 6vw;
     font-weight: bold;
     text-shadow: 10px 10px 10px #1C1B20;
     font-family: "Nanum Gothic", serif;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
   }
   .body .container .main .thirdSection .c1 {
     width: 100%;
-    height: 150px;
-    background-color: #303136;
+    height: 180px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
+    background: none;
+    box-shadow: 5px 5px 10px #506472;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    opacity: 90%;
     padding: 30px;
     box-sizing: border-box;
     position: relative;
@@ -442,10 +470,13 @@
   .body .container .main .thirdSection .c2 {
     margin-top: 4vw;
     width: 100%;
-    height: 16vh;
-    background-color: #303136;
+    height: 180px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
+    background: none;
+    box-shadow: 5px 5px 10px #506472;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    opacity: 90%;
     margin-top: 5vw;
     margin-bottom: 5vw;
     text-align: center;
@@ -522,8 +553,9 @@
   }
   .body.dark .container .main .firstSection .selectTime {
     width: 100%;
-    height: 20px;
-    margin: 0 auto;
+    height: 40px;
+    margin: auto;
+    padding: 2vw !important;
     border-radius: 10px;
     background-color: #303136;
     border-radius: 10px;
@@ -531,42 +563,42 @@
     margin-bottom: 4vw;
   }
   .body.dark .container .main .firstSection .selectTime .selectValuebox {
-    width: 60%;
+    width: 100%;
+    margin: 1vw auto;
     text-align: center;
     display: flex;
     justify-content: space-between;
-    margin-top: -2.5vw;
   }
-  .body.dark .container .main .firstSection .selectTime .selectValuebox .yearBox {
-    display: flex;
-  }
-  .body.dark .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
-    text-align: center;
-    width: 100px;
-    height: 20px;
-    border-radius: 10px;
-    color: #1C1B20;
+  .body.dark .container .main .firstSection .selectTime .selectValue,
+  .body.dark .container .main .firstSection .selectTime .mapSelect {
+    width: 20vw;
+    height: 3vw;
+    border-radius: 20px;
     font-size: 2vw;
-  }
-  .body.dark .container .main .firstSection .selectTime .selectValuebox .mapBox {
-    height: 0;
-  }
-  .body.dark .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
-    vertical-align: top;
     text-align: center;
-    width: 100px;
-    height: 20px;
-    color: #1C1B20;
-    font-size: 2vw;
-    border-radius: 10px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000 !important;
+  }
+  .body.dark .container .main .firstSection .selectTime .selectValue:hover,
+  .body.dark .container .main .firstSection .selectTime .mapSelect:hover {
+    border-color: #0648AB;
+    background: #f0f8ff;
+    color: #000;
+  }
+  .body.dark .container .main .firstSection .selectTime .selectValue option,
+  .body.dark .container .main .firstSection .selectTime .mapSelect option {
+    color: #333;
+    font-size: 0.7vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea {
-    width: 47%;
-    height: 250px;
+    width: 48%;
+    height: 280px;
     margin: 0 auto;
     border-radius: 10px;
     background: linear-gradient(#6D4AE3, #6d069d);
-    padding: 20px;
     box-sizing: border-box;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather {
@@ -612,7 +644,7 @@
     margin: auto;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
-    font-size: 0.7vw;
+    font-size: 2vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
     width: 3vh;
@@ -645,8 +677,8 @@
     background-size: cover;
   }
   .body.dark .container .main .firstSection .perceived {
-    width: 47%;
-    height: 250px;
+    width: 48%;
+    height: 280px;
     margin: 0 auto;
     border-radius: 10px;
     box-sizing: border-box;
@@ -689,7 +721,7 @@
   .body.dark .container .main .firstSection .perceived .suggestion .suggestionT {
     font-size: 4vw;
     font-weight: bold;
-    margin-top: 2vh;
+    margin-top: 4vh;
     margin-bottom: 1vh;
   }
   .body.dark .container .main .firstSection .perceived .suggestion .suggestionM {
@@ -802,54 +834,64 @@
   .body.dark .container .main .thirdSection .c .c2-2 .allhighestprecipitation,
   .body.dark .container .main .thirdSection .c .c2-3 .allhighestprecipitation {
     z-index: 2px;
-    font-size: 1.5vw;
+    font-size: 3vw;
     line-height: 9vw;
     text-align: center;
   }
-  .body.dark .container .main .thirdSection .c .c2-1 .highestprecipitationDay,
-  .body.dark .container .main .thirdSection .c .c2-2 .highestprecipitationDay,
-  .body.dark .container .main .thirdSection .c .c2-3 .highestprecipitationDay {
-    font-size: 4vw;
-    line-height: 6vw;
-    font-weight: bold;
-    text-align: center;
-  }
-  .body.dark .container .main .thirdSection .c .c2-1 .highestprecipitation,
-  .body.dark .container .main .thirdSection .c .c2-2 .highestprecipitation,
-  .body.dark .container .main .thirdSection .c .c2-3 .highestprecipitation {
-    font-size: 5vw;
-    line-height: 2vw;
-    text-align: center;
-  }
-  .body.dark .container .main .thirdSection .c .c2-1 .circleBox,
-  .body.dark .container .main .thirdSection .c .c2-2 .circleBox,
-  .body.dark .container .main .thirdSection .c .c2-3 .circleBox {
-    width: 100%;
-    position: relative;
-  }
-  .body.dark .container .main .thirdSection .c .c2-1 .circleBox .circle,
-  .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circle,
-  .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circle {
-    display: block;
-    width: 28vw;
-    height: 28vw;
-    margin: auto;
-    margin-top: -6vw;
-  }
-  .body.dark .container .main .thirdSection .c .c2-1 .circleBox .circleper,
-  .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circleper,
-  .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circleper {
+  .body.dark .container .main .thirdSection .c .c2-1 .ml,
+  .body.dark .container .main .thirdSection .c .c2-2 .ml,
+  .body.dark .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
-    top: 12.5vw;
-    left: 7.4vw;
-    font-size: 7vw;
+    top: 21vw;
+    left: 10.5vw;
+    font-size: 2vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .circleperTitle,
+  .body.dark .container .main .thirdSection .c .c2-2 .circleperTitle,
+  .body.dark .container .main .thirdSection .c .c2-3 .circleperTitle {
+    margin-top: 1vw;
+    text-align: center;
+    font-size: 2.5vw;
     font-weight: bold;
-    text-shadow: 10px 10px 10px #1C1B20;
     font-family: "Nanum Gothic", serif;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .daytemer,
+  .body.dark .container .main .thirdSection .c .c2-2 .daytemer,
+  .body.dark .container .main .thirdSection .c .c2-3 .daytemer {
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 2vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .daytemer .daytemerMax,
+  .body.dark .container .main .thirdSection .c .c2-2 .daytemer .daytemerMax,
+  .body.dark .container .main .thirdSection .c .c2-3 .daytemer .daytemerMax {
+    margin-bottom: 1vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .daytemer .daytemerMin,
+  .body.dark .container .main .thirdSection .c .c2-2 .daytemer .daytemerMin,
+  .body.dark .container .main .thirdSection .c .c2-3 .daytemer .daytemerMin {
+    margin-bottom: 1vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .dayprec,
+  .body.dark .container .main .thirdSection .c .c2-2 .dayprec,
+  .body.dark .container .main .thirdSection .c .c2-3 .dayprec {
+    text-align: center;
+    margin-bottom: 1vw;
+    font-size: 2vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .dayhumidity,
+  .body.dark .container .main .thirdSection .c .c2-2 .dayhumidity,
+  .body.dark .container .main .thirdSection .c .c2-3 .dayhumidity {
+    text-align: center;
+    margin-bottom: 1vw;
+    font-size: 2vw;
   }
   .body.dark .container .main .thirdSection .c1 {
     width: 100%;
-    height: 150px;
+    height: 180px;
     background-color: #303136;
     border-radius: 10px;
     box-shadow: 5px 5px 10px #535353;
@@ -884,7 +926,7 @@
   .body.dark .container .main .thirdSection .c2 {
     margin-top: 4vw;
     width: 100%;
-    height: 16vh;
+    height: 180px;
     background-color: #303136;
     border-radius: 10px;
     box-shadow: 5px 5px 10px #535353;

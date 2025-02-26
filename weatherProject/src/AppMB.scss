@@ -1,47 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Nanum Gothic", serif;
-    font-weight: 100;
-    color: #e0dddd;
-
-}
-
-.tg {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.tg td {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg th {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg .tg-0lax {
-    text-align: left;
-    vertical-align: top
-}
-
-
-
 @mixin titleFont() {
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
@@ -77,8 +33,6 @@ $MC: #e0dfdf;
         height: fit-content;
         padding-bottom: 5vw;
         background-repeat: repeat-y;
-
-
 
         .container {
 
@@ -118,57 +72,64 @@ $MC: #e0dfdf;
 
                     .selectTime {
                         width: 100%;
-                        height: 20px;
+                        height: 40px;
                         margin: 0 auto;
+                        margin-top: -0.4vw;
+                        padding: 2vw !important;
                         border-radius: 10px;
-                        @include objcolor();
+                        @include backblur2();
+                        box-sizing: border-box;
 
                         margin-bottom: 4vw;
 
                         .selectValuebox {
-                            width: 60%;
+                            width: 100%;
+                            margin: 1.5vw auto;
                             text-align: center;
                             display: flex;
                             justify-content: space-between;
-                            margin-top: -2.5vw;
+
+                        }
 
 
-                            .yearBox {
-                                display: flex;
 
-                                .selectValue {
-                                    text-align: center;
-                                    width: 100px;
-                                    height: 20px;
-                                    border-radius: 10px;
-                                    color: #1C1B20;
-                                    font-size: 2vw;
+                        .selectValue,
+                        .mapSelect {
+                            width: 20vw;
+                            height: 3vw;
+                            border-radius: 20px;
+                            font-size: 2vw;
+                            text-align: center;
+                            border: 1px solid #aaa;
+                            background: #fff;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            color: #000 !important;
 
-                                }
-                            }
+                        }
 
-                            .mapBox {
-                                height: 0;
 
-                                .mapSelect {
-                                    vertical-align: top;
-                                    text-align: center;
-                                    width: 100px;
-                                    height: 20px;
-                                    color: #1C1B20;
-                                    font-size: 2vw;
-                                    border-radius: 10px;
-                                }
-                            }
+                        .selectValue:hover,
+                        .mapSelect:hover {
+                            border-color: #0648AB;
+                            background: #f0f8ff;
+                            color: #000;
 
+                        }
+
+                        .selectValue option,
+                        .mapSelect option {
+                            color: #333;
+
+                            font-size: 0.7vw;
                         }
 
 
                     }
 
                     .realtimeWeatherArea {
-                        width: 47%;
-                        height: 250px;
+                        width: 48%;
+                        height: 280px;
                         margin: 0 auto;
                         border-radius: 10px;
                         background: linear-gradient(#ccc8bd, #0185f8);
@@ -220,7 +181,7 @@ $MC: #e0dfdf;
                                         margin: auto;
 
                                         p {
-                                            font-size: 0.7vw
+                                            font-size: 2vw
                                         }
 
                                         .windIcon {
@@ -261,8 +222,8 @@ $MC: #e0dfdf;
 
                     .perceived {
 
-                        width: 47%;
-                        height: 250px;
+                        width: 48%;
+                        height: 280px;
                         margin: 0 auto;
                         border-radius: 10px;
                         background: linear-gradient(#ccc8bd, #ffab04, #ff8604);
@@ -307,7 +268,7 @@ $MC: #e0dfdf;
                             .suggestionT {
                                 font-size: 4vw;
                                 font-weight: bold;
-                                margin-top: 2vh;
+                                margin-top: 4vh;
                                 margin-bottom: 1vh;
 
                             }
@@ -335,8 +296,7 @@ $MC: #e0dfdf;
                         height: 50%;
                         margin: 0 auto;
                         margin-top: -7vw;
-                        @include objcolor();
-
+                        @include backblur2();
                         overflow: hidden;
                         position: relative;
                         // background: linear-gradient(#bdc5cc, #0185f8);
@@ -369,7 +329,7 @@ $MC: #e0dfdf;
                         width: 100%;
                         margin: 0 auto;
                         margin-top: -17vw;
-                        @include objcolor();
+                        @include backblur2();
 
                         height: 35%;
 
@@ -439,7 +399,7 @@ $MC: #e0dfdf;
                             height: 170px;
                             box-sizing: border-box;
                             background-color: black;
-                            @include objcolor();
+                            @include backblur2();
 
 
                             .circleperTitle {
@@ -453,44 +413,92 @@ $MC: #e0dfdf;
 
                             .allhighestprecipitation {
                                 z-index: 2px;
-                                font-size: 1.5vw;
-                                line-height: 9vw;
-                                text-align: center;
-                            }
-
-                            .highestprecipitationDay {
                                 font-size: 4vw;
-                                line-height: 6vw;
-                                font-weight: bold;
+                                line-height: 15vw;
                                 text-align: center;
                             }
 
-                            .highestprecipitation {
-                                font-size: 5vw;
-                                line-height: 2vw;
+                            .ml {
+                                position: absolute;
+                                top: 21vw;
+                                left: 10.5vw;
+                                font-size: 2vw;
+                            }
+
+
+                            .circleperTitle {
+                                margin-top: 1vw;
                                 text-align: center;
+                                font-size: 2.5vw;
+                                font-weight: bold;
+                                font-family: "Nanum Gothic", serif;
+                                @include titleFont();
+                            }
+
+                            .daytemer {
+                                text-align: center;
+                                font-size: 2vw;
+                                margin-top: 2vw;
+
+                                .daytemerMax {
+                                    margin-bottom: 1vw;
+                                }
+
+
+                                .daytemerMin {
+                                    margin-bottom: 1vw;
+                                }
+
+                            }
+
+                            .dayprec {
+                                text-align: center;
+                                margin-bottom: 1vw;
+                                font-size: 2vw;
+
+                            }
+
+                            .dayhumidity {
+                                text-align: center;
+                                margin-bottom: 1vw;
+                                font-size: 2vw;
+
                             }
 
                             .circleBox {
                                 width: 100%;
                                 position: relative;
+                                margin-top: -2vw;
+
 
                                 .circle {
                                     display: block;
-                                    width: 28vw;
-                                    height: 28vw;
+                                    width: 25vw;
+                                    height: 25vw;
                                     margin: auto;
-                                    margin-top: -6vw;
+                                    margin-top: -7vw;
+
+                                    .circleIn {
+                                        stroke: #d0dee9;
+
+                                    }
+
+
+                                    .circleIn2 {
+                                        stroke: #00FFFF;
+                                    }
+
                                 }
 
                                 .circleper {
                                     position: absolute;
-                                    top: 12.5vw;
-                                    left: 7.4vw;
-                                    font-size: 7vw;
+                                    top: 9vw;
+                                    left: 8vw;
+                                    font-size: 6vw;
                                     font-weight: bold;
                                     text-shadow: 10px 10px 10px #1C1B20;
                                     font-family: "Nanum Gothic", serif;
+                                    @include titleFont();
                                 }
                             }
                         }
@@ -498,8 +506,8 @@ $MC: #e0dfdf;
 
                     .c1 {
                         width: 100%;
-                        height: 150px;
-                        @include objcolor();
+                        height: 180px;
+                        @include backblur2();
 
                         padding: 30px;
                         box-sizing: border-box;
@@ -539,8 +547,8 @@ $MC: #e0dfdf;
                     .c2 {
                         margin-top: 4vw;
                         width: 100%;
-                        height: 16vh;
-                        @include objcolor();
+                        height: 180px;
+                        @include backblur2();
 
                         margin-top: 5vw;
                         margin-bottom: 5vw;
@@ -651,61 +659,63 @@ $MC: #e0dfdf;
 
                     .selectTime {
                         width: 100%;
-                        height: 20px;
-                        margin: 0 auto;
+                        height: 40px;
+                        margin: auto;
+                        padding: 2vw !important;
                         border-radius: 10px;
                         @include objcolor();
-
                         margin-bottom: 4vw;
 
                         .selectValuebox {
-                            width: 60%;
+                            width: 100%;
+                            margin: 1vw auto;
                             text-align: center;
                             display: flex;
                             justify-content: space-between;
-                            margin-top: -2.5vw;
-
-                            .yearBox {
-                                display: flex;
-
-                                .selectValue {
-                                    text-align: center;
-                                    width: 100px;
-                                    height: 20px;
-                                    border-radius: 10px;
-                                    color: #1C1B20;
-                                    font-size: 2vw;
-
-                                }
-                            }
-
-                            .mapBox {
-                                height: 0;
-
-                                .mapSelect {
-                                    vertical-align: top;
-                                    text-align: center;
-                                    width: 100px;
-                                    height: 20px;
-                                    color: #1C1B20;
-                                    font-size: 2vw;
-                                    border-radius: 10px;
-                                }
-                            }
 
                         }
+
+
+                        .selectValue,
+                        .mapSelect {
+                            width: 20vw;
+                            height: 3vw;
+                            border-radius: 20px;
+                            font-size: 2vw;
+                            text-align: center;
+                            border: 1px solid #aaa;
+                            background: #fff;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            color: #000 !important;
+
+                        }
+
+
+                        .selectValue:hover,
+                        .mapSelect:hover {
+                            border-color: #0648AB;
+                            background: #f0f8ff;
+                            color: #000;
+
+                        }
+
+                        .selectValue option,
+                        .mapSelect option {
+                            color: #333;
+                            font-size: 0.7vw;
+                        }
+
 
 
                     }
 
                     .realtimeWeatherArea {
-                        width: 47%;
-                        height: 250px;
+                        width: 48%;
+                        height: 280px;
                         margin: 0 auto;
                         border-radius: 10px;
                         background: linear-gradient(#6D4AE3, #6d069d);
-
-                        padding: 20px;
                         box-sizing: border-box;
 
 
@@ -753,7 +763,7 @@ $MC: #e0dfdf;
                                         margin: auto;
 
                                         p {
-                                            font-size: 0.7vw
+                                            font-size: 2vw
                                         }
 
                                         .windIcon {
@@ -794,8 +804,9 @@ $MC: #e0dfdf;
 
                     .perceived {
 
-                        width: 47%;
-                        height: 250px;
+                        width: 48%;
+                        height: 280px;
+
                         margin: 0 auto;
                         border-radius: 10px;
                         box-sizing: border-box;
@@ -839,7 +850,7 @@ $MC: #e0dfdf;
                             .suggestionT {
                                 font-size: 4vw;
                                 font-weight: bold;
-                                margin-top: 2vh;
+                                margin-top: 4vh;
                                 margin-bottom: 1vh;
 
                             }
@@ -986,52 +997,63 @@ $MC: #e0dfdf;
 
                             .allhighestprecipitation {
                                 z-index: 2px;
-                                font-size: 1.5vw;
+                                font-size: 3vw;
                                 line-height: 9vw;
                                 text-align: center;
                             }
 
-                            .highestprecipitationDay {
-                                font-size: 4vw;
-                                line-height: 6vw;
+                            .ml {
+                                position: absolute;
+                                top: 21vw;
+                                left: 10.5vw;
+                                font-size: 2vw;
+                            }
+
+
+                            .circleperTitle {
+                                margin-top: 1vw;
+                                text-align: center;
+                                font-size: 2.5vw;
                                 font-weight: bold;
-                                text-align: center;
+                                font-family: "Nanum Gothic", serif;
+                                @include titleFont();
                             }
 
-                            .highestprecipitation {
-                                font-size: 5vw;
-                                line-height: 2vw;
+                            .daytemer {
                                 text-align: center;
+                                font-size: 2vw;
+                                margin-top: 2vw;
+
+                                .daytemerMax {
+                                    margin-bottom: 1vw;
+                                }
+
+
+                                .daytemerMin {
+                                    margin-bottom: 1vw;
+                                }
+
                             }
 
-                            .circleBox {
-                                width: 100%;
-                                position: relative;
+                            .dayprec {
+                                text-align: center;
+                                margin-bottom: 1vw;
+                                font-size: 2vw;
 
-                                .circle {
-                                    display: block;
-                                    width: 28vw;
-                                    height: 28vw;
-                                    margin: auto;
-                                    margin-top: -6vw;
-                                }
+                            }
 
-                                .circleper {
-                                    position: absolute;
-                                    top: 12.5vw;
-                                    left: 7.4vw;
-                                    font-size: 7vw;
-                                    font-weight: bold;
-                                    text-shadow: 10px 10px 10px #1C1B20;
-                                    font-family: "Nanum Gothic", serif;
-                                }
+                            .dayhumidity {
+                                text-align: center;
+                                margin-bottom: 1vw;
+                                font-size: 2vw;
+
                             }
                         }
                     }
 
                     .c1 {
                         width: 100%;
-                        height: 150px;
+                        height: 180px;
                         @include objcolor();
                         padding: 30px;
                         box-sizing: border-box;
@@ -1071,7 +1093,7 @@ $MC: #e0dfdf;
                     .c2 {
                         margin-top: 4vw;
                         width: 100%;
-                        height: 16vh;
+                        height: 180px;
                         @include objcolor();
 
                         margin-top: 5vw;

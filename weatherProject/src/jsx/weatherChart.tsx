@@ -77,7 +77,7 @@ const WeatherChart: React.FC<WeatherForecastChartProps> = ({ selectedIndex }) =>
                         }
                     }
 
-                    // ✅ 데이터 저장
+                    //  데이터 저장
                     tempData.push({
                         time: `${timePoint.getHours()}시`,
                         temperature: temp ?? 0,

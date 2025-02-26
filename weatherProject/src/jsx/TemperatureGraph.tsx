@@ -1,4 +1,5 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { regionCoords } from "./regionCoords";
 import { useEffect, useState } from 'react';
 
 type WeatherData = {
@@ -10,55 +11,78 @@ type WeatherData = {
     tamax: number;
     tamin: number;
     avghm: number;
-  };
+};
 
-const data = [
-    { name: '1월', 최고: 5, 평균: 2, 최저: -2 },
-    { name: '2월', 최고: 8, 평균: 3, 최저: 0 },
-    { name: '3월', 최고: 12, 평균: 8, 최저: 4 },
-    { name: '4월', 최고: 16, 평균: 12, 최저: 8 },
-    { name: '5월', 최고: 22, 평균: 18, 최저: 14 },
-    { name: '6월', 최고: 26, 평균: 22, 최저: 18 },
-    { name: '7월', 최고: 30, 평균: 25, 최저: 21 },
-    { name: '8월', 최고: 31, 평균: 26, 최저: 22 },
-    { name: '9월', 최고: 27, 평균: 22, 최저: 18 },
-    { name: '10월', 최고: 20, 평균: 14, 최저: 10 },
-    { name: '11월', 최고: 13, 평균: 8, 최저: 3 },
-    { name: '12월', 최고: 6, 평균: 2, 최저: -1 }
-
-];
 interface CallApiProps {
-    selectedYear: string; // 연도 props 추가
+    selectedYear: string;
+    selectedIndex: number;
 }
-const TemperatureGraph: React.FC<CallApiProps> = ({selectedYear}) => {
-    const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
-  
+
+const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex }) => {
+    const [chartData, setChartData] = useState<{ name: string; 최고: number; 평균: number; 최저: number }[]>([]);
+    const [cityName, setCityName] = useState<string>("");
+   
+
     useEffect(() => {
-      fetch(`http://localhost:5000/api/weather?year=${selectedYear}`)
-        .then((res) => res.json())
-        .then((data) => setWeatherData(data))
-        .catch((err) => console.error('❌ 데이터 가져오기 실패:', err));
-    }, [selectedYear]);
-    console.log(weatherData);
-    console.log(selectedYear);
+        const region = regionCoords[selectedIndex];
+
+        const regionMapping: { [key: string]: string } = {
+            "경기": "수원",
+            "강원": "강릉",
+            "전남": "여수",
+            "전북": "전주",
+            "충남": "천안",
+            "충북": "청주",
+            "경남": "창원",
+            "경북": "포항"
+        };
+
+        const mappedCityName = regionMapping[region.name] || region.name;
+        setCityName(mappedCityName);
+
+        fetch(`http://localhost:5000/api/temperature?year=${selectedYear}`)
+            .then((res) => res.json())
+            .then((data) => {
+                const months = [
+                    "1월", "2월", "3월", "4월", "5월", "6월",
+                    "7월", "8월", "9월", "10월", "11월", "12월"
+                ];
+
+                const cityData = data.filter((item: WeatherData) => item.city === mappedCityName);
+
+                const processedData = months.map((month, index) => {
+                    const monthData = cityData.find((item: any) => item.month === index + 1);
+
+                    return {
+                        name: month,
+                        최고: monthData?.tamax ?? 0,
+                        평균: monthData?.taavg ?? 0,
+                        최저: monthData?.tamin ?? 0,
+                    };
+                });
+
+                setChartData(processedData);
+            })
+            .catch((err) => console.error("❌ 데이터 가져오기 실패:", err));
+    }, [selectedYear, selectedIndex]);
+
     return (
         <div className="temperatureGraph">
+            <h2 className="tgtitle">{cityName} {selectedYear} 기온 그래프</h2>
             <ResponsiveContainer width="110%" height="92%">
-                <LineChart
-                    data={data}
-                    margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
-                >
+                <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" fontSize="12px" />
-                    <YAxis tickCount={12} domain={[-15, 3]} />
+                    <YAxis tickCount={12} domain={[-15, 40]} />
                     <Tooltip />
-                    {/* <Legend /> */}
-                    <Line type="monotone" dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} />
-                    <Line type="monotone" dataKey="평균" stroke="#007BFF" />
-                    <Line type="monotone" dataKey="최저" stroke="#00FF00" />
+                    <Legend />
+
+                    <Line type="monotone" className='tendata' dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} name="최고 기온"/>
+                    <Line type="monotone" dataKey="평균" stroke="#007BFF" name="평균 기온" />
+                    <Line type="monotone" dataKey="최저" stroke="#00FF00" name="최저 기온" />
                 </LineChart>
             </ResponsiveContainer>
-        </div >
+        </div>
     );
 };
 

@@ -3,9 +3,9 @@
     padding: 0;
     font-family: "Nanum Gothic", serif;
     font-weight: 100;
-    color: #e0dfdf;
-
+    color: #fff;
 }
+
 
 .tg {
     border-collapse: collapse;
@@ -134,35 +134,50 @@ $MC: #e0dfdf;
                     box-sizing: border-box;
                     padding: 20px;
 
-                    .selectValuebox {
+                       .selectValuebox {
                         width: 10vw;
-
-                        text-align: center;
                         margin: auto;
+                        text-align: center;
+                    }
 
-                        .yearBox {
-                            display: flex;
+                    .sb {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 0.5vw;
+                        margin-bottom: 1vw;
 
-                            .selectValue {
-                                text-align: center;
-                                width: 100%;
-                                height: 1.2vw;
-                                border-radius: 30px;
-                                margin-bottom: 1vw;
-                                font-size: 1vw;
-                            }
-                        }
+                    }
 
-                        .mapBox {
-                            .mapSelect {
-                                text-align: center;
-                                width: 10vw;
-                                height: 1.2vw;
-                                border-radius: 30px;
-                                font-size: 1vw;
-                            }
-                        }
 
+                    .selectValue,
+                    .mapSelect {
+                        width: 5vw;
+                        height: 1.5vw;
+                        border-radius: 20px;
+                        font-size: 0.7vw;
+                        text-align: center;
+                        border: 1px solid #aaa;
+                        background: #fff;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        color: #000 !important;
+
+                    }
+
+
+                    .selectValue:hover,
+                    .mapSelect:hover {
+                        border-color: #0648AB;
+                        background: #f0f8ff;
+                        color: #000;
+
+                    }
+
+                    .selectValue option,
+                    .mapSelect option {
+                        color: #333;
+
+                        font-size: 0.7vw;
                     }
 
 
@@ -182,10 +197,11 @@ $MC: #e0dfdf;
 
                 .realtimeWeather {
                     height: 100%;
-                    font-size: 1.4vw;
+                    font-size: 1.3vw;
 
                     h2 {
                         @include titleFont;
+                        font-weight: normal;
                         text-align: center;
 
                         p {
@@ -468,19 +484,14 @@ $MC: #e0dfdf;
                         text-align: center;
                     }
 
-                    .highestprecipitationDay {
-                        font-size: 2vw;
-                        line-height: 6vw;
-                        font-weight: bold;
-                        text-align: center;
+                    .ml {
+                        position: absolute;
+                        top: 8.5vw;
+                        left: 4.4vw;
+                        font-size: 1vw;
                     }
-
-                    .highestprecipitation {
-                        font-size: 1.5vw;
-                        line-height: 2vw;
-                        text-align: center;
-                    }
-
+    
+    
                     .circleperTitle {
                         margin-top: 1vw;
                         text-align: center;
@@ -488,38 +499,66 @@ $MC: #e0dfdf;
                         font-weight: bold;
                         font-family: "Nanum Gothic", serif;
                         @include titleFont();
-
-
                     }
-
+    
+                    .daytemer {
+                        text-align: center;
+                        font-size: 0.8vw;
+                        margin-top: 2vw;
+    
+                        .daytemerMax {
+                            margin-bottom: 0.5vw;
+                        }
+    
+    
+                        .daytemerMin {
+                            margin-bottom: 0.5vw;
+                        }
+    
+                    }
+    
+                    .dayprec {
+                        text-align: center;
+                        margin-bottom: 0.5vw;
+                        font-size: 0.8vw;
+    
+                    }
+    
+                    .dayhumidity {
+                        text-align: center;
+                        margin-bottom: 0.5vw;
+                        font-size: 0.8vw;
+    
+                    }
+    
                     .circleBox {
                         width: 100%;
                         position: relative;
                         margin-top: -2vw;
-
-
+    
+    
                         .circle {
                             display: block;
                             width: 12vw;
                             height: 12vw;
                             margin: auto;
-
+    
                             .circleIn {
                                 stroke: #d0dee9;
-
+    
                             }
-
-
+    
+    
                             .circleIn2 {
                                 stroke: #00FFFF;
                             }
-
+    
                         }
-
+    
                         .circleper {
                             position: absolute;
-                            top: 6vw;
-                            left: 4.3vw;
+                            top: 5.3vw;
+                            left: 5vw;
                             font-size: 2vw;
                             font-weight: bold;
                             text-shadow: 10px 10px 10px #1C1B20;
@@ -527,6 +566,7 @@ $MC: #e0dfdf;
                             @include titleFont();
                         }
                     }
+                    
                 }
             }
 
@@ -548,8 +588,8 @@ $MC: #e0dfdf;
                 .tgtitle {
                     font-size: 1vw;
                     position: absolute;
-                    top: 0.9vw;
-                    left: 17.3vw;
+                    top: -1.7vw;
+                    left: 15.6vw;
                     font-weight: bold;
                     @include titleFont();
                 }
@@ -601,7 +641,7 @@ $MC: #e0dfdf;
 
                 .table {
                     width: 90%;
-                    height: 80%;
+                    height: 100%;
                     padding: 0.5vw;
                     margin: auto;
                     border: 1px solid #fff;
@@ -710,35 +750,50 @@ $MC: #e0dfdf;
 
                     .selectValuebox {
                         width: 10vw;
-
-                        text-align: center;
                         margin: auto;
+                        text-align: center;
+                    }
 
-                        .yearBox {
-                            display: flex;
-
-                            .selectValue {
-                                text-align: center;
-                                width: 100%;
-                                height: 1.2vw;
-                                border-radius: 30px;
-                                margin-bottom: 1vw;
-                                color: #1C1B20;
-
-                            }
-                        }
-
-                        .mapBox {
-                            .mapSelect {
-                                text-align: center;
-                                width: 10vw;
-                                height: 1.2vw;
-                                color: #1C1B20;
-                                border-radius: 30px;
-                            }
-                        }
+                    .sb {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 0.5vw;
+                        margin-bottom: 1vw;
 
                     }
+
+
+                    .selectValue,
+                    .mapSelect {
+                        width: 5vw;
+                        height: 1.5vw;
+                        border-radius: 20px;
+                        font-size: 0.7vw;
+                        text-align: center;
+                        border: 1px solid #aaa;
+                        background: #fff;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        color: #000 !important;
+
+                    }
+
+
+                    .selectValue:hover,
+                    .mapSelect:hover {
+                        border-color: #0648AB;
+                        background: #f0f8ff;
+                        color: #000;
+
+                    }
+
+                    .selectValue option,
+                    .mapSelect option {
+                        color: #333;
+
+                        font-size: 0.7vw;
+                    }
+
 
 
                 }
@@ -763,6 +818,7 @@ $MC: #e0dfdf;
 
                     h2 {
                         @include titleFont;
+                        font-weight: normal;
                         text-align: center;
 
                         p {
@@ -1034,19 +1090,6 @@ $MC: #e0dfdf;
 
                     }
 
-                    .highestprecipitationDay {
-                        font-size: 2vw;
-                        line-height: 6vw;
-                        font-weight: bold;
-                        text-align: center;
-                    }
-
-                    .highestprecipitation {
-                        font-size: 1.5vw;
-                        line-height: 2vw;
-                        text-align: center;
-                    }
-
                     .circleperTitle {
                         margin-top: 1vw;
                         text-align: center;
@@ -1055,7 +1098,35 @@ $MC: #e0dfdf;
                         font-family: "Nanum Gothic", serif;
                         @include titleFont;
 
+                    }
 
+                    .daytemer {
+                        text-align: center;
+                        font-size: 0.8vw;
+                        margin-top: 2vw;
+
+                        .daytemerMax {
+                            margin-bottom: 0.5vw;
+                        }
+
+
+                        .daytemerMin {
+                            margin-bottom: 0.5vw;
+                        }
+
+                    }
+
+                    .dayprec {
+                        text-align: center;
+                        margin-bottom: 0.5vw;
+                        font-size: 0.8vw;
+
+                    }
+
+                    .dayhumidity {
+                        text-align: center;
+                        margin-bottom: 0.5vw;
+                        font-size: 0.8vw;
 
                     }
 
@@ -1085,13 +1156,14 @@ $MC: #e0dfdf;
 
                         .circleper {
                             position: absolute;
-                            top: 6vw;
-                            left: 4.3vw;
+                            top: 5.3vw;
+                            left: 5vw;
                             font-size: 2vw;
                             font-weight: bold;
                             text-shadow: 10px 10px 10px #1C1B20;
                             font-family: "Nanum Gothic", serif;
                         }
+                    
                     }
                 }
             }
@@ -1112,14 +1184,16 @@ $MC: #e0dfdf;
                 .tgtitle {
                     font-size: 1vw;
                     position: absolute;
-                    top: 0.9vw;
-                    left: 17.3vw;
+                    top: -1.7vw;
+                    left: 15.6vw;
                     font-weight: bold;
                     @include titleFont;
 
                 }
 
-
+                recharts-legend-wrapper{
+                    left: 15px;
+                }
 
                 .temperatureGraph {
                     position: absolute;
@@ -1140,7 +1214,7 @@ $MC: #e0dfdf;
                 width: 100%;
                 height: 30%;
                 @include objcolor();
-                padding: 10px 0 20px 0;
+                padding: 10px 0 10px 0;
                 font-size: 0.8vw;
                 text-align: center;
                 box-sizing: border-box;
@@ -1163,7 +1237,7 @@ $MC: #e0dfdf;
 
                 .table {
                     width: 90%;
-                    height: 80%;
+                    height: 100%;
                     padding: 0.5vw;
                     margin: auto;
                     border: 1px solid #fff;

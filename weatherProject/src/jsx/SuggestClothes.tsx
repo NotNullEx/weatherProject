@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { regionCoords } from "./regionCoords"; // 지역 좌표 데이터
 
 const API_KEY = "b38c1aa9b51d2705b80ad742bf49fba8"; // OpenWeatherMap API 키
-const CITY = "Seoul"; // 기본 도시
 const LANG = "kr"; // 한국어 설정
-const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&lang=${LANG}&units=metric`;
 
 interface WeatherData {
     main: {
@@ -24,18 +23,49 @@ const suggestClothes = (feelsLike: number): string[] => {
     return ["민소매", "반팔", "반바지", "원피스"];
 };
 
-// 사용 예제
-console.log(suggestClothes(15)); // ["야상", "니트", "기모 바지", "레깅스"]
+interface SuggestWeatherProps {
+    selectedIndex: number;
+}
 
-const SuggestWeather: React.FC = () => {
+const SuggestWeather: React.FC<SuggestWeatherProps> = ({ selectedIndex }) => {
     const [weather, setWeather] = useState<WeatherData | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [cityName, setCityName] = useState<string>("");
 
     useEffect(() => {
+        if (selectedIndex < 0 || selectedIndex >= regionCoords.length) return;
+
+        const region = regionCoords[selectedIndex];
+        const regionMapping: { [key: string]: string } = {
+            "서울": "Seoul",
+            "부산": "Busan",
+            "대구": "Daegu",
+            "인천": "Incheon",
+            "광주": "Gwangju",
+            "대전": "Daejeon",
+            "울산": "Ulsan",
+            "경기": "Suwon",  // 경기 지역의 대표 도시 (수원)
+            "강원": "Gangneung", // 강릉 (강원도 내 대표적인 도시)
+            "충북": "Cheongju", // 충청북도 대표 도시
+            "충남": "Cheonan", // 충청남도 대표 도시
+            "경북": "Pohang", // 경상북도 대표 도시
+            "경남": "Changwon", // 경상남도 대표 도시
+            "전북": "Jeonju", // 전라북도 대표 도시
+            "전남": "Yeosu", // 전라남도 대표 도시
+            "제주": "Jeju"
+        };
+        const mappedCityName = regionMapping[region.name] || region.name;
+        setCityName(mappedCityName);
+
         const fetchWeather = async () => {
             try {
                 setLoading(true);
+                setError(null);
+                
+                // OpenWeatherMap에서는 지역명(q)을 사용하여 요청
+                const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${mappedCityName}&appid=${API_KEY}&lang=${LANG}&units=metric`;
+
                 const response = await fetch(API_URL);
                 if (!response.ok) {
                     throw new Error("날씨 데이터를 불러오는 데 실패했습니다.");
@@ -50,7 +80,7 @@ const SuggestWeather: React.FC = () => {
         };
 
         fetchWeather();
-    }, []);
+    }, [selectedIndex]);
 
     if (loading) return <p>날씨 정보를 불러오는 중...</p>;
     if (error) return <p>오류 발생: {error}</p>;
@@ -58,11 +88,18 @@ const SuggestWeather: React.FC = () => {
     return (
         <div>
             <div className="thermometerIconbox">
-                <div className="thermometerIcon"></div> <div>체감 온도 <p>{weather?.main.feels_like} °C</p></div>
+                <div className="thermometerIcon"></div>
+                <div>
+                    체감 온도 <p>{weather?.main.feels_like} °C</p>
+                </div>
             </div>
             <div className="suggestion">
-                <div className="suggestionT">추천 의상</div><div className="suggestionM"> {suggestClothes(weather?.main.feels_like || 0).join(", ")}</div></div>
-        </div >
+                <div className="suggestionT">추천 의상</div>
+                <div className="suggestionM">
+                    {suggestClothes(weather?.main.feels_like || 0).join(", ")}
+                </div>
+            </div>
+        </div>
     );
 };
 

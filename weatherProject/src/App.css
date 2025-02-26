@@ -4,7 +4,7 @@
   padding: 0;
   font-family: "Nanum Gothic", serif;
   font-weight: 100;
-  color: #e0dfdf;
+  color: #fff;
 }
 
 .tg {
@@ -115,26 +115,38 @@
 }
 .body .container .main .firstSection .selectTime .selectValuebox {
   width: 10vw;
-  text-align: center;
   margin: auto;
+  text-align: center;
 }
-.body .container .main .firstSection .selectTime .selectValuebox .yearBox {
+.body .container .main .firstSection .selectTime .sb {
   display: flex;
-}
-.body .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
-  text-align: center;
-  width: 100%;
-  height: 1.2vw;
-  border-radius: 30px;
+  justify-content: space-between;
+  gap: 0.5vw;
   margin-bottom: 1vw;
-  font-size: 1vw;
 }
-.body .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
+.body .container .main .firstSection .selectTime .selectValue,
+.body .container .main .firstSection .selectTime .mapSelect {
+  width: 5vw;
+  height: 1.5vw;
+  border-radius: 20px;
+  font-size: 0.7vw;
   text-align: center;
-  width: 10vw;
-  height: 1.2vw;
-  border-radius: 30px;
-  font-size: 1vw;
+  border: 1px solid #aaa;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000 !important;
+}
+.body .container .main .firstSection .selectTime .selectValue:hover,
+.body .container .main .firstSection .selectTime .mapSelect:hover {
+  border-color: #0648AB;
+  background: #f0f8ff;
+  color: #000;
+}
+.body .container .main .firstSection .selectTime .selectValue option,
+.body .container .main .firstSection .selectTime .mapSelect option {
+  color: #333;
+  font-size: 0.7vw;
 }
 .body .container .main .realtimeWeatherArea {
   width: 100%;
@@ -147,12 +159,13 @@
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather {
   height: 100%;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather h2 {
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
   color: white;
+  font-weight: normal;
   text-align: center;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather h2 p {
@@ -402,20 +415,13 @@
   line-height: 9vw;
   text-align: center;
 }
-.body .container .thirdSection .c .c2-1 .highestprecipitationDay,
-.body .container .thirdSection .c .c2-2 .highestprecipitationDay,
-.body .container .thirdSection .c .c2-3 .highestprecipitationDay {
-  font-size: 2vw;
-  line-height: 6vw;
-  font-weight: bold;
-  text-align: center;
-}
-.body .container .thirdSection .c .c2-1 .highestprecipitation,
-.body .container .thirdSection .c .c2-2 .highestprecipitation,
-.body .container .thirdSection .c .c2-3 .highestprecipitation {
-  font-size: 1.5vw;
-  line-height: 2vw;
-  text-align: center;
+.body .container .thirdSection .c .c2-1 .ml,
+.body .container .thirdSection .c .c2-2 .ml,
+.body .container .thirdSection .c .c2-3 .ml {
+  position: absolute;
+  top: 8.5vw;
+  left: 4.4vw;
+  font-size: 1vw;
 }
 .body .container .thirdSection .c .c2-1 .circleperTitle,
 .body .container .thirdSection .c .c2-2 .circleperTitle,
@@ -428,6 +434,37 @@
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
   color: white;
+}
+.body .container .thirdSection .c .c2-1 .daytemer,
+.body .container .thirdSection .c .c2-2 .daytemer,
+.body .container .thirdSection .c .c2-3 .daytemer {
+  text-align: center;
+  font-size: 0.8vw;
+  margin-top: 2vw;
+}
+.body .container .thirdSection .c .c2-1 .daytemer .daytemerMax,
+.body .container .thirdSection .c .c2-2 .daytemer .daytemerMax,
+.body .container .thirdSection .c .c2-3 .daytemer .daytemerMax {
+  margin-bottom: 0.5vw;
+}
+.body .container .thirdSection .c .c2-1 .daytemer .daytemerMin,
+.body .container .thirdSection .c .c2-2 .daytemer .daytemerMin,
+.body .container .thirdSection .c .c2-3 .daytemer .daytemerMin {
+  margin-bottom: 0.5vw;
+}
+.body .container .thirdSection .c .c2-1 .dayprec,
+.body .container .thirdSection .c .c2-2 .dayprec,
+.body .container .thirdSection .c .c2-3 .dayprec {
+  text-align: center;
+  margin-bottom: 0.5vw;
+  font-size: 0.8vw;
+}
+.body .container .thirdSection .c .c2-1 .dayhumidity,
+.body .container .thirdSection .c .c2-2 .dayhumidity,
+.body .container .thirdSection .c .c2-3 .dayhumidity {
+  text-align: center;
+  margin-bottom: 0.5vw;
+  font-size: 0.8vw;
 }
 .body .container .thirdSection .c .c2-1 .circleBox,
 .body .container .thirdSection .c .c2-2 .circleBox,
@@ -458,8 +495,8 @@
 .body .container .thirdSection .c .c2-2 .circleBox .circleper,
 .body .container .thirdSection .c .c2-3 .circleBox .circleper {
   position: absolute;
-  top: 6vw;
-  left: 4.3vw;
+  top: 5.3vw;
+  left: 5vw;
   font-size: 2vw;
   font-weight: bold;
   text-shadow: 10px 10px 10px #1C1B20;
@@ -487,8 +524,8 @@
 .body .container .thirdSection .c1 .tgtitle {
   font-size: 1vw;
   position: absolute;
-  top: 0.9vw;
-  left: 17.3vw;
+  top: -1.7vw;
+  left: 15.6vw;
   font-weight: bold;
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
@@ -533,7 +570,7 @@
 }
 .body .container .thirdSection .c2 .table {
   width: 90%;
-  height: 80%;
+  height: 100%;
   padding: 0.5vw;
   margin: auto;
   border: 1px solid #fff;
@@ -622,26 +659,38 @@
 }
 .body.dark .container .main .firstSection .selectTime .selectValuebox {
   width: 10vw;
-  text-align: center;
   margin: auto;
+  text-align: center;
 }
-.body.dark .container .main .firstSection .selectTime .selectValuebox .yearBox {
+.body.dark .container .main .firstSection .selectTime .sb {
   display: flex;
-}
-.body.dark .container .main .firstSection .selectTime .selectValuebox .yearBox .selectValue {
-  text-align: center;
-  width: 100%;
-  height: 1.2vw;
-  border-radius: 30px;
+  justify-content: space-between;
+  gap: 0.5vw;
   margin-bottom: 1vw;
-  color: #1C1B20;
 }
-.body.dark .container .main .firstSection .selectTime .selectValuebox .mapBox .mapSelect {
+.body.dark .container .main .firstSection .selectTime .selectValue,
+.body.dark .container .main .firstSection .selectTime .mapSelect {
+  width: 5vw;
+  height: 1.5vw;
+  border-radius: 20px;
+  font-size: 0.7vw;
   text-align: center;
-  width: 10vw;
-  height: 1.2vw;
-  color: #1C1B20;
-  border-radius: 30px;
+  border: 1px solid #aaa;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000 !important;
+}
+.body.dark .container .main .firstSection .selectTime .selectValue:hover,
+.body.dark .container .main .firstSection .selectTime .mapSelect:hover {
+  border-color: #0648AB;
+  background: #f0f8ff;
+  color: #000;
+}
+.body.dark .container .main .firstSection .selectTime .selectValue option,
+.body.dark .container .main .firstSection .selectTime .mapSelect option {
+  color: #333;
+  font-size: 0.7vw;
 }
 .body.dark .container .main .realtimeWeatherArea {
   width: 100%;
@@ -661,6 +710,7 @@
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
   color: white;
+  font-weight: normal;
   text-align: center;
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather h2 p {
@@ -893,21 +943,6 @@
   line-height: 9vw;
   text-align: center;
 }
-.body.dark .container .thirdSection .c .c2-1 .highestprecipitationDay,
-.body.dark .container .thirdSection .c .c2-2 .highestprecipitationDay,
-.body.dark .container .thirdSection .c .c2-3 .highestprecipitationDay {
-  font-size: 2vw;
-  line-height: 6vw;
-  font-weight: bold;
-  text-align: center;
-}
-.body.dark .container .thirdSection .c .c2-1 .highestprecipitation,
-.body.dark .container .thirdSection .c .c2-2 .highestprecipitation,
-.body.dark .container .thirdSection .c .c2-3 .highestprecipitation {
-  font-size: 1.5vw;
-  line-height: 2vw;
-  text-align: center;
-}
 .body.dark .container .thirdSection .c .c2-1 .circleperTitle,
 .body.dark .container .thirdSection .c .c2-2 .circleperTitle,
 .body.dark .container .thirdSection .c .c2-3 .circleperTitle {
@@ -919,6 +954,37 @@
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
   color: white;
+}
+.body.dark .container .thirdSection .c .c2-1 .daytemer,
+.body.dark .container .thirdSection .c .c2-2 .daytemer,
+.body.dark .container .thirdSection .c .c2-3 .daytemer {
+  text-align: center;
+  font-size: 0.8vw;
+  margin-top: 2vw;
+}
+.body.dark .container .thirdSection .c .c2-1 .daytemer .daytemerMax,
+.body.dark .container .thirdSection .c .c2-2 .daytemer .daytemerMax,
+.body.dark .container .thirdSection .c .c2-3 .daytemer .daytemerMax {
+  margin-bottom: 0.5vw;
+}
+.body.dark .container .thirdSection .c .c2-1 .daytemer .daytemerMin,
+.body.dark .container .thirdSection .c .c2-2 .daytemer .daytemerMin,
+.body.dark .container .thirdSection .c .c2-3 .daytemer .daytemerMin {
+  margin-bottom: 0.5vw;
+}
+.body.dark .container .thirdSection .c .c2-1 .dayprec,
+.body.dark .container .thirdSection .c .c2-2 .dayprec,
+.body.dark .container .thirdSection .c .c2-3 .dayprec {
+  text-align: center;
+  margin-bottom: 0.5vw;
+  font-size: 0.8vw;
+}
+.body.dark .container .thirdSection .c .c2-1 .dayhumidity,
+.body.dark .container .thirdSection .c .c2-2 .dayhumidity,
+.body.dark .container .thirdSection .c .c2-3 .dayhumidity {
+  text-align: center;
+  margin-bottom: 0.5vw;
+  font-size: 0.8vw;
 }
 .body.dark .container .thirdSection .c .c2-1 .circleBox,
 .body.dark .container .thirdSection .c .c2-2 .circleBox,
@@ -949,8 +1015,8 @@
 .body.dark .container .thirdSection .c .c2-2 .circleBox .circleper,
 .body.dark .container .thirdSection .c .c2-3 .circleBox .circleper {
   position: absolute;
-  top: 6vw;
-  left: 4.3vw;
+  top: 5.3vw;
+  left: 5vw;
   font-size: 2vw;
   font-weight: bold;
   text-shadow: 10px 10px 10px #1C1B20;
@@ -969,12 +1035,15 @@
 .body.dark .container .thirdSection .c1 .tgtitle {
   font-size: 1vw;
   position: absolute;
-  top: 0.9vw;
-  left: 17.3vw;
+  top: -1.7vw;
+  left: 15.6vw;
   font-weight: bold;
   font-family: "Nanum Gothic", serif;
   font-weight: 600;
   color: white;
+}
+.body.dark .container .thirdSection .c1 recharts-legend-wrapper {
+  left: 15px;
 }
 .body.dark .container .thirdSection .c1 .temperatureGraph {
   position: absolute;
@@ -992,7 +1061,7 @@
   background-color: #303136;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #535353;
-  padding: 10px 0 20px 0;
+  padding: 10px 0 10px 0;
   font-size: 0.8vw;
   text-align: center;
   box-sizing: border-box;
@@ -1011,7 +1080,7 @@
 }
 .body.dark .container .thirdSection .c2 .table {
   width: 90%;
-  height: 80%;
+  height: 100%;
   padding: 0.5vw;
   margin: auto;
   border: 1px solid #fff;
