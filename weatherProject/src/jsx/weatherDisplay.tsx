@@ -47,8 +47,8 @@ function WeatherDisplay() {
         }
     }, [darkMode]);
 
-    let selectMonth = Number(selectedMonth) < 10 ? "0"+selectedMonth : selectedMonth;
-    const apiUrl2=`/api/typ02/openApi/SfcMtlyInfoService/getDailyWthrData?pageNo=1&numOfRows=10&dataType=JSON&year=${selectedYear}&month=${selectMonth}&station=${selectedCityN}&authKey=hVqmw5caSHOapsOXGhhz3Q`;
+    let selectMonth = Number(selectedMonth) < 10 ? "0" + selectedMonth : selectedMonth;
+    const apiUrl2 = `/api/typ02/openApi/SfcMtlyInfoService/getDailyWthrData?pageNo=1&numOfRows=10&dataType=JSON&year=${selectedYear}&month=${selectMonth}&station=${selectedCityN}&authKey=hVqmw5caSHOapsOXGhhz3Q`;
     function callJsonApi(url: any) {  // Text API 호출 함수
         console.log("출력중");
         fetch(url)  // fetch를 통해 API 호출

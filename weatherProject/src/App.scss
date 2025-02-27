@@ -77,7 +77,6 @@ $MC: #e0dfdf;
     display: block;
     background-image: url(./assets/img/light.jpg);
     @include backgoundSet();
-    overflow-y: hidden;
 
     .container {
         margin: 0 auto;
@@ -115,7 +114,8 @@ $MC: #e0dfdf;
 
         .main {
             width: 100%;
-            height: calc(100vh - 60px);
+            height: fit-content;
+
             display: flex;
             justify-content: space-between;
 

@@ -27,14 +27,14 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
         const region = regionCoords[selectedIndex];
 
         const regionMapping: { [key: string]: string } = {
-            "경기": "수원",
-            "강원": "강릉",
-            "전남": "여수",
-            "전북": "전주",
-            "충남": "천안",
-            "충북": "청주",
-            "경남": "창원",
-            "경북": "포항"
+            "수원": "경기",
+            "강릉": "강원",
+            "여수": "전남",
+            "전주": "전북",
+            "천안": "충남",
+            "청주": "충북",
+            "창원": "경남",
+            "포항": "경북"
         };
 
         const mappedCityName = regionMapping[region.name] || region.name;

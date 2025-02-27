@@ -48,7 +48,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-y: hidden;
 }
 .body .container {
   margin: 0 auto;
@@ -89,7 +88,8 @@
 }
 .body .container .main {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   justify-content: space-between;
 }
