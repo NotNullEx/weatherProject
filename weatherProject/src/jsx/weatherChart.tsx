@@ -65,16 +65,23 @@ const WeatherChart: React.FC<WeatherForecastChartProps> = ({ selectedIndex }) =>
                 const result = await response.json();
                 const forecastData = result.list;
 
-                // 현재 시간 이후 데이터 중에서 처음 12개(3시간 간격)를 선택
+                // 현재 시간을 가져옴
                 const now = new Date();
+                const closestHour = new Date(now);
+                closestHour.setMinutes(0, 0, 0); // 정각으로 맞춤
+                if (now.getMinutes() > 30) {
+                    closestHour.setHours(now.getHours() + 1);
+                }
+
+                // 현재 시간 이후 데이터만 필터링
                 const filteredData = forecastData
-                    .filter((entry: any) => new Date(entry.dt * 1000) >= now)
-                    .slice(0, 12);
+                    .filter((entry: any) => new Date(entry.dt_txt) >= closestHour)
+                    .slice(0, 12); // 가장 가까운 정각부터 12개 데이터 선택
 
                 const chartData = filteredData.map((entry: any) => ({
-                    time: entry.dt_txt.split(" ")[1].slice(0, 5),
+                    time: entry.dt_txt.split(" ")[1].slice(0, 5), // HH:MM 포맷
                     temperature: entry.main.temp,
-                    weather: entry.weather[0].main, // 날씨 상태 추가
+                    weather: entry.weather[0].main,
                 }));
 
                 setData(chartData);

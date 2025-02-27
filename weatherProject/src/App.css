@@ -195,16 +195,20 @@
   text-shadow: 7px 7px 20px #1C1B20;
   margin-top: -2vw;
 }
+.body .container .main .realtimeWeatherArea .realtimeWeather ul .weatherType {
+  text-align: center;
+  width: 10vw;
+  font-size: 1.5vw;
+}
 .body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
   margin-top: 1vw;
   width: 10vw;
   height: 5.5vw;
-  display: flex;
   gap: 1.2vw;
-  justify-content: space-between;
   text-align: center;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
+  position: relative;
   margin: auto;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
@@ -228,16 +232,6 @@
   display: block;
   margin: auto;
   background-image: url(./assets/img/Dew.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .VisibilityIcon {
-  width: 2vw;
-  height: 2vw;
-  display: block;
-  margin: auto;
-  background-image: url(./assets/img/Rain2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -769,52 +763,25 @@
   font-weight: 600;
   color: white;
 }
+.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weatherType {
+  text-align: center;
+  width: 10vw;
+  font-size: 1.5vw;
+}
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info {
   margin-top: 1vw;
   width: 10vw;
   height: 5.5vw;
-  display: flex;
-  gap: 1.2vw;
-  justify-content: space-between;
   text-align: center;
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
+  position: relative;
   margin: auto;
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
   margin-top: 0.5vw;
   font-size: 0.6vw;
   text-align: center;
-}
-.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
-  width: 2vw;
-  height: 2vw;
-  display: block;
-  margin: auto;
-  background-image: url(./assets/img/Wind.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .humidityIcon {
-  width: 2vw;
-  height: 2vw;
-  display: block;
-  margin: auto;
-  background-image: url(./assets/img/Dew.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .VisibilityIcon {
-  width: 2vw;
-  height: 2vw;
-  display: block;
-  margin: auto;
-  background-image: url(./assets/img/Rain2.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .body.dark .container .main .perceived {
   width: 100%;

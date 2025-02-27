@@ -235,17 +235,24 @@ $MC: #e0dfdf;
                             margin-top: -2vw;
                         }
 
+                        .weatherType {
+                            text-align: center;
+                            width: 10vw;
+                            font-size: 1.5vw;
+                        }
+
                         .weather-info {
                             margin-top: 1vw;
                             width: 10vw;
                             height: 5.5vw;
-                            display: flex;
                             gap: 1.2vw;
-                            justify-content: space-between;
                             text-align: center;
 
                             .winfoB {
+                                position: relative;
                                 margin: auto;
+
+
 
                                 p {
                                     margin-top: 0.5vw;
@@ -274,15 +281,7 @@ $MC: #e0dfdf;
 
                                 }
 
-                                .VisibilityIcon {
-                                    width: 2vw;
-                                    height: 2vw;
-                                    display: block;
-                                    margin: auto;
-                                    background-image: url(./assets/img/Rain2.png);
-                                    @include backgoundSet();
 
-                                }
                             }
 
                         }
@@ -886,54 +885,26 @@ $MC: #e0dfdf;
 
                         }
 
+                        .weatherType {
+                            text-align: center;
+                            width: 10vw;
+                            font-size: 1.5vw;
+                        }
+
                         .weather-info {
                             margin-top: 1vw;
                             width: 10vw;
                             height: 5.5vw;
-                            display: flex;
-                            gap: 1.2vw;
-                            justify-content: space-between;
                             text-align: center;
 
                             .winfoB {
+                                position: relative;
                                 margin: auto;
 
                                 p {
                                     margin-top: 0.5vw;
                                     font-size: 0.6vw;
                                     text-align: center;
-
-
-                                }
-
-                                .windIcon {
-                                    width: 2vw;
-                                    height: 2vw;
-                                    display: block;
-                                    margin: auto;
-                                    background-image: url(./assets/img/Wind.png);
-                                    @include backgoundSet();
-                                }
-
-                                .humidityIcon {
-                                    width: 2vw;
-                                    height: 2vw;
-                                    display: block;
-                                    margin: auto;
-                                    background-image: url(./assets/img/Dew.png);
-                                    @include backgoundSet();
-
-
-                                }
-
-                                .VisibilityIcon {
-                                    width: 2vw;
-                                    height: 2vw;
-                                    display: block;
-                                    margin: auto;
-                                    background-image: url(./assets/img/Rain2.png);
-                                    @include backgoundSet();
-
                                 }
                             }
 
