@@ -1069,111 +1069,148 @@ $MC: #e0dfdf;
                                 font-size: 2vw;
 
                             }
-                        }
-                    }
 
-                    .c1 {
-                        width: 100%;
-                        height: 180px;
-                        @include objcolor();
-                        padding: 30px;
-                        box-sizing: border-box;
-                        position: relative;
-                        margin-top: 5vw;
-
-                        Line {
-                            stroke: #746bb8;
-                        }
+                            .circleBox {
+                                width: 100%;
+                                position: relative;
+                                margin-top: -2vw;
 
 
-                        .tgtitle {
-                            width: 65%;
-                            line-height: 9vw;
-                            font-size: 3vw;
-                            text-align: center;
-                            font-weight: bold;
-                            @include titleFont();
+                                .circle {
+                                    display: block;
+                                    width: 25vw;
+                                    height: 25vw;
+                                    margin: auto;
+                                    margin-top: -7vw;
 
-                        }
-
-                        .temperatureGraph {
-                            position: absolute;
-                            top: 10vw;
-                            left: 0;
-                            border-radius: 10px;
-                            margin: auto;
-                            display: block;
-                            width: 90%;
-                            height: 120px;
-                        }
-
-
-
-                    }
-
-                    .c2 {
-                        margin-top: 4vw;
-                        width: 100%;
-                        height: 180px;
-                        @include objcolor();
-
-                        margin-top: 5vw;
-                        margin-bottom: 5vw;
-                        text-align: center;
-                        box-sizing: border-box;
-                        font-weight: bold;
-
-
-
-                        .tgtitle2 {
-                            font-size: 3vw !important;
-
-                        }
-
-                        h2 {
-                            font-size: 1vw;
-                            font-weight: bold;
-                            margin-bottom: 5px;
-                            @include titleFont();
-                        }
-
-                        .customtbody {
-                            font-size: 0.8rem;
-                            /* 모바일에서 글자 크기 조정 */
-                        }
-
-                        .tableMain {
-                            .customthead {
-                                .customtr {
-                                    .customth {
-                                        border-bottom: 1px solid #bdc5cc;
-                                        color: #ffffff;
-
+                                    .circleIn {
+                                        stroke: #5b6063;
 
                                     }
+
+
+                                    .circleIn2 {
+                                        stroke: #8a2bd8;
+                                    }
+
                                 }
+
+                                .circleper {
+                                    position: absolute;
+                                    top: 10.5vw;
+                                    left: 10.5vw;
+                                    font-size: 5vw;
+                                    font-weight: bold;
+                                    text-shadow: 10px 10px 10px #1C1B20;
+                                    font-family: "Nanum Gothic", serif;
+                                    @include titleFont();
+                                }
+                            }
+                        }
+
+                        .c1 {
+                            width: 100%;
+                            height: 180px;
+                            @include objcolor();
+                            padding: 30px;
+                            box-sizing: border-box;
+                            position: relative;
+                            margin-top: 5vw;
+
+                            Line {
+                                stroke: #746bb8;
+                            }
+
+
+                            .tgtitle {
+                                width: 65%;
+                                line-height: 9vw;
+                                font-size: 3vw;
+                                text-align: center;
+                                font-weight: bold;
+                                @include titleFont();
+
+                            }
+
+                            .temperatureGraph {
+                                position: absolute;
+                                top: 10vw;
+                                left: 0;
+                                border-radius: 10px;
+                                margin: auto;
+                                display: block;
+                                width: 90%;
+                                height: 120px;
+                            }
+
+
+
+                        }
+
+                        .c2 {
+                            margin-top: 4vw;
+                            width: 100%;
+                            height: 180px;
+                            @include objcolor();
+
+                            margin-top: 5vw;
+                            margin-bottom: 5vw;
+                            text-align: center;
+                            box-sizing: border-box;
+                            font-weight: bold;
+
+
+
+                            .tgtitle2 {
+                                font-size: 3vw !important;
+
+                            }
+
+                            h2 {
+                                font-size: 1vw;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                                @include titleFont();
                             }
 
                             .customtbody {
-                                .customtr {
-                                    border-bottom: 2px solid #0185f8;
-                                    color: #ffffff;
+                                font-size: 0.8rem;
+                                /* 모바일에서 글자 크기 조정 */
+                            }
+
+                            .tableMain {
+                                .customthead {
+                                    .customtr {
+                                        .customth {
+                                            border-bottom: 1px solid #bdc5cc;
+                                            color: #ffffff;
 
 
-                                    .customtd {
+                                        }
+                                    }
+                                }
 
-                                        width: 200px;
-                                        word-break: break-all;
-                                        border-bottom: 1px solid #dedede;
+                                .customtbody {
+                                    .customtr {
+                                        border-bottom: 2px solid #0185f8;
                                         color: #ffffff;
 
 
+                                        .customtd {
+
+                                            width: 200px;
+                                            word-break: break-all;
+                                            border-bottom: 1px solid #dedede;
+                                            color: #ffffff;
+
+
+                                        }
                                     }
                                 }
                             }
+
+
                         }
-
-
                     }
                 }
             }

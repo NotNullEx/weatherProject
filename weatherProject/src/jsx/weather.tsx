@@ -34,7 +34,7 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
         if (weatherData) {
             setRegion(regionData.name);
             setMaxtemp(weatherData.main.temp_max.toFixed(1));
-            setMintemp(weatherData.main.presure.toFixed(1));
+            setMintemp(weatherData.main.pressure);
             setTemp(weatherData.main.temp.toFixed(1));
             setWind(weatherData.wind.speed.toFixed(1));
             setHumidity(weatherData.main.humidity);
@@ -65,7 +65,7 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
                             <p>최고 기온 : {maxtemp} °C</p>
                         </div>
                         <div className="winfoB">
-                            <p>최저 기온 : {(mintemp)} °C</p>
+                            <p>기압 : {(mintemp)} Pa</p>
                         </div>
                         <div className="winfoB">
                             <p>풍속 : {wind} m/s </p>

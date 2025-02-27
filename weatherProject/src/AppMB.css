@@ -911,7 +911,47 @@
     margin-bottom: 1vw;
     font-size: 2vw;
   }
-  .body.dark .container .main .thirdSection .c1 {
+  .body.dark .container .main .thirdSection .c .c2-1 .circleBox,
+  .body.dark .container .main .thirdSection .c .c2-2 .circleBox,
+  .body.dark .container .main .thirdSection .c .c2-3 .circleBox {
+    width: 100%;
+    position: relative;
+    margin-top: -2vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .circleBox .circle,
+  .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circle,
+  .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circle {
+    display: block;
+    width: 25vw;
+    height: 25vw;
+    margin: auto;
+    margin-top: -7vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .circleBox .circle .circleIn,
+  .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circle .circleIn,
+  .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circle .circleIn {
+    stroke: #5b6063;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .circleBox .circle .circleIn2,
+  .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circle .circleIn2,
+  .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circle .circleIn2 {
+    stroke: #8a2bd8;
+  }
+  .body.dark .container .main .thirdSection .c .c2-1 .circleBox .circleper,
+  .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circleper,
+  .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circleper {
+    position: absolute;
+    top: 10.5vw;
+    left: 10.5vw;
+    font-size: 5vw;
+    font-weight: bold;
+    text-shadow: 10px 10px 10px #1C1B20;
+    font-family: "Nanum Gothic", serif;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
+  }
+  .body.dark .container .main .thirdSection .c .c1 {
     width: 100%;
     height: 180px;
     background-color: #303136;
@@ -922,10 +962,10 @@
     position: relative;
     margin-top: 5vw;
   }
-  .body.dark .container .main .thirdSection .c1 Line {
+  .body.dark .container .main .thirdSection .c .c1 Line {
     stroke: #746bb8;
   }
-  .body.dark .container .main .thirdSection .c1 .tgtitle {
+  .body.dark .container .main .thirdSection .c .c1 .tgtitle {
     width: 65%;
     line-height: 9vw;
     font-size: 3vw;
@@ -935,7 +975,7 @@
     font-weight: 600;
     color: white;
   }
-  .body.dark .container .main .thirdSection .c1 .temperatureGraph {
+  .body.dark .container .main .thirdSection .c .c1 .temperatureGraph {
     position: absolute;
     top: 10vw;
     left: 0;
@@ -945,7 +985,7 @@
     width: 90%;
     height: 120px;
   }
-  .body.dark .container .main .thirdSection .c2 {
+  .body.dark .container .main .thirdSection .c .c2 {
     margin-top: 4vw;
     width: 100%;
     height: 180px;
@@ -958,10 +998,10 @@
     box-sizing: border-box;
     font-weight: bold;
   }
-  .body.dark .container .main .thirdSection .c2 .tgtitle2 {
+  .body.dark .container .main .thirdSection .c .c2 .tgtitle2 {
     font-size: 3vw !important;
   }
-  .body.dark .container .main .thirdSection .c2 h2 {
+  .body.dark .container .main .thirdSection .c .c2 h2 {
     font-size: 1vw;
     font-weight: bold;
     margin-bottom: 5px;
@@ -969,19 +1009,19 @@
     font-weight: 600;
     color: white;
   }
-  .body.dark .container .main .thirdSection .c2 .customtbody {
+  .body.dark .container .main .thirdSection .c .c2 .customtbody {
     font-size: 0.8rem;
     /* 모바일에서 글자 크기 조정 */
   }
-  .body.dark .container .main .thirdSection .c2 .tableMain .customthead .customtr .customth {
+  .body.dark .container .main .thirdSection .c .c2 .tableMain .customthead .customtr .customth {
     border-bottom: 1px solid #bdc5cc;
     color: #ffffff;
   }
-  .body.dark .container .main .thirdSection .c2 .tableMain .customtbody .customtr {
+  .body.dark .container .main .thirdSection .c .c2 .tableMain .customtbody .customtr {
     border-bottom: 2px solid #0185f8;
     color: #ffffff;
   }
-  .body.dark .container .main .thirdSection .c2 .tableMain .customtbody .customtr .customtd {
+  .body.dark .container .main .thirdSection .c .c2 .tableMain .customtbody .customtr .customtd {
     width: 200px;
     word-break: break-all;
     border-bottom: 1px solid #dedede;
