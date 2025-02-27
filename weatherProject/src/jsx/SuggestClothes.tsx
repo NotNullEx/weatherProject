@@ -62,7 +62,7 @@ const SuggestWeather: React.FC<SuggestWeatherProps> = ({ selectedIndex }) => {
             try {
                 setLoading(true);
                 setError(null);
-                
+
                 // OpenWeatherMap에서는 지역명(q)을 사용하여 요청
                 const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${mappedCityName}&appid=${API_KEY}&lang=${LANG}&units=metric`;
 

@@ -21,7 +21,7 @@ interface CallApiProps {
 const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex }) => {
     const [chartData, setChartData] = useState<{ name: string; 최고: number; 평균: number; 최저: number }[]>([]);
     const [cityName, setCityName] = useState<string>("");
-   
+
 
     useEffect(() => {
         const region = regionCoords[selectedIndex];
@@ -68,16 +68,16 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
 
     return (
         <div className="temperatureGraph">
-            <h2 className="tgtitle">{cityName} {selectedYear} 기온 그래프</h2>
+            <h2 className="tgtitle">{cityName}  {selectedYear}년 기온 그래프</h2>
             <ResponsiveContainer width="110%" height="92%">
                 <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" fontSize="12px" />
                     <YAxis tickCount={12} domain={[-15, 40]} />
-                    <Tooltip />
+                    <Tooltip contentStyle={{ backgroundColor: "rgba(0,0,0,0.7)", borderRadius: "8px", border: "none" }}
+                        labelStyle={{ color: "#fff" }} />
                     <Legend />
-
-                    <Line type="monotone" className='tendata' dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} name="최고 기온"/>
+                    <Line type="monotone" dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} name="최고 기온" />
                     <Line type="monotone" dataKey="평균" stroke="#007BFF" name="평균 기온" />
                     <Line type="monotone" dataKey="최저" stroke="#00FF00" name="최저 기온" />
                 </LineChart>

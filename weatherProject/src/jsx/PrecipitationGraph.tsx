@@ -28,14 +28,14 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
     // 전국 총 강수량 가져오기
     useEffect(() => {
         fetch(`http://localhost:5000/api/precipitation?year=${selectedYear}`)
-        .then((res) => res.json())
-        .then((data: WeatherData[]) => {
-            const totalRain = data.reduce((sum, item) => sum + item.rnDay, 0);
-            setGetTotalPrecipitation(String(Math.floor(totalRain)));
-        })
-        .catch((err) => console.error("❌ 강수량 데이터 가져오기 실패:", err));
-}, [selectedYear, selectedCity]);
-   
+            .then((res) => res.json())
+            .then((data: WeatherData[]) => {
+                const totalRain = data.reduce((sum, item) => sum + item.rnDay, 0);
+                setGetTotalPrecipitation(String(Math.floor(totalRain)));
+            })
+            .catch((err) => console.error("❌ 강수량 데이터 가져오기 실패:", err));
+    }, [selectedYear, selectedCity]);
+
     // 특정 지역 강수량 가져오기
     useEffect(() => {
         if (!selectedCity) return;
@@ -46,14 +46,14 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
             // .then(setRegionWeatherData)
             .catch((err) => console.error("❌ 지역 강수량 데이터 가져오기 실패:", err));
     }, [selectedYear, selectedCity]);
-    
+
     // 강수량 데이터 계산
     useEffect(() => {
-        if ( regionWeatherData.length > 0) {
+        if (regionWeatherData.length > 0) {
             //const totalRain = weatherData.reduce((sum, d) => sum + d.rnDay, 0);
             const regionRain = regionWeatherData.reduce((sum, d) => sum + d.rnDay, 0);
             setRegionData(Math.floor(regionRain));
-            setPercent(Math.floor((regionRain / Number(getTotalPrecipitation)  ) * 100));
+            setPercent(Math.floor((regionRain / Number(getTotalPrecipitation)) * 100));
             console.log(regionRain)
         }
     }, [weatherData, regionWeatherData]);

@@ -221,7 +221,7 @@
   }
   .body .container .main .secondSection {
     width: 100%;
-    height: 63%;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -259,6 +259,7 @@
   }
   .body .container .main .secondSection .b2 {
     width: 100%;
+    height: 200px;
     margin: 0 auto;
     margin-top: -17vw;
     border-radius: 10px;
@@ -267,7 +268,12 @@
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
-    height: 35%;
+  }
+  .body .container .main .secondSection .b2 .text {
+    font-size: 3vw;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
   }
   .body .container .main .secondSection .b2 .chart {
     height: 150px !important;
@@ -282,13 +288,16 @@
     width: 88vw;
     justify-content: space-between;
     margin-left: 4vw;
+    margin-top: -1.2vw;
   }
   .body .container .main .secondSection .b2 .chartInfo .text-center {
     margin-top: -0.6vw;
-    width: 20vw !important;
-    height: 20vw !important;
+    width: 25vw !important;
+    height: 25vw !important;
+    font-size: 2vw;
   }
   .body .container .main .secondSection .b2 .chartInfo .text-center .text-sm {
+    color: #000000;
     margin-left: -3vw;
     font-size: 2.3vw;
     text-align: center;
@@ -343,9 +352,10 @@
   .body .container .main .thirdSection .c .c2-2 .ml,
   .body .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
-    top: 21vw;
-    left: 10.5vw;
+    top: 17.2vw;
+    left: 12vw;
     font-size: 2vw;
+    text-align: center;
   }
   .body .container .main .thirdSection .c .c2-1 .circleperTitle,
   .body .container .main .thirdSection .c .c2-2 .circleperTitle,
@@ -420,9 +430,9 @@
   .body .container .main .thirdSection .c .c2-2 .circleBox .circleper,
   .body .container .main .thirdSection .c .c2-3 .circleBox .circleper {
     position: absolute;
-    top: 9vw;
-    left: 8vw;
-    font-size: 6vw;
+    top: 10.5vw;
+    left: 10.5vw;
+    font-size: 5vw;
     font-weight: bold;
     text-shadow: 10px 10px 10px #1C1B20;
     font-family: "Nanum Gothic", serif;
@@ -432,14 +442,14 @@
   }
   .body .container .main .thirdSection .c1 {
     width: 100%;
-    height: 180px;
+    height: 200px;
     border-radius: 10px;
     background: none;
     box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
-    padding: 30px;
+    padding: 2vw;
     box-sizing: border-box;
     position: relative;
     margin-top: 5vw;
@@ -459,13 +469,13 @@
   }
   .body .container .main .thirdSection .c1 .temperatureGraph {
     position: absolute;
-    top: 10vw;
-    left: 0;
+    top: 5vw;
+    left: -5vw;
     border-radius: 10px;
     margin: auto;
     display: block;
-    width: 90%;
-    height: 120px;
+    width: 95%;
+    height: 180px;
   }
   .body .container .main .thirdSection .c2 {
     margin-top: 4vw;
@@ -729,7 +739,7 @@
   }
   .body.dark .container .main .secondSection {
     width: 100%;
-    height: 63%;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -764,12 +774,18 @@
   }
   .body.dark .container .main .secondSection .b2 {
     width: 100%;
+    height: 200px;
     margin: 0 auto;
     margin-top: -17vw;
     background-color: #303136;
     border-radius: 10px;
     box-shadow: 5px 5px 10px #535353;
-    height: 35%;
+  }
+  .body.dark .container .main .secondSection .b2 .text {
+    font-size: 3vw;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 600;
+    color: white;
   }
   .body.dark .container .main .secondSection .b2 .chart {
     height: 150px !important;
@@ -778,19 +794,22 @@
     stroke: #3d4754;
   }
   .body.dark .container .main .secondSection .b2 .chart .chartline {
-    stroke: #7b55f0;
+    stroke: #1269d4;
   }
   .body.dark .container .main .secondSection .b2 .chartInfo {
     width: 88vw;
     justify-content: space-between;
     margin-left: 4vw;
+    margin-top: -1.2vw;
   }
   .body.dark .container .main .secondSection .b2 .chartInfo .text-center {
     margin-top: -0.6vw;
-    width: 20vw !important;
-    height: 20vw !important;
+    width: 25vw !important;
+    height: 25vw !important;
+    font-size: 2vw;
   }
   .body.dark .container .main .secondSection .b2 .chartInfo .text-center .text-sm {
+    color: #fff;
     margin-left: -3vw;
     font-size: 2.3vw;
     text-align: center;
@@ -842,9 +861,10 @@
   .body.dark .container .main .thirdSection .c .c2-2 .ml,
   .body.dark .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
-    top: 21vw;
-    left: 10.5vw;
+    top: 17.2vw;
+    left: 12vw;
     font-size: 2vw;
+    text-align: center;
   }
   .body.dark .container .main .thirdSection .c .c2-1 .circleperTitle,
   .body.dark .container .main .thirdSection .c .c2-2 .circleperTitle,

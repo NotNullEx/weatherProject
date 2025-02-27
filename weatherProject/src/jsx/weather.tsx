@@ -89,8 +89,8 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
     return (
         <div className="realtimeWeather">
             <h2>
-                {region}
-                <p>{formatTimeWithMeridiem(time)} 기준</p>
+                현재 {region}
+                <p> {formatTimeWithMeridiem(time)} 기준</p>
             </h2>
             {loading ? (
                 <p>날씨 정보 불러오는 중...</p>
