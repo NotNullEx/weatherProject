@@ -80,10 +80,11 @@ $MC: #e0dfdf;
 
     .container {
         margin: 0 auto;
-        height: 900px;
         width: 90vw;
         padding-top: 20px;
         box-sizing: border-box;
+        height: fit-content;
+
 
         .header {
             justify-content: space-between;
@@ -731,7 +732,7 @@ $MC: #e0dfdf;
 
     .container {
         margin: 0 auto;
-        height: 900px;
+        height: fit-content;
         width: 90vw;
         padding-top: 20px;
         box-sizing: border-box;
