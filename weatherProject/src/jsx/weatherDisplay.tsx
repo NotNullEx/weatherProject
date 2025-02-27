@@ -32,6 +32,12 @@ function WeatherDisplay() {
     const [selectedDay, setSelectedDay] = useState("1");      // 일
     const [dayWeather, setDayWeather] = useState<any>([]);       // 선택된 월의 일들의 자료
 
+    const getDaysInMonth = (year: string, month: string) => {
+        const yearNum = Number(year);
+        const monthNum = Number(month);
+        return new Date(yearNum, monthNum, 0).getDate();
+    };
+
 
     useEffect(() => {
         if (darkMode) {
@@ -152,7 +158,7 @@ function WeatherDisplay() {
 
                             <div className="sb">
                                 <select className="selectValue" value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
-                                    {Array.from({ length: 31 }, (_, i) => {
+                                    {Array.from({ length: getDaysInMonth(selectedYear, selectedMonth) }, (_, i) => {
                                         const day = i + 1;
                                         return (
                                             <option key={day} value={`${day}`}>

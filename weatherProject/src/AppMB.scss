@@ -33,6 +33,7 @@ $MC: #e0dfdf;
         height: fit-content;
         padding-bottom: 5vw;
         background-repeat: repeat-y;
+        overflow-y: auto;
 
         .container {
 
@@ -41,8 +42,8 @@ $MC: #e0dfdf;
                 p {
                     font-size: 4vw;
                     text-align: center;
-                    margin: 0;
                     border-radius: 10px;
+                    margin-left: 5vw;
                 }
 
                 button {
@@ -638,6 +639,7 @@ $MC: #e0dfdf;
                     font-size: 4vw;
                     text-align: center;
                     margin: 0;
+                    margin-left: 5vw;
                     border-radius: 10px;
                 }
 

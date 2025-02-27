@@ -75,8 +75,9 @@ $MC: #e0dfdf;
     width: 99vw;
     height: 100%;
     display: block;
-    background-image: url(./assets/img/날씨.jpg);
+    background-image: url(./assets/img/light.jpg);
     @include backgoundSet();
+    overflow-y: hidden;
 
     .container {
         margin: 0 auto;
@@ -414,11 +415,28 @@ $MC: #e0dfdf;
                 .chart {
                     height: 9vw !important;
 
-                    Line {
-                        stroke: #3d4754;
+                    .grdt {
+
+                        #colorTemp {
+                            height: 100px !important;
+
+                            .grdt1 {
+                                stop-color: #92c2f6;
+                                height: 100px;
+                            }
+
+                            .grdt2 {
+                                stop-color: #0d52d2;
+                                height: 100px;
 
 
+                            }
+                        }
                     }
+
+
+
+                    Area {}
 
                     .chartline {
                         stroke: #1269d4;
@@ -709,9 +727,8 @@ $MC: #e0dfdf;
     width: 99vw;
     height: 100%;
     display: block;
-    background-color: #4A494E;
-    background-image: none;
-
+    background-image: url(./assets/img/dark3.png);
+    @include backgoundSet();
 
     .container {
         margin: 0 auto;
@@ -1045,14 +1062,31 @@ $MC: #e0dfdf;
                 .chart {
                     height: 9vw !important;
 
-                    Line {
-                        stroke: #3d4754;
+                    .grdt {
+
+                        #colorTemp {
+                            height: 100px !important;
+
+                            .grdt1 {
+                                stop-color: #d392f6;
+                                height: 100px;
+                            }
+
+                            .grdt2 {
+                                stop-color: #7a28cb;
+                                height: 100px;
 
 
+                            }
+                        }
                     }
 
+
+
+                    Area {}
+
                     .chartline {
-                        stroke: #1269d4;
+                        stroke: #7a28cb;
                     }
                 }
 

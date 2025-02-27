@@ -94,7 +94,7 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
             {/* 중앙 텍스트 */}
             <div className="absolute text-white text-sm font-semibold">
                 <p className="circleper">{percent}%</p>
-                <p className="ml">{regionData}mm</p>|
+                <p className="ml">{regionData}mm</p>
             </div>
         </div>
     );

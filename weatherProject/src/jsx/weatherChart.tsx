@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import { regionCoords } from "./regionCoords";
 
 const API_KEY = "b38c1aa9b51d2705b80ad742bf49fba8";
@@ -95,22 +95,31 @@ const WeatherChart: React.FC<WeatherForecastChartProps> = ({ selectedIndex }) =>
         <div className="p-4 border rounded-lg shadow-lg bg-white">
             <h2 className="text">날씨 예보</h2>
             <ResponsiveContainer width="100%" className="chart">
-                <LineChart data={data} margin={{ right: 20, left: 20, bottom: 5 }}>
+                <AreaChart data={data} margin={{ right: 20, left: 20, bottom: 5 }} >
+                    <defs className="grdt" >
+                        <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1" >
+                            <stop className="grdt1" offset="20%" stopColor="" stopOpacity={0.2} />
+                            <stop className="grdt2" offset="100%" stopColor="" stopOpacity={1} />
+
+                        </linearGradient>
+                    </defs>
                     <CartesianGrid stroke="rgba(255,255,255,0.1)" />
                     <XAxis dataKey="time" tick={{ fontSize: 12, fill: "#ffffff" }} interval="preserveStartEnd" />
-                    <YAxis hide domain={["dataMin-10", "dataMax+10"]} tickCount={5} />
+                    <YAxis hide />
                     <Tooltip formatter={(value) => [`${value}°C`, "온도"]}
                         contentStyle={{ backgroundColor: "rgba(0,0,0,0.7)", borderRadius: "8px", border: "none" }}
                         labelStyle={{ color: "#fff" }} />
-                    <Line className="chartline"
+                    <Area
+                        className="chartline"
                         type="monotone"
                         dataKey="temperature"
-                        name="온도"
                         stroke=""
                         strokeWidth={3}
+                        fill="url(#colorTemp)" // 그래디언트 적용
                         dot={{ r: 5, fill: "#ffffff" }}
-                        activeDot={{ r: 8, stroke: "#fff", strokeWidth: 2, fill: "#b399ff" }} />
-                </LineChart>
+                        activeDot={{ r: 8, stroke: "#fff", strokeWidth: 2, fill: "#ffffff" }}
+                    />
+                </AreaChart>
             </ResponsiveContainer>
 
             <div className="chartInfo" >
@@ -121,7 +130,7 @@ const WeatherChart: React.FC<WeatherForecastChartProps> = ({ selectedIndex }) =>
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
 
