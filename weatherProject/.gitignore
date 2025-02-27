@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+App.css
+App.css.map
+AppMB.css
+AppMB.css.map
