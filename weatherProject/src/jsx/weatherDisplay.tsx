@@ -74,7 +74,7 @@ function WeatherDisplay() {
     return (
         <div id="container" className="container">
             <header id="header" className="header">
-                <p>WeatherLand</p>
+                <p>Weather Insight</p>
                 <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
                     {darkMode ? "다크" : "라이트 "}
                 </button>
