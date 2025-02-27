@@ -21,7 +21,7 @@ interface CallApiProps {
 const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex }) => {
     const [chartData, setChartData] = useState<{ name: string; 최고: number; 평균: number; 최저: number }[]>([]);
     const [cityName, setCityName] = useState<string>("");
-
+    const [viewCityName,setViewCityName] = useState<string>("");
 
     useEffect(() => {
         const region = regionCoords[selectedIndex];
@@ -39,6 +39,7 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
 
         const mappedCityName = regionMapping[region.name] || region.name;
         setCityName(mappedCityName);
+        setViewCityName(region.name);
 
         fetch(`http://localhost:5000/api/temperature?year=${selectedYear}`)
             .then((res) => res.json())
@@ -68,7 +69,7 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
 
     return (
         <div className="temperatureGraph">
-            <h2 className="tgtitle">{cityName} {selectedYear} 기온 그래프</h2>
+            <h2 className="tgtitle">{viewCityName} {selectedYear} 기온 그래프</h2>
             <ResponsiveContainer width="110%" height="92%">
                 <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />

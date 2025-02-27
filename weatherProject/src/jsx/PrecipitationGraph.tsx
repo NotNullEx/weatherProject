@@ -21,7 +21,7 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
 
     // 선택된 지역 설정
     useEffect(() => {
-        const cityMapping = ["서울", "수원", "강릉", "충주", "천안", "대구", "창원", "전주", "여수", "제주"];
+        const cityMapping = ['서울', '수원', '천안', '청주', '강릉', '대구', '창원', '전주', '여수', '제주', '부산', '인천', '대전', '광주', '울산', '포항'];
         setSelectedCity(cityMapping[selectedIndex] || "서울");
     }, [selectedIndex]);
 
@@ -57,7 +57,7 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
             console.log(regionRain)
         }
     }, [weatherData, regionWeatherData]);
-
+    console.log(selectedCity);
     // 원형 그래프 설정
     const radius = 30;
     const circumference = 2 * Math.PI * radius;

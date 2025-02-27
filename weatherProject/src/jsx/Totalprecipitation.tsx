@@ -132,7 +132,7 @@ const TotalPrecipitation: React.FC<CallApiProps> = ({ selectedYear, selectedInde
 
     return (
         <div className="c2-1">
-            <p className="circleperTitle">총 강수량</p>
+            <p className="circleperTitle">{selectedYear}년 총 강수량</p>
             <p className="allhighestprecipitation">{getTotalPrecipitation} (mm)</p>
         </div>
     );

@@ -35,6 +35,7 @@ const TableData: React.FC<WeatherProps> = ({ selectedIndex, selectedYear }) => {
     const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
     const [precipitationData, setPrecipitationData] = useState<PrecipitationData[]>([]);
     const [cityName, setCityName] = useState<string>("");
+    const [viewCityName,setViewCityName] = useState<string>("");
 
     useEffect(() => {
         const region = regionCoords[selectedIndex];
@@ -51,6 +52,7 @@ const TableData: React.FC<WeatherProps> = ({ selectedIndex, selectedYear }) => {
         };
         const mappedCityName = regionMapping[region.name] || region.name;
         setCityName(mappedCityName);
+        setViewCityName(region.name);
 
         // 기온 데이터 가져오기
         fetch(`http://localhost:5000/api/temperature?year=${selectedYear}`)
@@ -68,11 +70,11 @@ const TableData: React.FC<WeatherProps> = ({ selectedIndex, selectedYear }) => {
 
     return (
         <div className="table">
-            <h2>{selectedYear}년 {cityName} 기상 데이터</h2>
+            <h2>{selectedYear}년 {viewCityName} 기상 데이터</h2>
             <table className="tableMain">
                 <thead className="customthead">
                     <tr className="customtr">
-                        <th className="customth">{cityName}</th>
+                        <th className="customth">{viewCityName}</th>
                         <th className="customth">최고 기온(°C)</th>
                         <th className="customth">평균 기온(°C)</th>
                         <th className="customth">최저 기온(°C)</th>
