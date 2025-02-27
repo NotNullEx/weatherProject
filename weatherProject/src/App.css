@@ -635,7 +635,7 @@
   background-color: #fff;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
 }
 .body.dark .container .header button {
   border-radius: 30px;
@@ -675,7 +675,7 @@
   border-radius: 20px;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
   box-sizing: border-box;
 }
 .body.dark .container .main .firstSection .selectTime .selectValuebox {
@@ -791,7 +791,7 @@
   box-sizing: border-box;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
   padding: 2vw;
 }
 .body.dark .container .main .perceived .thermometerIconbox {
@@ -852,7 +852,7 @@
   height: 63%;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
   overflow: hidden;
   position: relative;
   opacity: 90%;
@@ -876,7 +876,7 @@
   width: 100%;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
   height: 30%;
 }
 .body.dark .container .secondSection .b2 .text {
@@ -944,7 +944,7 @@
   width: 32%;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
 }
 .body.dark .container .thirdSection .c .c2-1 .allhighestprecipitation,
 .body.dark .container .thirdSection .c .c2-2 .allhighestprecipitation,
@@ -1038,7 +1038,7 @@
   height: 30%;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
   padding: 30px;
   box-sizing: border-box;
   position: relative;
@@ -1078,7 +1078,7 @@
   height: 30%;
   background-color: #303136;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #535353;
+  box-shadow: 5px 5px 10px #131212;
   text-align: center;
   box-sizing: border-box;
   font-weight: bold;
