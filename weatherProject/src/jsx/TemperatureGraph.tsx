@@ -1,6 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { regionCoords } from "./regionCoords";
 import { useEffect, useState } from 'react';
+import url from './json/url.json';
 
 type WeatherData = {
     id: number;
@@ -27,21 +28,21 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
         const region = regionCoords[selectedIndex];
 
         const regionMapping: { [key: string]: string } = {
-            "수원": "경기",
-            "강릉": "강원",
-            "여수": "전남",
-            "전주": "전북",
-            "천안": "충남",
-            "청주": "충북",
-            "창원": "경남",
-            "포항": "경북"
+            "경기": "수원",
+            "강원": "강릉",
+            "전남": "여수",
+            "전북": "전주",
+            "충남": "천안",
+            "충북": "청주",
+            "경남": "창원",
+            "경북": "포항"
         };
 
         const mappedCityName = regionMapping[region.name] || region.name;
         setCityName(mappedCityName);
         setViewCityName(region.name);
 
-        fetch(`http://localhost:5000/api/temperature?year=${selectedYear}`)
+        fetch(`${url.host2}/api/temperature?year=${selectedYear}`)
             .then((res) => res.json())
             .then((data) => {
                 const months = [
@@ -69,13 +70,13 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
 
     return (
         <div className="temperatureGraph">
-            <h2 className="tgtitle">{viewCityName} {selectedYear} 기온 그래프</h2>
+            <h2 className="tgtitle">{selectedYear}년 {viewCityName} 기온 그래프</h2>
             <ResponsiveContainer width="110%" height="92%">
                 <LineChart data={chartData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" fontSize="12px" />
                     <YAxis tickCount={12} domain={[-15, 40]} />
-                    <Tooltip />
+                    <Tooltip contentStyle={{ backgroundColor: "rgba(0,0,0,0.7)", borderRadius: "8px", border: "none" }}/>
                     <Legend />
 
                     <Line type="monotone" className='tendata' dataKey="최고" stroke="#ff0000" activeDot={{ r: 8 }} name="최고 기온" />

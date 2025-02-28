@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Nanum Gothic", serif;
+    font-family: "Nanum Gothic";
     font-weight: 100;
     color: #fff;
 }
@@ -73,7 +73,7 @@ $MC: #e0dfdf;
 .body {
     margin: 0 auto;
     width: 99vw;
-    height: 100%;
+    height: 100vh;
     display: block;
     background-image: url(./assets/img/light.jpg);
     @include backgoundSet();
@@ -81,9 +81,10 @@ $MC: #e0dfdf;
     .container {
         margin: 0 auto;
         width: 90vw;
+        height: 100vh;
+
         padding-top: 20px;
         box-sizing: border-box;
-        height: fit-content;
 
 
         .header {
@@ -116,7 +117,6 @@ $MC: #e0dfdf;
         .main {
             width: 100%;
             height: fit-content;
-
             display: flex;
             justify-content: space-between;
 
@@ -129,30 +129,33 @@ $MC: #e0dfdf;
 
                 .selectTime {
                     width: 100%;
-                    height: 15%;
+                    height: 21%;
                     margin: 0 auto;
                     @include backblur2();
                     box-sizing: border-box;
-                    padding: 1vw !important;
+                    // padding: 1vw !important;
 
                     .selectValuebox {
                         width: 10vw;
+                        height:100%;
                         margin: auto;
                         text-align: center;
+                        flex-direction:column;
                     }
 
                     .sb {
                         display: flex;
-                        justify-content: space-between;
-                        gap: 0.5vw;
-                        margin-bottom: 1vw;
-
+                        justify-content: space-around;
+                        // gap: 0.5vw;
+                        // margin-bottom: 1vw;
+                        flex-direction:column;
+                        height:50%;
                     }
 
 
                     .selectValue,
                     .mapSelect {
-                        width: 5vw;
+                        width: 10vw;
                         height: 1.5vw;
                         border-radius: 20px;
                         font-size: 0.7vw;
@@ -189,7 +192,7 @@ $MC: #e0dfdf;
 
             .realtimeWeatherArea {
                 width: 100%;
-                height: 20.5vw;
+                height: 18vw;
                 margin: 0 auto;
                 border-radius: 20px;
                 background: linear-gradient(#ccc8bd, #0185f8);
@@ -221,10 +224,9 @@ $MC: #e0dfdf;
                         margin-top: 2vh;
 
                         .icon {
-                            width: 8vw;
-                            height: 40%;
+                            width: 6vw;
+                            height: 32%;
                             margin: -1vw auto;
-                            background-image: url(./assets/img/sunny.png);
                             @include backgoundSet();
                         }
 
@@ -239,7 +241,7 @@ $MC: #e0dfdf;
                         .weatherType {
                             text-align: center;
                             width: 10vw;
-                            font-size: 1.5vw;
+                            font-size: 1.2vw;
                         }
 
                         .weather-info {
@@ -383,7 +385,7 @@ $MC: #e0dfdf;
 
                         &.active {
                             fill: #0088ff; // 클릭 시 활성화된 색 (주황색)
-                            stroke: #ffa600; // 테두리 강조
+                            stroke: #0088ff; // 테두리 강조
                             stroke-width: 3;
 
 
@@ -501,6 +503,16 @@ $MC: #e0dfdf;
                 .c2-3 {
                     width: 32%;
                     @include backblur2();
+
+                    span{
+                        display:inline-block;
+                        width:50%;
+                        text-align:right;
+                    }
+                    .textLeft{
+                        width:30%;
+                        padding-right:20%;
+                    }
 
                     .allhighestprecipitation {
                         z-index: 2px;
@@ -658,7 +670,7 @@ $MC: #e0dfdf;
 
                 padding: 10px 0 10px 0;
                 font-size: 0.8vw;
-                text-align: center;
+                // text-align: center;
                 box-sizing: border-box;
                 font-weight: bold;
                 background-color: rgb(109, 145, 181);
@@ -700,23 +712,26 @@ $MC: #e0dfdf;
                             }
                         }
 
-                        .customtbody {
-                            .customtr {
-                                border-bottom: 2px solid #0185f8;
-                                color: #ffffff;
-
-
-                                .customtd {
-                                    width: 20vw;
-                                    word-break: break-all;
-                                    border-bottom: 1px solid #dedede;
-                                    color: #ffffff;
-                                }
-                            }
-                        }
+                        
                     }
                 }
 
+            }
+            .customtbody {
+                .customtr {
+                    border-bottom: 2px solid #0185f8;
+                    color: #ffffff;
+
+
+                    .customtd {
+                        text-align:right;
+                        padding-right: 10px;
+                        width: 20vw;
+                        word-break: break-all;
+                        border-bottom: 1px solid #dedede;
+                        color: #ffffff;
+                    }
+                }
             }
         }
     }
@@ -725,14 +740,14 @@ $MC: #e0dfdf;
 .body.dark {
     margin: 0 auto;
     width: 99vw;
-    height: 100%;
+    height: 100vh;
     display: block;
     background-image: url(./assets/img/dark3.png);
     @include backgoundSet();
 
     .container {
         margin: 0 auto;
-        height: fit-content;
+        height: 100vh;
         width: 90vw;
         padding-top: 20px;
         box-sizing: border-box;
@@ -776,30 +791,33 @@ $MC: #e0dfdf;
 
                 .selectTime {
                     width: 100%;
-                    height: 15%;
+                    height: 21%;
                     margin: 0 auto;
-                    border-radius: 20px;
-                    @include objcolor();
+                    @include backblur2();
                     box-sizing: border-box;
+                    // padding: 1vw !important;
 
                     .selectValuebox {
                         width: 10vw;
+                        height:100%;
                         margin: auto;
                         text-align: center;
+                        flex-direction:column;
                     }
 
                     .sb {
                         display: flex;
-                        justify-content: space-between;
-                        gap: 0.5vw;
-                        margin-bottom: 1vw;
-
+                        justify-content: space-around;
+                        // gap: 0.5vw;
+                        // margin-bottom: 1vw;
+                        flex-direction:column;
+                        height:50%;
                     }
 
 
                     .selectValue,
                     .mapSelect {
-                        width: 5vw;
+                        width: 10vw;
                         height: 1.5vw;
                         border-radius: 20px;
                         font-size: 0.7vw;
@@ -837,7 +855,7 @@ $MC: #e0dfdf;
 
             .realtimeWeatherArea {
                 width: 100%;
-                height: 20.5vw;
+                height: 18vw;
                 margin: 0 auto;
                 background-color: #fff;
                 border-radius: 20px;
@@ -848,7 +866,7 @@ $MC: #e0dfdf;
                 .realtimeWeather {
                     height: 100%;
 
-                    font-size: 1.3vw;
+                    font-size: 1.1vw;
 
                     h2 {
                         @include titleFont;
@@ -869,10 +887,9 @@ $MC: #e0dfdf;
                         margin-top: 2vh;
 
                         .icon {
-                            width: 8vw;
-                            height: 40%;
+                            width: 6vw;
+                            height: 32%;
                             margin: -1vw auto;
-                            background-image: url(./assets/img/sunny.png);
                             @include backgoundSet();
                         }
 
@@ -889,7 +906,7 @@ $MC: #e0dfdf;
                         .weatherType {
                             text-align: center;
                             width: 10vw;
-                            font-size: 1.5vw;
+                            font-size: 1.2vw;
                         }
 
                         .weather-info {
@@ -949,7 +966,7 @@ $MC: #e0dfdf;
 
                         p {
                             margin-top: 1vw;
-                            font-size: 1.1vw;
+                            font-size: 1vw;
                             font-weight: bold;
                             @include titleFont;
 
@@ -1006,15 +1023,24 @@ $MC: #e0dfdf;
                     position: absolute;
 
                     .koreaMap {
-                        stroke: $MC;
+                        stroke: #780aa7;
                         fill: #ffffff;
+
+                        &.active {
+                            fill: #ffa600; // 클릭 시 활성화된 색 (주황색)
+                            stroke: #ffa600; // 테두리 강조
+                            stroke-width: 3;
+
+
+                        }
+
+                        &:hover {
+
+                            fill: #ffa600;
+                            cursor: pointer;
+                        }
                     }
 
-                    .koreaMap:hover {
-
-                        fill: #06ab7c;
-                        cursor: pointer;
-                    }
                 }
 
             }
@@ -1118,6 +1144,15 @@ $MC: #e0dfdf;
                     width: 32%;
                     @include objcolor();
 
+                    span{
+                        display:inline-block;
+                        width:50%;
+                        text-align:right;
+                    }
+                    .textLeft{
+                        width:30%;
+                        padding-right:20%;
+                    }
 
                     .allhighestprecipitation {
                         z-index: 2px;
@@ -1265,7 +1300,7 @@ $MC: #e0dfdf;
                 width: 100%;
                 height: 30%;
                 @include objcolor();
-                text-align: center;
+                // text-align: center;
                 box-sizing: border-box;
                 font-weight: bold;
 

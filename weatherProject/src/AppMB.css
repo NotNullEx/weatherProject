@@ -46,7 +46,6 @@
     border-radius: 10px;
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
@@ -58,7 +57,13 @@
     margin: 1.5vw auto;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .body .container .main .firstSection .selectTime .sb {
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .body .container .main .firstSection .selectTime .selectValue,
   .body .container .main .firstSection .selectTime .mapSelect {
@@ -98,10 +103,17 @@
     font-size: 4vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather h2 {
+    font-size: 5vw !important;
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
     color: white;
     text-align: center;
+  }
+  .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather .weatherType {
+    width: 200px;
+    font-size: 4vw;
+    margin-bottom: 3vw;
+    margin-left: -76px;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul {
     width: 10vw;
@@ -114,7 +126,7 @@
     width: 20vw;
     height: 10vh;
     margin: 0 auto;
-    margin-left: -4vw;
+    margin-left: -6vw;
     background-image: url(./assets/img/sunny.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -126,10 +138,10 @@
     font-weight: bold;
     text-shadow: 7px 7px 20px #1C1B20;
     margin-top: -10vw;
-    margin-left: -3vw;
+    margin-left: -6.6vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info {
-    width: 300%;
+    width: 30vw;
     margin-left: -9.6vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
@@ -183,7 +195,7 @@
     position: relative;
   }
   .body .container .main .firstSection .perceived .thermometerIconbox .thermometerIcon {
-    margin-top: 14vw;
+    margin-top: 21vw;
     margin-left: 1vw;
     width: 17vw;
     height: 10vh;
@@ -235,7 +247,6 @@
     margin-top: -7vw;
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
@@ -254,18 +265,26 @@
     stroke: #0088ff;
     fill: #ffffff;
   }
+  .body .container .main .secondSection .b1 .map .koreaMap.active {
+    fill: #0088ff;
+    stroke: #ffffff;
+    stroke-width: 3;
+  }
   .body .container .main .secondSection .b1 .map .koreaMap:hover {
-    fill: #046b1e;
+    fill: #0088ff;
+    cursor: pointer;
+  }
+  .body .container .main .secondSection .b1 .map .koreaMap:hover {
+    fill: #0088ff;
     cursor: pointer;
   }
   .body .container .main .secondSection .b2 {
     width: 100%;
-    height: 200px;
+    height: 220px;
     margin: 0 auto;
     margin-top: -17vw;
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
@@ -277,7 +296,7 @@
     color: white;
   }
   .body .container .main .secondSection .b2 .chart {
-    height: 150px !important;
+    height: 160px !important;
   }
   .body .container .main .secondSection .b2 .chart Line {
     stroke: #3d4754;
@@ -286,10 +305,10 @@
     stroke: #1269d4;
   }
   .body .container .main .secondSection .b2 .chartInfo {
-    width: 88vw;
+    width: 90vw;
     justify-content: space-between;
-    margin-left: 4vw;
-    margin-top: -1.2vw;
+    margin-left: 0.2vw;
+    margin-top: 12vw;
   }
   .body .container .main .secondSection .b2 .chartInfo .text-center {
     margin-top: -0.6vw;
@@ -299,8 +318,8 @@
   }
   .body .container .main .secondSection .b2 .chartInfo .text-center .text-sm {
     color: #000000;
-    margin-left: -3vw;
-    font-size: 2.3vw;
+    margin-left: 0.2vw;
+    font-size: 2.7vw;
     text-align: center;
   }
   .body .container .main .thirdSection {
@@ -327,7 +346,6 @@
     background-color: black;
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
@@ -354,7 +372,7 @@
   .body .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
     top: 17.2vw;
-    left: 12vw;
+    left: 10vw;
     font-size: 2vw;
     text-align: center;
   }
@@ -446,7 +464,6 @@
     height: 200px;
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
@@ -459,9 +476,9 @@
     stroke: #746bb8;
   }
   .body .container .main .thirdSection .c1 .tgtitle {
-    width: 65%;
-    line-height: 9vw;
-    font-size: 3vw;
+    width: 80%;
+    line-height: 1vw;
+    font-size: 2.6vw;
     text-align: center;
     font-weight: bold;
     font-family: "Nanum Gothic", serif;
@@ -476,7 +493,13 @@
     margin: auto;
     display: block;
     width: 95%;
-    height: 180px;
+    height: 190px !important;
+  }
+  .body .container .main .thirdSection .c1 .temperatureGraph ul {
+    margin-left: 14vw !important;
+  }
+  .body .container .main .thirdSection .c1 .temperatureGraph span {
+    font-size: 3vw !important;
   }
   .body .container .main .thirdSection .c2 {
     margin-top: 4vw;
@@ -484,7 +507,6 @@
     height: 180px;
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     opacity: 90%;
@@ -493,13 +515,12 @@
     text-align: center;
     box-sizing: border-box;
     font-weight: bold;
-    background-color: rgb(109, 145, 181);
   }
   .body .container .main .thirdSection .c2 .tgtitle2 {
     font-size: 3vw !important;
   }
   .body .container .main .thirdSection .c2 h2 {
-    font-size: 1vw;
+    font-size: 3vw;
     font-weight: bold;
     margin-bottom: 5px;
     font-family: "Nanum Gothic", serif;
@@ -509,6 +530,12 @@
   .body .container .main .thirdSection .c2 .customtbody {
     font-size: 0.8rem;
     /* 모바일에서 글자 크기 조정 */
+  }
+  .body .container .main .thirdSection .c2 .table {
+    height: 93%;
+  }
+  .body .container .main .thirdSection .c2 .tableMain .customthead .customtr {
+    font-size: 2vw;
   }
   .body .container .main .thirdSection .c2 .tableMain .customthead .customtr .customth {
     border-bottom: 1px solid #bdc5cc;
@@ -571,7 +598,6 @@
     border-radius: 10px;
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
     margin-bottom: 4vw;
   }
   .body.dark .container .main .firstSection .selectTime .selectValuebox {
@@ -580,6 +606,9 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
+  }
+  .body.dark .container .main .firstSection .selectTime .sb {
+    flex-direction: row;
   }
   .body.dark .container .main .firstSection .selectTime .selectValue,
   .body.dark .container .main .firstSection .selectTime .mapSelect {
@@ -618,10 +647,17 @@
     font-size: 4vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather h2 {
+    font-size: 6vw !important;
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
     color: white;
     text-align: center;
+  }
+  .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather .weatherType {
+    width: 200px;
+    font-size: 4vw;
+    margin-bottom: 3vw;
+    margin-left: -76px;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul {
     width: 10vw;
@@ -634,7 +670,7 @@
     width: 20vw;
     height: 10vh;
     margin: 0 auto;
-    margin-left: -4vw;
+    margin-left: -6vw;
     background-image: url(./assets/img/sunny.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -646,10 +682,10 @@
     font-weight: bold;
     text-shadow: 7px 7px 20px #1C1B20;
     margin-top: -10vw;
-    margin-left: -3vw;
+    margin-left: -6.6vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info {
-    width: 300%;
+    width: 30vw;
     margin-left: -9.6vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB {
@@ -702,7 +738,7 @@
     position: relative;
   }
   .body.dark .container .main .firstSection .perceived .thermometerIconbox .thermometerIcon {
-    margin-top: 14vw;
+    margin-top: 21vw;
     margin-left: 1vw;
     width: 17vw;
     height: 10vh;
@@ -754,7 +790,6 @@
     margin-top: -7vw;
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
     overflow: hidden;
     position: relative;
     opacity: 90%;
@@ -767,11 +802,20 @@
     position: absolute;
   }
   .body.dark .container .main .secondSection .b1 .map .koreaMap {
-    stroke: #0088ff;
+    stroke: #ffa600;
     fill: #ffffff;
   }
+  .body.dark .container .main .secondSection .b1 .map .koreaMap.active {
+    fill: #ffa600;
+    stroke: #ffa600;
+    stroke-width: 3;
+  }
   .body.dark .container .main .secondSection .b1 .map .koreaMap:hover {
-    fill: #046b1e;
+    fill: #ffa600;
+    cursor: pointer;
+  }
+  .body.dark .container .main .secondSection .b1 .map .koreaMap:hover {
+    fill: #ffa600;
     cursor: pointer;
   }
   .body.dark .container .main .secondSection .b2 {
@@ -781,7 +825,6 @@
     margin-top: -17vw;
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
   }
   .body.dark .container .main .secondSection .b2 .text {
     font-size: 3vw;
@@ -799,10 +842,10 @@
     stroke: #1269d4;
   }
   .body.dark .container .main .secondSection .b2 .chartInfo {
-    width: 88vw;
+    width: 90vw;
     justify-content: space-between;
-    margin-left: 4vw;
-    margin-top: -1.2vw;
+    margin-left: 0.2vw;
+    margin-top: 12vw;
   }
   .body.dark .container .main .secondSection .b2 .chartInfo .text-center {
     margin-top: -0.6vw;
@@ -811,9 +854,9 @@
     font-size: 2vw;
   }
   .body.dark .container .main .secondSection .b2 .chartInfo .text-center .text-sm {
-    color: #fff;
-    margin-left: -3vw;
-    font-size: 2.3vw;
+    color: #ffffff;
+    margin-left: 0.2vw;
+    font-size: 2.7vw;
     text-align: center;
   }
   .body.dark .container .main .thirdSection {
@@ -840,7 +883,6 @@
     background-color: black;
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
   }
   .body.dark .container .main .thirdSection .c .c2-1 .circleperTitle,
   .body.dark .container .main .thirdSection .c .c2-2 .circleperTitle,
@@ -864,7 +906,7 @@
   .body.dark .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
     top: 17.2vw;
-    left: 12vw;
+    left: 10vw;
     font-size: 2vw;
     text-align: center;
   }
@@ -956,7 +998,6 @@
     height: 180px;
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
     padding: 30px;
     box-sizing: border-box;
     position: relative;
@@ -985,13 +1026,15 @@
     width: 90%;
     height: 120px;
   }
+  .body.dark .container .main .thirdSection .c .c1 .temperatureGraph span {
+    font-size: 30vw !important;
+  }
   .body.dark .container .main .thirdSection .c .c2 {
     margin-top: 4vw;
     width: 100%;
     height: 180px;
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
     margin-top: 5vw;
     margin-bottom: 5vw;
     text-align: center;
@@ -1002,26 +1045,24 @@
     font-size: 3vw !important;
   }
   .body.dark .container .main .thirdSection .c .c2 h2 {
-    font-size: 1vw;
+    font-size: 3vw;
     font-weight: bold;
     margin-bottom: 5px;
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
     color: white;
   }
-  .body.dark .container .main .thirdSection .c .c2 .customtbody {
-    font-size: 0.8rem;
-    /* 모바일에서 글자 크기 조정 */
+  .body.dark .container .main .thirdSection .c .c2 .tableMain .customthead th {
+    font-size: 12vw;
+  }
+  .body.dark .container .main .thirdSection .c .c2 .tableMain .customthead .customtr {
+    font-size: 2vw;
   }
   .body.dark .container .main .thirdSection .c .c2 .tableMain .customthead .customtr .customth {
     border-bottom: 1px solid #bdc5cc;
     color: #ffffff;
   }
-  .body.dark .container .main .thirdSection .c .c2 .tableMain .customtbody .customtr {
-    border-bottom: 2px solid #0185f8;
-    color: #ffffff;
-  }
-  .body.dark .container .main .thirdSection .c .c2 .tableMain .customtbody .customtr .customtd {
+  .body.dark .container .main .thirdSection .c .c2 .tableMain .customtbody .customtd {
     width: 200px;
     word-break: break-all;
     border-bottom: 1px solid #dedede;

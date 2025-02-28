@@ -13,14 +13,12 @@
 @mixin objcolor() {
     background-color: #303136;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #535353;
 
 }
 
 @mixin backblur2() {
     border-radius: 10px;
     background: none;
-    box-shadow: 5px 5px 10px #506472;
     backdrop-filter: blur(30px);
     opacity: 90%;
 
@@ -88,11 +86,15 @@ $MC: #e0dfdf;
                             margin: 1.5vw auto;
                             text-align: center;
                             display: flex;
-                            justify-content: space-between;
-
+                            justify-content: space-around;
+                            flex-direction:row;
                         }
 
-
+                        .sb {
+                            width:50%;
+                            flex-direction:row;
+                            justify-content:space-around;
+                        }
 
                         .selectValue,
                         .mapSelect {
@@ -144,9 +146,17 @@ $MC: #e0dfdf;
                             font-size: 4vw;
 
                             h2 {
+                                font-size: 5vw !important;
                                 @include titleFont;
                                 text-align: center;
 
+                            }
+
+                            .weatherType {
+                                width: 200px;
+                                font-size: 4vw;
+                                margin-bottom: 3vw;
+                                margin-left: -76px;
                             }
 
                             ul {
@@ -160,7 +170,7 @@ $MC: #e0dfdf;
                                     width: 20vw;
                                     height: 10vh;
                                     margin: 0 auto;
-                                    margin-left: -4vw;
+                                    margin-left: -6vw;
                                     background-image: url(./assets/img/sunny.png);
                                     @include backgoundSet();
                                 }
@@ -171,11 +181,11 @@ $MC: #e0dfdf;
                                     font-weight: bold;
                                     text-shadow: 7px 7px 20px #1C1B20;
                                     margin-top: -10vw;
-                                    margin-left: -3vw;
+                                    margin-left: -6.6vw;
                                 }
 
                                 .weather-info {
-                                    width: 300%;
+                                    width: 30vw;
                                     margin-left: -9.6vw;
 
                                     .winfoB {
@@ -237,7 +247,7 @@ $MC: #e0dfdf;
                             position: relative;
 
                             .thermometerIcon {
-                                margin-top: 14vw;
+                                margin-top: 21vw;
                                 margin-left: 1vw;
                                 width: 17vw;
                                 height: 10vh;
@@ -315,11 +325,25 @@ $MC: #e0dfdf;
                             .koreaMap {
                                 stroke: #0088ff;
                                 fill: #ffffff;
+
+                                &.active {
+                                    fill: #0088ff; // 클릭 시 활성화된 색 (주황색)
+                                    stroke: #ffffff; // 테두리 강조
+                                    stroke-width: 3;
+
+
+                                }
+
+                                &:hover {
+
+                                    fill: #0088ff;
+                                    cursor: pointer;
+                                }
                             }
 
                             .koreaMap:hover {
 
-                                fill: #046b1e;
+                                fill: #0088ff;
                                 cursor: pointer;
                             }
                         }
@@ -328,7 +352,7 @@ $MC: #e0dfdf;
 
                     .b2 {
                         width: 100%;
-                        height: 200px;
+                        height: 220px;
                         margin: 0 auto;
                         margin-top: -17vw;
                         @include backblur2();
@@ -339,9 +363,7 @@ $MC: #e0dfdf;
                         }
 
                         .chart {
-                            height: 150px !important;
-
-
+                            height: 160px !important;
 
                             Line {
                                 stroke: #3d4754;
@@ -357,10 +379,10 @@ $MC: #e0dfdf;
 
 
                         .chartInfo {
-                            width: 88vw;
+                            width: 90vw;
                             justify-content: space-between;
-                            margin-left: 4vw;
-                            margin-top: -1.2vw;
+                            margin-left: 0.2vw;
+                            margin-top: 12vw;
 
 
                             .text-center {
@@ -371,8 +393,8 @@ $MC: #e0dfdf;
 
                                 .text-sm {
                                     color: #000000;
-                                    margin-left: -3vw;
-                                    font-size: 2.3vw;
+                                    margin-left: 0.2vw;
+                                    font-size: 2.7vw;
                                     text-align: center;
                                 }
                             }
@@ -431,7 +453,7 @@ $MC: #e0dfdf;
                             .ml {
                                 position: absolute;
                                 top: 17.2vw;
-                                left: 12vw;
+                                left: 10vw;
                                 font-size: 2vw;
                                 text-align: center;
                             }
@@ -530,9 +552,9 @@ $MC: #e0dfdf;
 
 
                         .tgtitle {
-                            width: 65%;
-                            line-height: 9vw;
-                            font-size: 3vw;
+                            width: 80%;
+                            line-height: 1vw;
+                            font-size: 2.6vw;
                             text-align: center;
                             font-weight: bold;
                             @include titleFont();
@@ -547,7 +569,16 @@ $MC: #e0dfdf;
                             margin: auto;
                             display: block;
                             width: 95%;
-                            height: 180px;
+                            height: 190px !important;
+
+                            ul {
+                                margin-left: 14vw !important;
+
+                            }
+
+                            span {
+                                font-size: 3vw !important;
+                            }
                         }
 
 
@@ -566,7 +597,6 @@ $MC: #e0dfdf;
                         box-sizing: border-box;
                         font-weight: bold;
 
-                        background-color: rgb(109, 145, 181);
 
 
                         .tgtitle2 {
@@ -575,7 +605,7 @@ $MC: #e0dfdf;
                         }
 
                         h2 {
-                            font-size: 1vw;
+                            font-size: 3vw;
                             font-weight: bold;
                             margin-bottom: 5px;
                             @include titleFont();
@@ -586,9 +616,17 @@ $MC: #e0dfdf;
                             /* 모바일에서 글자 크기 조정 */
                         }
 
+                        .table {
+                            height: 93%;
+                        }
+
                         .tableMain {
+
+
                             .customthead {
                                 .customtr {
+                                    font-size: 2vw;
+
                                     .customth {
                                         border-bottom: 1px solid #bdc5cc;
                                         color: #ffffff;
@@ -686,6 +724,9 @@ $MC: #e0dfdf;
 
                         }
 
+                        .sb {
+                            flex-direction:row;
+                        }
 
                         .selectValue,
                         .mapSelect {
@@ -736,9 +777,17 @@ $MC: #e0dfdf;
                             font-size: 4vw;
 
                             h2 {
+                                font-size: 6vw !important;
                                 @include titleFont;
                                 text-align: center;
 
+                            }
+
+                            .weatherType {
+                                width: 200px;
+                                font-size: 4vw;
+                                margin-bottom: 3vw;
+                                margin-left: -76px;
                             }
 
                             ul {
@@ -752,7 +801,7 @@ $MC: #e0dfdf;
                                     width: 20vw;
                                     height: 10vh;
                                     margin: 0 auto;
-                                    margin-left: -4vw;
+                                    margin-left: -6vw;
                                     background-image: url(./assets/img/sunny.png);
                                     @include backgoundSet();
                                 }
@@ -763,11 +812,11 @@ $MC: #e0dfdf;
                                     font-weight: bold;
                                     text-shadow: 7px 7px 20px #1C1B20;
                                     margin-top: -10vw;
-                                    margin-left: -3vw;
+                                    margin-left: -6.6vw;
                                 }
 
                                 .weather-info {
-                                    width: 300%;
+                                    width: 30vw;
                                     margin-left: -9.6vw;
 
                                     .winfoB {
@@ -829,7 +878,7 @@ $MC: #e0dfdf;
                             position: relative;
 
                             .thermometerIcon {
-                                margin-top: 14vw;
+                                margin-top: 21vw;
                                 margin-left: 1vw;
                                 width: 17vw;
                                 height: 10vh;
@@ -906,13 +955,27 @@ $MC: #e0dfdf;
                             position: absolute;
 
                             .koreaMap {
-                                stroke: #0088ff;
+                                stroke: #ffa600;
                                 fill: #ffffff;
+
+                                &.active {
+                                    fill: #ffa600; // 클릭 시 활성화된 색 (주황색)
+                                    stroke: #ffa600; // 테두리 강조
+                                    stroke-width: 3;
+
+
+                                }
+
+                                &:hover {
+
+                                    fill: #ffa600;
+                                    cursor: pointer;
+                                }
                             }
 
                             .koreaMap:hover {
 
-                                fill: #046b1e;
+                                fill: #ffa600;
                                 cursor: pointer;
                             }
                         }
@@ -950,10 +1013,10 @@ $MC: #e0dfdf;
 
 
                         .chartInfo {
-                            width: 88vw;
+                            width: 90vw;
                             justify-content: space-between;
-                            margin-left: 4vw;
-                            margin-top: -1.2vw;
+                            margin-left: 0.2vw;
+                            margin-top: 12vw;
 
 
                             .text-center {
@@ -963,9 +1026,9 @@ $MC: #e0dfdf;
                                 font-size: 2vw;
 
                                 .text-sm {
-                                    color: #fff;
-                                    margin-left: -3vw;
-                                    font-size: 2.3vw;
+                                    color: #ffffff;
+                                    margin-left: 0.2vw;
+                                    font-size: 2.7vw;
                                     text-align: center;
                                 }
                             }
@@ -1025,7 +1088,7 @@ $MC: #e0dfdf;
                             .ml {
                                 position: absolute;
                                 top: 17.2vw;
-                                left: 12vw;
+                                left: 10vw;
                                 font-size: 2vw;
                                 text-align: center;
                             }
@@ -1141,6 +1204,10 @@ $MC: #e0dfdf;
                                 display: block;
                                 width: 90%;
                                 height: 120px;
+
+                                span {
+                                    font-size: 30vw !important;
+                                }
                             }
 
 
@@ -1152,7 +1219,6 @@ $MC: #e0dfdf;
                             width: 100%;
                             height: 180px;
                             @include objcolor();
-
                             margin-top: 5vw;
                             margin-bottom: 5vw;
                             text-align: center;
@@ -1167,20 +1233,25 @@ $MC: #e0dfdf;
                             }
 
                             h2 {
-                                font-size: 1vw;
+                                font-size: 3vw;
                                 font-weight: bold;
                                 margin-bottom: 5px;
                                 @include titleFont();
                             }
 
-                            .customtbody {
-                                font-size: 0.8rem;
-                                /* 모바일에서 글자 크기 조정 */
-                            }
+                            .customtbody {}
 
                             .tableMain {
+
                                 .customthead {
+
+                                    th {
+                                        font-size: 12vw;
+                                    }
+
                                     .customtr {
+                                        font-size: 2vw;
+
                                         .customth {
                                             border-bottom: 1px solid #bdc5cc;
                                             color: #ffffff;
@@ -1191,26 +1262,20 @@ $MC: #e0dfdf;
                                 }
 
                                 .customtbody {
-                                    .customtr {
-                                        border-bottom: 2px solid #0185f8;
+                                    .customtd {
+
+                                        width: 200px;
+                                        word-break: break-all;
+                                        border-bottom: 1px solid #dedede;
                                         color: #ffffff;
 
 
-                                        .customtd {
-
-                                            width: 200px;
-                                            word-break: break-all;
-                                            border-bottom: 1px solid #dedede;
-                                            color: #ffffff;
-
-
-                                        }
                                     }
                                 }
                             }
-
-
                         }
+
+
                     }
                 }
             }

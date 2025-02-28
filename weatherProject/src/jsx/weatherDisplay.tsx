@@ -8,6 +8,7 @@ import { regionCoords } from "./regionCoords";
 import TableData from "./TableData";
 import WeatherChart from "./weatherChart";
 import TotalPrecipitation from "./Totalprecipitation";
+import DayWeather from "./DayWeather";
 
 type monthPrecipitation = {
     city: string;
@@ -38,6 +39,10 @@ function WeatherDisplay() {
         return new Date(yearNum, monthNum, 0).getDate();
     };
 
+    useEffect(() => {
+        const cityMapping = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '경기', '강원', '충북', '충남', '경북', '경남', '전북', '전남', '제주'];
+        setSelectedCity(cityMapping[selectedIndex] || "서울");
+    }, [selectedIndex]);
 
     useEffect(() => {
         if (darkMode) {
@@ -47,36 +52,12 @@ function WeatherDisplay() {
         }
     }, [darkMode]);
 
-    let selectMonth = Number(selectedMonth) < 10 ? "0" + selectedMonth : selectedMonth;
-    const apiUrl2 = `/api/typ02/openApi/SfcMtlyInfoService/getDailyWthrData?pageNo=1&numOfRows=10&dataType=JSON&year=${selectedYear}&month=${selectMonth}&station=${selectedCityN}&authKey=hVqmw5caSHOapsOXGhhz3Q`;
-    function callJsonApi(url: any) {  // Text API 호출 함수
-        console.log("출력중");
-        fetch(url)  // fetch를 통해 API 호출
-            .then(response => response.json())  // 응답을 JSON으로 변환
-            .then(data => { setDayWeather(data.response.body.items.item[0].stndays.info); })
-            .catch(error => {
-                console.error('API 호출 중 오류가 발생했습니다:', error);
-                // 오류 처리를 수행할 수 있습니다.
-            });
-    }
-
-    useEffect(() => {
-        callJsonApi(apiUrl2);
-    }, [apiUrl2, selectedYear, selectedMonth, selectedCityN, selectedDay]);
-
-    let weatherDay: any = [];
-    dayWeather.forEach((v: any) => {
-        if (v.tm == selectedDay) {
-            weatherDay = v;
-        }
-    });
-
     return (
         <div id="container" className="container">
             <header id="header" className="header">
                 <p>Weather Insight</p>
                 <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
-                    {darkMode ? "다크" : "라이트 "}
+                    {darkMode ? "🌞" : "🌙 "}
                 </button>
             </header>
             <main id="main" className="main">
@@ -104,36 +85,6 @@ function WeatherDisplay() {
                                     })}
                                 </select>
 
-                                {/* 월 선택 */}
-                                {/* <select className="selectValue" value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>
-                {Array.from({ length: 12 }, (_, i) => {
-                    const month = i + 1;
-                    return (
-                        <option key={month} value={month}>
-                            {month}월
-                        </option>
-                    );
-                })}
-            </select> */}
-
-                                {/* 일 선택 - 해당 연도와 월에 맞게 일 수 조정 */}
-                                {/* <select className="selectValue" value={selectedDay} onChange={(e) => setSelectedDay(Number(e.target.value))}>
-                {Array.from({ length: getDaysInMonth(selectedYear, selectedMonth) }, (_, i) => {
-                    const day = i + 1;
-                    return (
-                        <option key={day} value={day}>
-                            {day}일
-                        </option>
-                    );
-                })}
-            </select>
-            <select className="mapSelect" value={selectedIndex} onChange={(e) => setSelectedIndex(Number(e.target.value))}>
-                                    {regionCoords.map((region, idx) => (
-                                        <option key={region.name} value={idx}>
-                                            {region.name}
-                                        </option>
-                                    ))}
-                                </select> */}
                                 <select className="selectValue" value={selectedMonth} onChange={(e) => {
                                     if (Number(e.target.value) > 9) {
                                         setSelectedMonth(e.target.value);
@@ -186,18 +137,11 @@ function WeatherDisplay() {
                     <div className="c">
                         <div className="c2-3">
                             <p className="circleperTitle">{selectedYear}년 {selectedMonth}월 {selectedDay}일</p>
-                            <div className="daytemer">
-                                <p className="daytemerMax">최고 기온 : {weatherDay.ta_max}°C</p>
-                                <p className="daytemerMin">최저 기온 : {weatherDay.ta_min}°C</p>
-                            </div>
-                            <div className="dayprec">
-                                <p className="prec">강수량 : {weatherDay.rn_day === "null" ? "-- " : weatherDay.rn_day + "mm"}</p>
-                            </div>
-                            <div className="dayhumidity">습도 : {weatherDay.hm}%</div>
+                            <DayWeather selectedYear={selectedYear} selectedMonth={selectedMonth} selectedDay={selectedDay} selectedCity={selectedCity} selectedCityN={selectedCityN}></DayWeather>
                         </div>
                         <TotalPrecipitation selectedIndex={selectedIndex} selectedYear={selectedYear} />
                         <div className="c2-2">
-                            <p className="circleperTitle">전국 중 지역 강수량</p>
+                            <p className="circleperTitle">{selectedYear}년 {selectedCity} 강수량</p>
                             <PrecipitationGraph selectedIndex={selectedIndex} selectedYear={selectedYear} />
                         </div>
                     </div>

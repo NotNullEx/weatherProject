@@ -90,7 +90,8 @@ const SuggestWeather: React.FC<SuggestWeatherProps> = ({ selectedIndex }) => {
             <div className="thermometerIconbox">
                 <div className="thermometerIcon"></div>
                 <div>
-                    체감 온도 <p>{weather?.main.feels_like} °C</p>
+                    현재<br/>
+                    체감 온도<p>{weather?.main.feels_like}°C</p>
                 </div>
             </div>
             <div className="suggestion">

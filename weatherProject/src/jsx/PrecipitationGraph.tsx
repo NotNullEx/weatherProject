@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import url from './json/url.json';
 
 interface WeatherData {
     city: string;
@@ -27,7 +28,7 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
 
     // 전국 총 강수량 가져오기
     useEffect(() => {
-        fetch(`http://localhost:5000/api/precipitation?year=${selectedYear}`)
+        fetch(`${url.host2}/api/precipitation?year=${selectedYear}`)
             .then((res) => res.json())
             .then((data: WeatherData[]) => {
                 const totalRain = data.reduce((sum, item) => sum + item.rnDay, 0);
@@ -40,7 +41,7 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
     useEffect(() => {
         if (!selectedCity) return;
 
-        fetch(`http://localhost:5000/api/precipitation?year=${selectedYear}&city=${selectedCity}`)
+        fetch(`${url.host2}/api/precipitation?year=${selectedYear}&city=${selectedCity}`)
             .then((res) => res.json())
             .then((data) => setRegionWeatherData(data))
             // .then(setRegionWeatherData)
@@ -51,13 +52,13 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
     useEffect(() => {
         if (regionWeatherData.length > 0) {
             //const totalRain = weatherData.reduce((sum, d) => sum + d.rnDay, 0);
-            const regionRain = regionWeatherData.reduce((sum, d) => sum + d.rnDay, 0);
+            const regionRain = regionWeatherData.reduce((sum, d) => sum +Math.floor(d.rnDay), 0);
             setRegionData(Math.floor(regionRain));
             setPercent(Math.floor((regionRain / Number(getTotalPrecipitation)) * 100));
             console.log(regionRain)
         }
     }, [weatherData, regionWeatherData]);
-    console.log(selectedCity);
+
     // 원형 그래프 설정
     const radius = 30;
     const circumference = 2 * Math.PI * radius;
@@ -94,7 +95,7 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
             {/* 중앙 텍스트 */}
             <div className="absolute text-white text-sm font-semibold">
                 <p className="circleper">{percent}%</p>
-                <p className="ml">{regionData}mm</p>
+                <p className="ml">{String(regionData).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}mm</p>
             </div>
         </div>
     );

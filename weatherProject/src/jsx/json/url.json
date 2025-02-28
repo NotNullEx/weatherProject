@@ -1,0 +1,5 @@
+{
+ "host1":"http://localhost:5000",
+ "host2":"http://kkms4001.iptime.org:21182",
+ "host3":"host2가 사용하는 주소로 설정해야 한다"
+}

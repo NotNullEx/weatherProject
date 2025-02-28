@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { regionCoords } from "./regionCoords";
+import url from './json/url.json';
 
 type WeatherData = {
     id: number;
@@ -55,13 +56,13 @@ const TableData: React.FC<WeatherProps> = ({ selectedIndex, selectedYear }) => {
         setViewCityName(region.name);
 
         // 기온 데이터 가져오기
-        fetch(`http://localhost:5000/api/temperature?year=${selectedYear}`)
+        fetch(`${url.host2}/api/temperature?year=${selectedYear}`)
             .then((res) => res.json())
             .then((data) => setWeatherData(data))
             .catch((err) => console.error("❌ 기온 데이터 가져오기 실패:", err));
 
         // 강수량 데이터 가져오기
-        fetch(`http://localhost:5000/api/precipitation?year=${selectedYear}`)
+        fetch(`${url.host2}/api/precipitation?year=${selectedYear}`)
             .then((res) => res.json())
             .then((data) => setPrecipitationData(data))
             .catch((err) => console.error("❌ 강수량 데이터 가져오기 실패:", err));
@@ -91,11 +92,11 @@ const TableData: React.FC<WeatherProps> = ({ selectedIndex, selectedYear }) => {
                         return (
                             <tr key={index} className="customtr">
                                 <td className="customtd">{month}</td>
-                                <td className="customtd">{tempData?.tamax ?? "-"}</td>
-                                <td className="customtd">{tempData?.taavg ?? "-"}</td>
-                                <td className="customtd">{tempData?.tamin ?? "-"}</td>
-                                <td className="customtd">{rainData?.rnDay ?? "-"}</td>
-                                <td className="customtd">{rainData?.maxRnDay ?? "-"}</td>
+                                <td className="customtd">{(tempData?.tamax ?? "-") == "-" ? "-" : tempData.tamax.toString().includes('.') ? tempData.tamax : `${tempData.tamax}.0`}</td>
+                                <td className="customtd">{(tempData?.taavg ?? "-") == "-" ? "-" : tempData.taavg.toString().includes('.') ? tempData.taavg : `${tempData.taavg}.0`}</td>
+                                <td className="customtd">{(tempData?.tamin ?? "-") == "-" ? "-" : tempData.tamin.toString().includes('.') ? tempData.tamin : `${tempData.tamin}.0`}</td>
+                                <td className="customtd">{(rainData?.rnDay ?? "-") == "-" ? "-" : rainData.rnDay.toString().includes('.') ? rainData.rnDay : `${rainData.rnDay}.0`}</td>
+                                <td className="customtd">{(rainData?.maxRnDay ?? "-") == "-" ? "-" : rainData.maxRnDay.toString().includes('.') ? rainData.maxRnDay : `${rainData.maxRnDay}.0`}</td>
                                 <td className="customtd">{rainData?.tmRnDay ?? "-"}</td>
                             </tr>
                         );

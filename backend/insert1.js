@@ -4,11 +4,10 @@ import './server.js';
 
 // MySQL 연결 설정
 const connection = await mysql.createConnection({
-  host: 'mysql-db',
-  user: 'weather',
-  password: '1q2w3e',
-  database: 'weatherDB',
-  charset: 'utf8mb4',
+  host: "http://kkms4001.iptime.org/localhost",
+  user: "c21st18",
+  password: "MJfqebtKqcW6KV27",
+  database: "c21st18"
 });
 
 console.log('MySQL 연결 성공!');
