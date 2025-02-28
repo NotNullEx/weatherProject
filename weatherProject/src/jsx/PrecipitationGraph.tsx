@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import url from './json/url.json';
 
 interface WeatherData {
-    city: string;
-    year: number;
+    city: string; // 도시
+    year: number; // 년도
     rnDay: number; // 월별 총 강수량
 }
 
@@ -20,13 +20,12 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
     const [regionData, setRegionData] = useState<number>(0);
     const [percent, setPercent] = useState<number>(0);
 
-    // 선택된 지역 설정
     useEffect(() => {
         const cityMapping = ['서울', '수원', '천안', '청주', '강릉', '대구', '창원', '전주', '여수', '제주', '부산', '인천', '대전', '광주', '울산', '포항'];
         setSelectedCity(cityMapping[selectedIndex] || "서울");
     }, [selectedIndex]);
 
-    // 전국 총 강수량 가져오기
+    // 전국 총 강수량 
     useEffect(() => {
         fetch(`${url.host2}/api/precipitation?year=${selectedYear}`)
             .then((res) => res.json())
@@ -34,28 +33,25 @@ const PrecipitationGraph: React.FC<CallApiProps> = ({ selectedYear, selectedInde
                 const totalRain = data.reduce((sum, item) => sum + item.rnDay, 0);
                 setGetTotalPrecipitation(String(Math.floor(totalRain)));
             })
-            .catch((err) => console.error("❌ 강수량 데이터 가져오기 실패:", err));
+            .catch((err) => console.error("강수량 가져오기 실패:", err));
     }, [selectedYear, selectedCity]);
 
-    // 특정 지역 강수량 가져오기
+    // 특정 지역 강수량 
     useEffect(() => {
         if (!selectedCity) return;
 
         fetch(`${url.host2}/api/precipitation?year=${selectedYear}&city=${selectedCity}`)
             .then((res) => res.json())
             .then((data) => setRegionWeatherData(data))
-            // .then(setRegionWeatherData)
-            .catch((err) => console.error("❌ 지역 강수량 데이터 가져오기 실패:", err));
+            .catch((err) => console.error("지역 강수량 가져오기 실패:", err));
     }, [selectedYear, selectedCity]);
 
     // 강수량 데이터 계산
     useEffect(() => {
         if (regionWeatherData.length > 0) {
-            //const totalRain = weatherData.reduce((sum, d) => sum + d.rnDay, 0);
             const regionRain = regionWeatherData.reduce((sum, d) => sum +Math.floor(d.rnDay), 0);
             setRegionData(Math.floor(regionRain));
             setPercent(Math.floor((regionRain / Number(getTotalPrecipitation)) * 100));
-            console.log(regionRain)
         }
     }, [weatherData, regionWeatherData]);
 

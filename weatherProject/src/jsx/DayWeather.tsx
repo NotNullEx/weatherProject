@@ -26,7 +26,7 @@ const DayWeather: React.FC<CallApiProps> = ({ selectedYear, selectedMonth, selec
           `${url.host2}/api/dayWeather?year=${selectedYear}&month=${selectedMonth}&city=${selectedCity}&day=${selectedDay}`
         );
         const data = await response.json();
-        console.log("API 응답 데이터: ", data);
+  
         setDayWeather(data);
       } catch (error) {
         console.error('API 호출 중 오류가 발생했습니다:', error);

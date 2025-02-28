@@ -17,7 +17,6 @@ const TotalPrecipitation: React.FC<CallApiProps> = ({ selectedYear, selectedInde
     const [selectedCity, setSelectedCity] = useState<string>("");
     const [getTotalPrecipitation, setGetTotalPrecipitation] = useState<string>("0");
 
-    // 지역 인덱스를 기반으로 도시 매핑
     useEffect(() => {
         const region = regionCoords[selectedIndex];
 
@@ -35,7 +34,7 @@ const TotalPrecipitation: React.FC<CallApiProps> = ({ selectedYear, selectedInde
         setSelectedCity(regionMapping[region.name] || region.name);
     }, [selectedIndex]);
 
-    // 선택된 연도와 도시를 기반으로 강수량 데이터 가져오기
+    // 선택된 연도, 도시로 불러옴
     useEffect(() => {
         if (!selectedCity) return;
 
@@ -45,7 +44,7 @@ const TotalPrecipitation: React.FC<CallApiProps> = ({ selectedYear, selectedInde
                 const totalRain = data.reduce((sum, item) => sum + item.rnDay, 0);
                 setGetTotalPrecipitation(String(Math.floor(totalRain)));
             })
-            .catch((err) => console.error("❌ 강수량 데이터 가져오기 실패:", err));
+            .catch((err) => console.error("강수량 가져오기 실패:", err));
     }, [selectedYear, selectedCity]);
 
     return (

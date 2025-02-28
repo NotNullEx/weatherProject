@@ -5,7 +5,7 @@ export interface RegionCoord {
     index: string;
 }
 
-// 지역별 격자 좌표 (예시)
+// 지역 좌표
 export const regionCoords: RegionCoord[] = [
     { name: "서울", nx: 60, ny: 127, index: '108' },
     { name: "부산", nx: 98, ny: 76, index: '159' },
@@ -25,6 +25,7 @@ export const regionCoords: RegionCoord[] = [
     { name: "제주", nx: 52, ny: 38, index: '184' },
 ];
 
+
 export interface todayRegionCoord {
     name: string;
     lat: number;
@@ -32,6 +33,7 @@ export interface todayRegionCoord {
     index: string;
 }
 
+// 현재(실시간) 지역 좌표에 사용
 export const todayRegionCoords: todayRegionCoord[] = [
     { name: "서울", lat: 37.5665, lon: 126.9780, index: '108' },
     { name: "부산", lat: 35.1796, lon: 129.0756, index: '159' },

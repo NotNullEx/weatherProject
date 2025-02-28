@@ -13,12 +13,11 @@ const connection = await mysql.createConnection({
 
 console.log('MySQL 연결 성공!');
 
-// 인코딩 강제 설정
+// 인코딩 설정
 await connection.query("SET NAMES utf8mb4;");
 await connection.query("SET CHARACTER SET utf8mb4;");
 await connection.query("SET character_set_connection=utf8mb4;");
 
-// 필터링할 도시 목록
 const targetCities = ['서울', '수원', '천안', '청주', '강릉', '대구', '창원', '전주', '여수', '제주', '부산', '인천', '대전', '광주', '울산', '포항'];
 
 const fetchWeatherData = (url) => {

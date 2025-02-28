@@ -65,7 +65,7 @@ const TemperatureGraph: React.FC<CallApiProps> = ({ selectedYear, selectedIndex 
 
                 setChartData(processedData);
             })
-            .catch((err) => console.error("❌ 데이터 가져오기 실패:", err));
+            .catch((err) => console.error("데이터 가져오기 실패:", err));
     }, [selectedYear, selectedIndex]);
 
     return (

@@ -5,11 +5,11 @@ import { getOpenWeatherData } from "./openWeather";
 import sunny from "../assets/img/sunny.png";
 import snowySunny from "../assets/img/SnowySunny.png";
 import overcast from "../assets/img/overcast.png";
-import rain2 from "../assets/img/Rain2.png";
+
 import rain from "../assets/img/rain.png";
 import storm from "../assets/img/Storm.png";
 import snow from "../assets/img/Snow.png";
-import sleet from "../assets/img/sleet.png";
+
 interface WeatherProps {
     selectedIndex: number;
 }
@@ -36,7 +36,6 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
         "천둥": storm,
         "눈": snow,
     };
-    console.log(weatherIcons[weatherDesc])
 
     const fetchWeather = async () => {
         setLoading(true);

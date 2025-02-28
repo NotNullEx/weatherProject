@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { regionCoords } from "./regionCoords";
 
-
 interface WeatherMapProps {
     selectedIndex: number;
     setSelectedIndex: (index: number) => void;
-
 }
-
 
 const WeatherMap: React.FC<WeatherMapProps> = ({ selectedIndex, setSelectedIndex }) => {
     const [activeRegion, setActiveRegion] = useState<string | null>(null);
@@ -20,11 +17,9 @@ const WeatherMap: React.FC<WeatherMapProps> = ({ selectedIndex, setSelectedIndex
         const index = regionCoords.findIndex((region) => region.name === regionName);
         if (index !== -1) {
             setSelectedIndex(index);
-            setActiveRegion(regionName); // 클릭한 지역을 활성화
+            setActiveRegion(regionName); 
         }
     };
-
-    // 드롭다운에서 지역 선택 시 액티브 효과 적용
 
     return (
         <div>

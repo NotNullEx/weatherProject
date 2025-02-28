@@ -22,7 +22,6 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
     if (err) {
-        console.log("DB 연결 실패...", err);
         return;
     }
     console.log("DB 연결 성공!");
@@ -30,8 +29,7 @@ connection.connect((err) => {
 
 // 데이터 조회 api
 app.get("/api/temperature", (req, res) => {
-    const selectedYear = req.query.year; // 요청에서 year 파라미터 가져오기
-    console.log("선택된 연도:", selectedYear);
+    const selectedYear = req.query.year;
     let query = `SELECT year, month, city, taavg, tamax, tamin, avghm FROM month_temperature_weather`;
 
     if (selectedYear) {
@@ -44,14 +42,12 @@ app.get("/api/temperature", (req, res) => {
             res.status(500).json({ error: "데이터 조회 실패" });
         } else {
             res.json(result);
-            //console.log("조회된 데이터:",result);
         }
     });
 });
 app.get("/api/precipitation", (req, res) => {
-    const selectedYear = req.query.year; // 요청에서 year 파라미터 가져오기
+    const selectedYear = req.query.year;
     const selectedCity = req.query.city;
-    console.log("선택된 도시:", selectedCity);
     let query = `SELECT city, year, month, rnDay, maxRnDay, tmRnDay FROM month_precipitation_weather WHERE 1=1`;
 
     let parmas = [];
@@ -65,14 +61,12 @@ app.get("/api/precipitation", (req, res) => {
         query += `AND city = ?`;
         parmas.push(selectedCity);
     }
-    console.log("최종 쿼리문",query);
+    console.log("최종 쿼리문", query);
     connection.query(query, parmas, (err, result) => {
         if (err) {
-            console.log("데이터 조회 실패...", err);
             res.status(500).json({ error: "데이터 조회 실패" });
         } else {
             res.json(result);
-            //console.log("조회된 강수량 데이터:", result);
         }
     });
 });
@@ -80,7 +74,7 @@ app.get("/api/precipitation", (req, res) => {
 app.get("/api/yearWeather", (req, res) => {
     const selectedYear = req.query.year;
     const selectedCity = req.query.city;
-    
+
     console.log("선택된 연도:", selectedYear, "선택된 도시:", selectedCity);
 
     let query = `SELECT city, year, Va_lst_11 FROM year_temper_precipi_weather WHERE 1=1`;
@@ -100,7 +94,6 @@ app.get("/api/yearWeather", (req, res) => {
 
     connection.query(query, params, (err, result) => {
         if (err) {
-            console.log("데이터 조회 실패...", err);
             res.status(500).json({ error: "데이터 조회 실패" });
         } else {
             res.json(result);
@@ -108,33 +101,32 @@ app.get("/api/yearWeather", (req, res) => {
     });
 });
 
-app.get("/api/dayWeather",(req,res)=>{
+app.get("/api/dayWeather", (req, res) => {
     const selectedYear = req.query.year;
     const selectedCity = req.query.city;
     const selectedMonth = req.query.month;
     const selectedDay = req.query.day;
     let query = `SELECT city, year, month, day, ta_max, ta_min, rn_day, hm FROM day_weather WHERE 1=1`;
     let params = [];
-    if(selectedYear){
+    if (selectedYear) {
         query += ` AND year = ?`;
         params.push(selectedYear);
     }
-    if(selectedMonth){
+    if (selectedMonth) {
         query += ` AND month =? `;
         params.push(selectedMonth);
     }
-    if(selectedCity){
+    if (selectedCity) {
         query += `AND city = ?`;
         params.push(selectedCity);
     }
-    if(selectedDay){
+    if (selectedDay) {
         query += `AND day = ?`;
         params.push(selectedDay);
     }
 
     connection.query(query, params, (err, result) => {
         if (err) {
-            console.log("데이터 조회 실패...", err);
             res.status(500).json({ error: "데이터 조회 실패" });
         } else {
             res.json(result);

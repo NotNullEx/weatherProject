@@ -12,12 +12,11 @@ const connection = await mysql.createConnection({
 
 console.log('MySQL 연결 성공!');
 
-// 인코딩 강제 설정
+// 인코딩 설정
 await connection.query("SET NAMES utf8mb4;");
 await connection.query("SET CHARACTER SET utf8mb4;");
 await connection.query("SET character_set_connection=utf8mb4;");
 
-// 필터링할 도시 목록
 const targetCities = ['서울', '수원', '천안', '청주', '강릉', '대구', '창원', '전주', '여수', '제주', '부산', '인천', '대전', '광주', '울산', '포항'];
 const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
@@ -62,28 +61,28 @@ const insertWeatherData = async (data, year, month, type) => {
       const columns = isTemperature
         ? '(city, year, month, taavg, tamax, tamin, avghm)'
         : '(city, year, month, rnDay, maxRnDay, tmRnDay)';
-      
+
       // null로 변환 처리 함수
       const toValidValue = (value) => value != 'null' ? value : null;
 
       const values = isTemperature
         ? [
-            cityName, 
-            year, 
-            month,
-            toValidValue(cityData.taavg),
-            toValidValue(cityData.tamax),
-            toValidValue(cityData.tamin),
-            toValidValue(cityData.avghm)
-          ]
+          cityName,
+          year,
+          month,
+          toValidValue(cityData.taavg),
+          toValidValue(cityData.tamax),
+          toValidValue(cityData.tamin),
+          toValidValue(cityData.avghm)
+        ]
         : [
-            cityName, 
-            year, 
-            month,
-            toValidValue(cityData.rn_day),
-            toValidValue(cityData.max_rn_day),
-            toValidValue(cityData.tm_rn_day)
-          ];
+          cityName,
+          year,
+          month,
+          toValidValue(cityData.rn_day),
+          toValidValue(cityData.max_rn_day),
+          toValidValue(cityData.tm_rn_day)
+        ];
 
       const [existing] = await connection.query(
         `SELECT * FROM ${tableName} WHERE city = ? AND year = ? AND month = ?`,
@@ -114,11 +113,11 @@ const main = async () => {
 
         const weatherData1 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcMtlyInfoService/getMmSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&month=${month}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
         const weatherData2 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcMtlyInfoService/getMmSumry2?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&month=${month}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null);
-        
+
         if (weatherData1) await insertWeatherData(weatherData1, year, month, 'temperature');
         if (weatherData2) await insertWeatherData(weatherData2, year, month, 'precipitation');
 
-        // API 요청 간 지연 (1초)
+        // API 지연 처리(1초)
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
     }

@@ -59,13 +59,13 @@ const TableData: React.FC<WeatherProps> = ({ selectedIndex, selectedYear }) => {
         fetch(`${url.host2}/api/temperature?year=${selectedYear}`)
             .then((res) => res.json())
             .then((data) => setWeatherData(data))
-            .catch((err) => console.error("❌ 기온 데이터 가져오기 실패:", err));
+            .catch((err) => console.error("기온 가져오기 실패!:", err));
 
         // 강수량 데이터 가져오기
         fetch(`${url.host2}/api/precipitation?year=${selectedYear}`)
             .then((res) => res.json())
             .then((data) => setPrecipitationData(data))
-            .catch((err) => console.error("❌ 강수량 데이터 가져오기 실패:", err));
+            .catch((err) => console.error("강수량 가져오기 실패:", err));
 
     }, [selectedYear, selectedIndex]);
 

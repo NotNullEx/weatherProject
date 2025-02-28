@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { regionCoords } from "./regionCoords"; // 지역 좌표 데이터
-
-const API_KEY = "b38c1aa9b51d2705b80ad742bf49fba8"; // OpenWeatherMap API 키
-const LANG = "kr"; // 한국어 설정
+import { regionCoords } from "./regionCoords"; 
+const API_KEY = "b38c1aa9b51d2705b80ad742bf49fba8";
+const LANG = "kr"; 
 
 interface WeatherData {
     main: {
@@ -45,14 +44,14 @@ const SuggestWeather: React.FC<SuggestWeatherProps> = ({ selectedIndex }) => {
             "광주": "Gwangju",
             "대전": "Daejeon",
             "울산": "Ulsan",
-            "경기": "Suwon",  // 경기 지역의 대표 도시 (수원)
-            "강원": "Gangneung", // 강릉 (강원도 내 대표적인 도시)
-            "충북": "Cheongju", // 충청북도 대표 도시
-            "충남": "Cheonan", // 충청남도 대표 도시
-            "경북": "Pohang", // 경상북도 대표 도시
-            "경남": "Changwon", // 경상남도 대표 도시
-            "전북": "Jeonju", // 전라북도 대표 도시
-            "전남": "Yeosu", // 전라남도 대표 도시
+            "경기": "Suwon",  // 경기 (수원)
+            "강원": "Gangneung", // 강원 (강릉)
+            "충북": "Cheongju", // 충북 (청주)
+            "충남": "Cheonan", // 충남 (천안)
+            "경북": "Pohang", // 경북 (포항)
+            "경남": "Changwon", // 경남 (창원)
+            "전북": "Jeonju", // 전북 (전주)
+            "전남": "Yeosu", // 전남 (여수)
             "제주": "Jeju"
         };
         const mappedCityName = regionMapping[region.name] || region.name;
@@ -63,7 +62,6 @@ const SuggestWeather: React.FC<SuggestWeatherProps> = ({ selectedIndex }) => {
                 setLoading(true);
                 setError(null);
 
-                // OpenWeatherMap에서는 지역명(q)을 사용하여 요청
                 const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${mappedCityName}&appid=${API_KEY}&lang=${LANG}&units=metric`;
 
                 const response = await fetch(API_URL);
