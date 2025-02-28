@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0', // 외부 접근 허용
-    port: 5173,
+    allowedHosts: ['kkms4001.iptime.org'],
+    // host: 'kkms4001.iptme.org', // 외부 접근 허용
+    host:'0.0.0.0',
+    port: 21183,
     proxy: {
       "/api": {
         target: "https://apihub.kma.go.kr",

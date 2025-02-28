@@ -10,15 +10,6 @@ import WeatherChart from "./weatherChart";
 import TotalPrecipitation from "./Totalprecipitation";
 import DayWeather from "./DayWeather";
 
-type monthPrecipitation = {
-    city: string;
-    year: number;
-    month: number;
-    rnDay: number; // 강수량 총량
-    maxRnDay: number; // 1일 최다 강수량
-    tmRnDay: number; // 1일 최다 강수량이 나타난 날
-};
-
 function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0);
     const [selectedYear, setSelectedYear] = useState<string>("2024");
