@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise';
 import https from 'https';
-import './server.js';
+// api를 받아서 테이블에 데이터 저장하는 파일
 
 // MySQL 연결 설정
 const connection = await mysql.createConnection({
