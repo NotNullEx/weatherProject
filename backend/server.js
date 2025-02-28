@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
-// import url from '../weatherProject/src/jsx/json/url.json';
 import { readFile } from 'fs/promises';
 const url = JSON.parse(await readFile(new URL('../weatherProject/src/jsx/json/url.json', import.meta.url)));
 
@@ -10,7 +9,6 @@ const PORT = 21182;
 
 // cors 설정 -> 이게 리엑트에서 api 호출 가능하게 함
 app.use(cors());
-// app.use(express.json());
 
 // mysql 연결
 const connection = mysql.createConnection({
@@ -31,7 +29,6 @@ connection.connect((err) => {
 app.get("/api/temperature", (req, res) => {
     const selectedYear = req.query.year;
     let query = `SELECT year, month, city, taavg, tamax, tamin, avghm FROM month_temperature_weather`;
-
     if (selectedYear) {
         query += ` WHERE year = ?`;
     }
@@ -45,11 +42,11 @@ app.get("/api/temperature", (req, res) => {
         }
     });
 });
+
 app.get("/api/precipitation", (req, res) => {
     const selectedYear = req.query.year;
     const selectedCity = req.query.city;
     let query = `SELECT city, year, month, rnDay, maxRnDay, tmRnDay FROM month_precipitation_weather WHERE 1=1`;
-
     let parmas = [];
 
     if (selectedYear) {
@@ -74,7 +71,6 @@ app.get("/api/precipitation", (req, res) => {
 app.get("/api/yearWeather", (req, res) => {
     const selectedYear = req.query.year;
     const selectedCity = req.query.city;
-
     console.log("선택된 연도:", selectedYear, "선택된 도시:", selectedCity);
 
     let query = `SELECT city, year, Va_lst_11 FROM year_temper_precipi_weather WHERE 1=1`;

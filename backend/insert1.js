@@ -31,7 +31,6 @@ const fetchWeatherData = (url) => {
 
     const req = https.request(options, (res) => {
       let result = '';
-
       res.on('data', (chunk) => (result += chunk));
       res.on('end', () => {
         try {
@@ -61,10 +60,8 @@ const insertWeatherData = async (data, year, month, type) => {
       const columns = isTemperature
         ? '(city, year, month, taavg, tamax, tamin, avghm)'
         : '(city, year, month, rnDay, maxRnDay, tmRnDay)';
-
       // null로 변환 처리 함수
       const toValidValue = (value) => value != 'null' ? value : null;
-
       const values = isTemperature
         ? [
           cityName,

@@ -31,7 +31,6 @@ const fetchWeatherData = (url) => {
 
     const req = https.request(options, (res) => {
       let result = '';
-
       res.on('data', (chunk) => (result += chunk));
       res.on('end', () => {
         try {
@@ -55,10 +54,8 @@ const insertWeatherData2 = async (data, year, type) => {
     for (const cityData of infoList) {
       const cityName = cityData.stn_ko;
       if (!targetCities.includes(cityName)) continue;
-
       const tableName = 'year_temper_precipi_weather';
       const columns = '(city, year, Va_lst_11, Va_lst_13, Va_lst_14, Va_lst_03, Va_lst_05, Va_lst_06, Va_lst_07, Va_lst_09, Va_lst_10)';
-  
       const values = [
         cityName, 
         year, 
@@ -72,8 +69,6 @@ const insertWeatherData2 = async (data, year, type) => {
         cityData.va_lst_09 != 'null' ? cityData.va_lst_09 : 0,
         cityData.va_lst_10 != 'null' ? cityData.va_lst_10 : 0
       ];
-      
-
       const [existing] = await connection.query(
         `SELECT * FROM ${tableName} WHERE city = ? AND year = ?`,
         [cityName, year]
