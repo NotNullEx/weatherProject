@@ -23,15 +23,10 @@ function WeatherDisplay() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0);
     const [selectedYear, setSelectedYear] = useState<string>("2024");
     const [selectedCity, setSelectedCity] = useState<string>("서울");
-    // const [selectedMonth, setSelectedMonth] = useState<string>("");
-    // const [selectedDay, setSelectedDay] = useState<string>("");
     const [darkMode, setDarkMode] = useState<boolean>(false);
-    const [weatherData, setWeatherData] = useState<monthPrecipitation[]>([]);
-    const [regionWeatherData, setRegionWeatherData] = useState<monthPrecipitation[]>([]);
     const [selectedCityN, setSelectedCityN] = useState('108');  // 도시 번호 (일별에서 씀)
     const [selectedMonth, setSelectedMonth] = useState("1"); // 월
     const [selectedDay, setSelectedDay] = useState("1");      // 일
-    const [dayWeather, setDayWeather] = useState<any>([]);       // 선택된 월의 일들의 자료
 
     const getDaysInMonth = (year: string, month: string) => {
         const yearNum = Number(year);
@@ -56,9 +51,12 @@ function WeatherDisplay() {
         <div id="container" className="container">
             <header id="header" className="header">
                 <p>Weather Insight</p>
-                <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
-                    {darkMode ? "🌞" : "🌙 "}
-                </button>
+                <div>
+                    <button onClick={() => window.open("https://github.com/NotNullEx/weatherProject", "_blank")}>GitHub</button>
+                    <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
+                        {darkMode ? "🌞" : "🌙 "}
+                    </button>
+                </div>
             </header>
             <main id="main" className="main">
                 <section id="secondSection" className="secondSection">
@@ -153,7 +151,6 @@ function WeatherDisplay() {
                     </div>
                 </section>
             </main>
-            {/* <CallApi selectedYear={selectedYear} /> */}
         </div >
     );
 }

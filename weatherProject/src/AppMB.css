@@ -123,8 +123,8 @@
     margin-top: 2vh;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .icon {
-    width: 20vw;
-    height: 10vh;
+    width: 20vw !important;
+    height: 10vh !important;
     margin: 0 auto;
     margin-left: -6vw;
     background-image: url(./assets/img/sunny.png);
@@ -148,7 +148,7 @@
     margin: auto;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
-    font-size: 2vw;
+    font-size: 4vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
     width: 3vh;
@@ -667,8 +667,8 @@
     margin-top: 2vh;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .icon {
-    width: 20vw;
-    height: 10vh;
+    width: 20vw !important;
+    height: 10vh !important;
     margin: 0 auto;
     margin-left: -6vw;
     background-image: url(./assets/img/sunny.png);
@@ -692,7 +692,7 @@
     margin: auto;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
-    font-size: 2vw;
+    font-size: 4vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
     width: 3vh;

@@ -155,7 +155,7 @@
   margin: 0 auto;
   border-radius: 20px;
   background: linear-gradient(#ccc8bd, #0185f8);
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather {
@@ -178,11 +178,11 @@
   height: 100%;
   margin: auto;
   list-style: none;
-  margin-top: 2vh;
+  margin-top: 10px;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather ul .icon {
-  width: 6vw;
-  height: 32%;
+  width: 6vw !important;
+  height: 32% !important;
   margin: -1vw auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -213,7 +213,7 @@
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
   margin-top: 0.5vw;
-  font-size: 0.6vw;
+  font-size: 1vw;
   text-align: center;
 }
 .body .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
@@ -294,7 +294,7 @@
   margin-bottom: 1vh;
 }
 .body .container .main .perceived .suggestion .suggestionM {
-  font-size: 0.7vw;
+  font-size: 1vw;
 }
 .body .container .secondSection {
   width: 35%;
@@ -738,7 +738,7 @@
   background-color: #fff;
   border-radius: 20px;
   background: linear-gradient(#6D4AE3, #6d069d);
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather {
@@ -797,7 +797,7 @@
 }
 .body.dark .container .main .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
   margin-top: 0.5vw;
-  font-size: 0.6vw;
+  font-size: 1vw;
   text-align: center;
 }
 .body.dark .container .main .perceived {
@@ -855,7 +855,7 @@
   margin-bottom: 1vh;
 }
 .body.dark .container .main .perceived .suggestion .suggestionM {
-  font-size: 0.7vw;
+  font-size: 1vw;
 }
 .body.dark .container .secondSection {
   width: 35%;

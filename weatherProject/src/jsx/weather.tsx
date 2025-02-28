@@ -97,7 +97,7 @@ const WeatherChart: React.FC<WeatherProps> = ({ selectedIndex }) => {
                             <p>최고 기온 : {maxtemp} °C</p>
                         </div>
                         <div className="winfoB">
-                            <p>기압 : {mintemp} Pa</p>
+                            <p>기압 : {String(mintemp).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")} Pa</p>
                         </div>
                         <div className="winfoB">
                             <p>풍속 : {wind} m/s </p>
