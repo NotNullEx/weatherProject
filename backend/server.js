@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
-import { readFile } from 'fs/promises';
-const url = JSON.parse(await readFile(new URL('./url.json', import.meta.url)));
 
 const app = express();
 const PORT = 5000;
@@ -12,7 +10,7 @@ app.use(cors());
 
 // mysql 연결
 const connection = mysql.createConnection({
-    host: "localhost",
+    host: "mysql-db",
     user: "weather",
     password: "1q2w3e",
     database: "weatherDB"
@@ -132,5 +130,5 @@ app.get("/api/dayWeather", (req, res) => {
 
 // 서버 실행
 app.listen(PORT, () => {
-    console.log(`백엔드 서버 실행 중: ${url.host2}${PORT}`);
+    console.log(`백엔드 서버 실행 중: ${PORT}`);
 });
