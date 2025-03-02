@@ -26,12 +26,24 @@ create table if not exists year_temper_precipi_weather(
   city varchar(50) null,
   year smallint null,
   Va_lst_11 int null,   -- 강수량 총량
-  Va_lst_13 bigint null,   -- 1일 최다 강수량
-  Va_lst_14 int null, -- 1일 최다 강수량이 나타난 날
+  Va_lst_13 bigint null,-- 1일 최다 강수량
+  Va_lst_14 int null,   -- 1일 최다 강수량이 나타난 날
   Va_lst_03 int null,   -- 평균 기온
   Va_lst_05 int null,   -- 최고 평균 기온
   Va_lst_06 int null,   -- 최고 기온
-  Va_lst_07 int null, -- 최고 기온이 나타난 날
+  Va_lst_07 int null,   -- 최고 기온이 나타난 날
   Va_lst_09 int null,   -- 최저 기온
-  Va_lst_10 int null  -- 최저 기온이 나타난 날
+  Va_lst_10 int null    -- 최저 기온이 나타난 날
+);
+
+create table if not exists day_weather(
+  id int(1) auto_increment primary key,
+  city varchar(50) null,
+  year smallint null,
+  month smallint null,
+  day smallint null,
+  ta_max int null,  -- 최고 기온
+  ta_min int null,  -- 최저 기온
+  rn_day int null,  -- 강수량
+  hm int null       -- 상대 습도 평균
 );
