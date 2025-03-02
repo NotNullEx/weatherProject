@@ -1,4 +1,6 @@
-use c21st18;
+CREATE DATABASE IF NOT EXISTS weatherDB;
+
+use weatherDB;
 
 CREATE TABLE IF NOT EXISTS month_temperature_weather (
   id INT(1) AUTO_INCREMENT PRIMARY KEY,
