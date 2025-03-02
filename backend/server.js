@@ -2,10 +2,10 @@ import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
 import { readFile } from 'fs/promises';
-const url = JSON.parse(await readFile(new URL('../weatherProject/src/jsx/json/url.json', import.meta.url)));
+const url = JSON.parse(await readFile(new URL('./url.json', import.meta.url)));
 
 const app = express();
-const PORT = 21182;
+const PORT = 5000;
 
 // cors 설정 -> 이게 리엑트에서 api 호출 가능하게 함
 app.use(cors());
@@ -13,9 +13,9 @@ app.use(cors());
 // mysql 연결
 const connection = mysql.createConnection({
     host: "localhost",
-    user: "c21st18",
-    password: "MJfqebtKqcW6KV27",
-    database: "c21st18"
+    user: "weather",
+    password: "1q2w3e",
+    database: "weatherDB"
 });
 
 connection.connect((err) => {
