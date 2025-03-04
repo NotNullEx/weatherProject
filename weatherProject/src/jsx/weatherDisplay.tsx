@@ -43,7 +43,7 @@ function WeatherDisplay() {
             <header id="header" className="header">
                 <p>Weather Insight</p>
                 <div>
-                    <button onClick={() => window.open("", "_blank")}>Report</button>
+                    <button onClick={() => window.open("http://kkms4001.iptime.org/~c21st18/weatherProject/WEATHER%20PROJECT.pdf", "_blank")}>Report</button>
                     <button onClick={() => window.open("https://github.com/NotNullEx/weatherProject", "_blank")}>GitHub</button>
                     <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
                         {darkMode ? "🌞" : "🌙 "}
