@@ -33,24 +33,30 @@ $MC: #e0dfdf;
 
         .container {
             .header {
+                    width:100%;
                 p {
+                    width:35%;
                     font-size: 4vw;
                     text-align: center;
                     border-radius: 10px;
                     margin-left: 5vw;
                 }
-
-                button {
-                    width: 70px;
-                    border-radius: 10px;
-                    height: 20px;
-                    line-height: 10px;
-                    font-size: 2vw;
-                    color: #1C1B20;
-                    margin: 3.7vw;
-                    background-color: #cddcf8;
-                    border: none;
+                div{
+                    width:46%;
+                    display:flex;
+                    button {
+                        margin-top: 14px;
+                        width:32%;
+                        border-radius: 10px;
+                        height: 30px;
+                        line-height: 10px;
+                        font-size: 2vw;
+                        color: #1C1B20;
+                        background-color: #cddcf8;
+                        border: none;
+                    }
                 }
+                
             }
 
             .main {
@@ -178,7 +184,7 @@ $MC: #e0dfdf;
                                         margin: auto;
 
                                         p {
-                                            font-size: 4vw
+                                            font-size: 3.2vw
                                         }
 
                                         .windIcon {
@@ -263,7 +269,7 @@ $MC: #e0dfdf;
                             }
 
                             .suggestionM {
-                                font-size: 2.5vw;
+                                font-size: 3.2vw;
                             }
                         }
                     }
@@ -321,7 +327,7 @@ $MC: #e0dfdf;
 
                     .b2 {
                         width: 100%;
-                        height: 220px;
+                        height: 200px;
                         margin: 0 auto;
                         margin-top: -17vw;
                         @include backblur2();
@@ -406,7 +412,7 @@ $MC: #e0dfdf;
 
                             .ml {
                                 position: absolute;
-                                top: 17.2vw;
+                                top: 21.2vw;
                                 left: 10vw;
                                 font-size: 2vw;
                                 text-align: center;
@@ -423,7 +429,7 @@ $MC: #e0dfdf;
 
                             .daytemer {
                                 text-align: center;
-                                font-size: 2vw;
+                                font-size: 2.5vw;
                                 margin-top: 2vw;
 
                                 .daytemerMax {
@@ -438,13 +444,13 @@ $MC: #e0dfdf;
                             .dayprec {
                                 text-align: center;
                                 margin-bottom: 1vw;
-                                font-size: 2vw;
+                                font-size: 2.5vw;
                             }
 
                             .dayhumidity {
                                 text-align: center;
                                 margin-bottom: 1vw;
-                                font-size: 2vw;
+                                font-size: 2.5vw;
                             }
 
                             .circleBox {
@@ -454,8 +460,8 @@ $MC: #e0dfdf;
 
                                 .circle {
                                     display: block;
-                                    width: 25vw;
-                                    height: 25vw;
+                                    width: 30vw;
+                                    height: 30vw;
                                     margin: auto;
                                     margin-top: -7vw;
 
@@ -470,7 +476,7 @@ $MC: #e0dfdf;
 
                                 .circleper {
                                     position: absolute;
-                                    top: 10.5vw;
+                                    top: 14.5vw;
                                     left: 10.5vw;
                                     font-size: 5vw;
                                     font-weight: bold;
@@ -604,16 +610,20 @@ $MC: #e0dfdf;
                     border-radius: 10px;
                 }
 
-                button {
-                    width: 70px;
-                    border-radius: 10px;
-                    height: 20px;
-                    line-height: 10px;
-                    font-size: 2vw;
-                    color: #1C1B20;
-                    margin: 3.7vw;
-                    background-color: #4A494E;
-                    border: none;
+                div{
+                    width:46%;
+                    display:flex;
+                    button {
+                        margin-top: 14px;
+                        width:32%;
+                        border-radius: 10px;
+                        height: 30px;
+                        line-height: 10px;
+                        font-size: 2vw;
+                        color: #1C1B20;
+                        background-color: #eff2f9;
+                        border: none;
+                    }
                 }
             }
 
@@ -632,7 +642,8 @@ $MC: #e0dfdf;
                     .selectTime {
                         width: 100%;
                         height: 40px;
-                        margin: auto;
+                        margin: 0 auto;
+                        margin-top: -0.4vw;
                         padding: 2vw !important;
                         border-radius: 10px;
                         @include objcolor();
@@ -640,10 +651,11 @@ $MC: #e0dfdf;
 
                         .selectValuebox {
                             width: 100%;
-                            margin: 1vw auto;
+                            margin: 1.5vw auto;
                             text-align: center;
                             display: flex;
-                            justify-content: space-between;
+                            justify-content: space-around;
+                            flex-direction:row;
                         }
 
                         .sb {
@@ -691,7 +703,7 @@ $MC: #e0dfdf;
                             font-size: 4vw;
 
                             h2 {
-                                font-size: 6vw !important;
+                                font-size: 5vw !important;
                                 @include titleFont;
                                 text-align: center;
                             }
@@ -736,7 +748,7 @@ $MC: #e0dfdf;
                                         margin: auto;
 
                                         p {
-                                            font-size: 4vw
+                                            font-size: 3.2vw
                                         }
 
                                         .windIcon {
@@ -821,7 +833,7 @@ $MC: #e0dfdf;
                             }
 
                             .suggestionM {
-                                font-size: 2.5vw;
+                                font-size: 3.2vw;
                             }
                         }
                     }
@@ -888,7 +900,7 @@ $MC: #e0dfdf;
                         }
 
                         .chart {
-                            height: 150px !important;
+                            height: 160px !important;
 
                             Line {
                                 stroke: #3d4754;
@@ -962,7 +974,7 @@ $MC: #e0dfdf;
 
                             .ml {
                                 position: absolute;
-                                top: 17.2vw;
+                                top: 21.2vw;
                                 left: 10vw;
                                 font-size: 2vw;
                                 text-align: center;
@@ -979,7 +991,7 @@ $MC: #e0dfdf;
 
                             .daytemer {
                                 text-align: center;
-                                font-size: 2vw;
+                                font-size: 2.5vw;
                                 margin-top: 2vw;
 
                                 .daytemerMax {
@@ -994,13 +1006,15 @@ $MC: #e0dfdf;
                             .dayprec {
                                 text-align: center;
                                 margin-bottom: 1vw;
-                                font-size: 2vw;
+                                font-size: 2.5vw;
+
                             }
 
                             .dayhumidity {
                                 text-align: center;
                                 margin-bottom: 1vw;
-                                font-size: 2vw;
+                                font-size: 2.5vw;
+
                             }
 
                             .circleBox {
@@ -1010,8 +1024,8 @@ $MC: #e0dfdf;
 
                                 .circle {
                                     display: block;
-                                    width: 25vw;
-                                    height: 25vw;
+                                    width: 30vw;
+                                    height: 30vw;
                                     margin: auto;
                                     margin-top: -7vw;
 
@@ -1026,7 +1040,7 @@ $MC: #e0dfdf;
 
                                 .circleper {
                                     position: absolute;
-                                    top: 10.5vw;
+                                    top: 14.5vw;
                                     left: 10.5vw;
                                     font-size: 5vw;
                                     font-weight: bold;

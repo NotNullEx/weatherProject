@@ -7,20 +7,28 @@
     background-repeat: repeat-y;
     overflow-y: auto;
   }
+  .body .container .header {
+    width: 100%;
+  }
   .body .container .header p {
+    width: 35%;
     font-size: 4vw;
     text-align: center;
     border-radius: 10px;
     margin-left: 5vw;
   }
-  .body .container .header button {
-    width: 70px;
+  .body .container .header div {
+    width: 46%;
+    display: flex;
+  }
+  .body .container .header div button {
+    margin-top: 14px;
+    width: 32%;
     border-radius: 10px;
-    height: 20px;
+    height: 30px;
     line-height: 10px;
     font-size: 2vw;
     color: #1C1B20;
-    margin: 3.7vw;
     background-color: #cddcf8;
     border: none;
   }
@@ -148,7 +156,7 @@
     margin: auto;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
-    font-size: 4vw;
+    font-size: 3.2vw;
   }
   .body .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
     width: 3vh;
@@ -230,7 +238,7 @@
     margin-bottom: 1vh;
   }
   .body .container .main .firstSection .perceived .suggestion .suggestionM {
-    font-size: 2.5vw;
+    font-size: 3.2vw;
   }
   .body .container .main .secondSection {
     width: 100%;
@@ -280,7 +288,7 @@
   }
   .body .container .main .secondSection .b2 {
     width: 100%;
-    height: 220px;
+    height: 200px;
     margin: 0 auto;
     margin-top: -17vw;
     border-radius: 10px;
@@ -371,7 +379,7 @@
   .body .container .main .thirdSection .c .c2-2 .ml,
   .body .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
-    top: 17.2vw;
+    top: 21.2vw;
     left: 10vw;
     font-size: 2vw;
     text-align: center;
@@ -392,7 +400,7 @@
   .body .container .main .thirdSection .c .c2-2 .daytemer,
   .body .container .main .thirdSection .c .c2-3 .daytemer {
     text-align: center;
-    font-size: 2vw;
+    font-size: 2.5vw;
     margin-top: 2vw;
   }
   .body .container .main .thirdSection .c .c2-1 .daytemer .daytemerMax,
@@ -410,14 +418,14 @@
   .body .container .main .thirdSection .c .c2-3 .dayprec {
     text-align: center;
     margin-bottom: 1vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
   .body .container .main .thirdSection .c .c2-1 .dayhumidity,
   .body .container .main .thirdSection .c .c2-2 .dayhumidity,
   .body .container .main .thirdSection .c .c2-3 .dayhumidity {
     text-align: center;
     margin-bottom: 1vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
   .body .container .main .thirdSection .c .c2-1 .circleBox,
   .body .container .main .thirdSection .c .c2-2 .circleBox,
@@ -430,8 +438,8 @@
   .body .container .main .thirdSection .c .c2-2 .circleBox .circle,
   .body .container .main .thirdSection .c .c2-3 .circleBox .circle {
     display: block;
-    width: 25vw;
-    height: 25vw;
+    width: 30vw;
+    height: 30vw;
     margin: auto;
     margin-top: -7vw;
   }
@@ -449,7 +457,7 @@
   .body .container .main .thirdSection .c .c2-2 .circleBox .circleper,
   .body .container .main .thirdSection .c .c2-3 .circleBox .circleper {
     position: absolute;
-    top: 10.5vw;
+    top: 14.5vw;
     left: 10.5vw;
     font-size: 5vw;
     font-weight: bold;
@@ -566,15 +574,19 @@
     margin-left: 5vw;
     border-radius: 10px;
   }
-  .body.dark .container .header button {
-    width: 70px;
+  .body.dark .container .header div {
+    width: 46%;
+    display: flex;
+  }
+  .body.dark .container .header div button {
+    margin-top: 14px;
+    width: 32%;
     border-radius: 10px;
-    height: 20px;
+    height: 30px;
     line-height: 10px;
     font-size: 2vw;
     color: #1C1B20;
-    margin: 3.7vw;
-    background-color: #4A494E;
+    background-color: #eff2f9;
     border: none;
   }
   .body.dark .container .main {
@@ -593,7 +605,8 @@
   .body.dark .container .main .firstSection .selectTime {
     width: 100%;
     height: 40px;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: -0.4vw;
     padding: 2vw !important;
     border-radius: 10px;
     background-color: #303136;
@@ -602,10 +615,11 @@
   }
   .body.dark .container .main .firstSection .selectTime .selectValuebox {
     width: 100%;
-    margin: 1vw auto;
+    margin: 1.5vw auto;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: row;
   }
   .body.dark .container .main .firstSection .selectTime .sb {
     flex-direction: row;
@@ -647,7 +661,7 @@
     font-size: 4vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather h2 {
-    font-size: 6vw !important;
+    font-size: 5vw !important;
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
     color: white;
@@ -692,7 +706,7 @@
     margin: auto;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB p {
-    font-size: 4vw;
+    font-size: 3.2vw;
   }
   .body.dark .container .main .firstSection .realtimeWeatherArea .realtimeWeather ul .weather-info .winfoB .windIcon {
     width: 3vh;
@@ -773,7 +787,7 @@
     margin-bottom: 1vh;
   }
   .body.dark .container .main .firstSection .perceived .suggestion .suggestionM {
-    font-size: 2.5vw;
+    font-size: 3.2vw;
   }
   .body.dark .container .main .secondSection {
     width: 100%;
@@ -833,7 +847,7 @@
     color: white;
   }
   .body.dark .container .main .secondSection .b2 .chart {
-    height: 150px !important;
+    height: 160px !important;
   }
   .body.dark .container .main .secondSection .b2 .chart Line {
     stroke: #3d4754;
@@ -905,7 +919,7 @@
   .body.dark .container .main .thirdSection .c .c2-2 .ml,
   .body.dark .container .main .thirdSection .c .c2-3 .ml {
     position: absolute;
-    top: 17.2vw;
+    top: 21.2vw;
     left: 10vw;
     font-size: 2vw;
     text-align: center;
@@ -926,7 +940,7 @@
   .body.dark .container .main .thirdSection .c .c2-2 .daytemer,
   .body.dark .container .main .thirdSection .c .c2-3 .daytemer {
     text-align: center;
-    font-size: 2vw;
+    font-size: 2.5vw;
     margin-top: 2vw;
   }
   .body.dark .container .main .thirdSection .c .c2-1 .daytemer .daytemerMax,
@@ -944,14 +958,14 @@
   .body.dark .container .main .thirdSection .c .c2-3 .dayprec {
     text-align: center;
     margin-bottom: 1vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
   .body.dark .container .main .thirdSection .c .c2-1 .dayhumidity,
   .body.dark .container .main .thirdSection .c .c2-2 .dayhumidity,
   .body.dark .container .main .thirdSection .c .c2-3 .dayhumidity {
     text-align: center;
     margin-bottom: 1vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
   .body.dark .container .main .thirdSection .c .c2-1 .circleBox,
   .body.dark .container .main .thirdSection .c .c2-2 .circleBox,
@@ -964,8 +978,8 @@
   .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circle,
   .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circle {
     display: block;
-    width: 25vw;
-    height: 25vw;
+    width: 30vw;
+    height: 30vw;
     margin: auto;
     margin-top: -7vw;
   }
@@ -983,7 +997,7 @@
   .body.dark .container .main .thirdSection .c .c2-2 .circleBox .circleper,
   .body.dark .container .main .thirdSection .c .c2-3 .circleBox .circleper {
     position: absolute;
-    top: 10.5vw;
+    top: 14.5vw;
     left: 10.5vw;
     font-size: 5vw;
     font-weight: bold;
