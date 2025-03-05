@@ -98,7 +98,8 @@ const insertWeatherData3 = async (data, year, month, type) => {
 // 메인 실행 함수
 const main = async () => {
   try {
-    for (let year = 2017; year <= 2024; year++) {
+    const getYear=new Date().getFullYear()-1;
+    for (let year = 2017; year <= getYear; year++) {
       for (const month of months) {
         console.log(`데이터 수집 중: ${year}-${month}`);
         for(let city=0; city<targetCitiyNumber.length; city++){

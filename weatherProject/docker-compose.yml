@@ -35,7 +35,7 @@ services:
       - app-network
     volumes:
       - mysql_data:/var/lib/mysql
-      - ../mysql/mybackup2.sql:/docker-entrypoint-initdb.d/mybackup2.sql
+      - ../mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
     command: >
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_unicode_ci

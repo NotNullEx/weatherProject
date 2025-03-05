@@ -93,7 +93,8 @@ const insertWeatherData2 = async (data, year, type) => {
 // 메인 실행 함수
 const main = async () => {
   try {
-    for (let year = 2017; year <= 2024; year++) {
+    const getYear=new Date().getFullYear()-1;
+    for (let year = 2017; year <= getYear; year++) {
       const weatherData3 = await fetchWeatherData(`https://apihub.kma.go.kr/api/typ02/openApi/SfcYearlyInfoService/getYearSumry?pageNo=1&numOfRows=10&dataType=JSON&year=${year}&authKey=hVqmw5caSHOapsOXGhhz3Q`).catch(() => null); 
       if (weatherData3) await insertWeatherData2(weatherData3,year,"precipi");
     }
