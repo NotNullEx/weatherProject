@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
-import './insert1.js';
-import './insert2.js';
-import './insert3.js';
+import './month-insert.js';
+import './year-insert.js';
+import './day-insert.js';
 
 const app = express();
 const PORT = 5000;
